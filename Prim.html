@@ -1,0 +1,126 @@
+<html>
+	<head>
+		
+		<title>
+			Prim MST Visualzation
+		</title>
+		
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	
+		<link rel="stylesheet" href="visualizationPageStyle.css">
+			
+			
+		
+		<link rel="stylesheet" href="ThirdParty/jquery-ui-1.8.11.custom.css">				
+		<script src="ThirdParty/jquery-1.5.2.min.js"></script>
+		<script src="ThirdParty/jquery-ui-1.8.11.custom.min.js"></script>
+				
+		<script type = "application/javascript" src = "AnimationLibrary/CustomEvents.js"> </script>
+		<script type = "application/javascript" src = "AnimationLibrary/UndoFunctions.js"> </script>
+		<script type = "application/javascript" src = "AnimationLibrary/AnimatedObject.js"> </script>
+		<script type = "application/javascript" src = "AnimationLibrary/AnimatedLabel.js"> </script>
+		<script type = "application/javascript" src = "AnimationLibrary/AnimatedCircle.js"> </script>
+		<script type = "application/javascript" src = "AnimationLibrary/AnimatedRectangle.js"> </script>
+		<script type = "application/javascript" src = "AnimationLibrary/AnimatedLinkedList.js"> </script>
+		<script type = "application/javascript" src = "AnimationLibrary/HighlightCircle.js"> </script>
+		<script type = "application/javascript" src = "AnimationLibrary/Line.js"> </script>
+		<script type = "application/javascript" src = "AnimationLibrary/ObjectManager.js"> </script>
+		<script type = "application/javascript" src = "AnimationLibrary/AnimationMain.js"> </script>
+
+		<script type = "application/javascript" src = "AlgorithmLibrary/Algorithm.js"> </script>
+		<script type = "application/javascript" src = "AlgorithmLibrary/Graph.js"> </script>
+		<script type = "application/javascript" src = "AlgorithmLibrary/DijkstraPrim.js"> </script>
+				
+			
+	 </head> 
+	
+	<body onload="init(false);" class="VisualizationMainPage">
+		<div id = "container">
+			
+			<div id="header">  
+				<h1>Prims Algorithm</h1>
+			</div>
+			
+			<div  id = "mainContent"> 
+				<div class = "head">
+				<div class = "bg">
+				<div id = "algoControlSection">
+					
+					<table id="AlgorithmSpecificControls"> 
+						
+					</table> 
+				</div>
+				<div id = "generalAnimationControlSection">
+					<table id="GeneralAnimationControls">		
+					
+					</table>
+				</div>
+				<table id="speed">
+					<tr>
+						<td align="center" colspan="3"><b>Animation Speed</b></td>
+					</tr>
+					<tr>
+						<th>
+							<button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></th>
+							<th><h1 value="1" id="floatingTextarea" >1</h1></th>
+							<th><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></th>
+					</tr>
+					
+		
+				</table>
+					
+			
+				
+				
+				
+				</div>
+				</div>
+				
+					
+									
+					<div class="bg">				
+						<div class="code"><pre>
+	node[] jarnikPrimAlgorithm(graph, weight)
+	Queue q
+	q.addAllVetices(graph.vertices) 
+	//add all vertices to the queue
+	
+	distances = new int[q.size()] //array of distances
+	distances[0] = 0 //root
+	for i in 1 -> distances.length - 1 do
+	distances[i] = +inf 
+	//all remaining vertices are in infinite distance
+	
+	predecessors = new node[q.size()] 
+	//array of predecessors
+	predecessors[0] = null 
+	//the root does not have any predecessor
+	
+	while !queue.empty() do //while the queue is not empty
+	u = queue.extractMin() 
+	//return a node in a minimal distance
+	for node in descendants(u) do //for all descendants of u
+	if queue.contains(node) AND weight(u, node) < d[node] 
+	//if we have found some improving path to the descendant
+	then predecessors[node] = u //than u is his predecessor
+	d[node] = weight(u, node) //and set a new distance
+	
+	return predecessors //return the array of predecessor
+						
+				</pre>
+				</div>
+				<canvas id="canvas" width="1000" height="540"></canvas>
+				</div>
+			</div>
+				
+				
+				
+			</div> 
+			
+			<div id="footer">  
+				
+			</div>
+
+		</div>
+	</body>
+</html>
