@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Huffman Coding</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <link rel = "stylesheet" href= "huffman.css">
+    </head>
+    <body>
+      <div class="header">
+        <a href="code_visualizer.html" class="logo">Code Visualizer</a>
+        <h1>Huffman Encoding (Lossless Data Compression)</h1>
+      </div>
+      <div class="ct">
+        <div class="ques">
+            <b>Problem Description:</b><br>Assign variable-length codes to input characters such that the lengths of the assigned codes are based on the frequencies of corresponding characters. Thus, The most frequent character gets the smallest code and the least frequent character gets the largest code.
+                <table class="table table-striped" style="text-align: center;">
+                  <thead>
+                    <tr class="bg-dark" style="color: aliceblue;">
+                      <th>Character</th>
+                      <th>Frequency</th>
+                      <th>%</th>
+                      <th>Code(Can be obtained after performing the algo)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>o</td>
+                      <td>5x</td>
+                      <td>29%</td>
+                      <td>10</td>
+                    </tr>
+                    <tr>
+                      <td>_</td>
+                      <td>3x</td>
+                      <td>18%</td>
+                      <td>111</td>
+                    </tr>
+                    <tr>
+                      <td>l</td>
+                      <td>2x</td>
+                      <td>12%</td>
+                      <td>001</td>
+                    </tr>
+                    <tr>
+                      <td>w</td>
+                      <td>2x</td>
+                      <td>12%</td>
+                      <td>010</td>
+                    </tr>
+                    <tr>
+                      <td>d</td>
+                      <td>2x</td>
+                      <td>12%</td>
+                      <td>011</td>
+                    </tr>
+                    <tr>
+                      <td>y</td>
+                      <td>1x</td>
+                      <td>6%</td>
+                      <td>1100</td>
+                    </tr>
+                    <tr>
+                      <td>e</td>
+                      <td>1x</td>
+                      <td>6%</td>
+                      <td>1101</td>
+                    </tr>
+                    <tr>
+                      <td>r</td>
+                      <td>1x</td>
+                      <td>6%</td>
+                      <td>000</td>
+                    </tr>
+                  </tbody>
+                </table>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 20px;">
+        <form>
+            <div class="form-group">
+                <textarea readonly class="form-control"  id="floatingTextarea" >The word to be encoded:      yellow_wood_door_ 
+The encoding (obtained after performing Huffman Encoding): 1100 1101 001 001 10 010 111 010 10 10 011 111 011 10 10 000 111
+                </textarea>
+                <textarea class="form-control"  id="floatingTextarea2" >Huffman Encoding..</textarea>
+             </div>
+        </form>  
+        <div class="row">
+          <div class="col-sm-6 pycode">
+                //PYTHON code for Huffman Encoding
+                <div id="l1">&nbsp;&nbsp;while len(nodes) > 1:</div> 
+                <div id="l2">&nbsp;&nbsp;&nbsp;&nbsp;nodes = sorted(nodes, key=lambda x: x.freq)</div> 
+                <div id="l3">&nbsp;&nbsp;&nbsp;&nbsp;left = nodes[0]</div> 
+                <div id="l4">&nbsp;&nbsp;&nbsp;&nbsp;right = nodes[1]</div> 
+                <div><br></div>
+                <div id="l5">&nbsp;&nbsp;&nbsp;&nbsp;left.huff = 0</div>
+                <div id="l6">&nbsp;&nbsp;&nbsp;&nbsp;right.huff = 1</div> 
+                <div><br></div>
+                <div id="l7">&nbsp;&nbsp;&nbsp;&nbsp;newNode = node(left.freq+right.freq, </div>
+                <div id="l8">&nbsp;&nbsp;&nbsp;&nbsp;left.symbol+right.symbol, left, right)</div> 
+                <div><br></div>
+                <div id="l9">&nbsp;&nbsp;&nbsp;&nbsp;nodes.remove(left)</div>
+                <div id="l10">&nbsp;&nbsp;&nbsp;&nbsp;nodes.remove(right)</div>
+                <div id="l11">&nbsp;&nbsp;&nbsp;&nbsp;nodes.append(newNode)</div> 
+            </div>
+            <div class="col-sm-6" style="margin: 5px;">
+                <div id="output" style="text-align:center">
+                  <svg width="458pt" height="365pt" viewBox="0.00 0.00 458.00 365.00" >
+                  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 361)">
+                  <title>%0</title>
+                  <!-- node28 -->
+                  <g id="node1" class="node">
+                  <title>node28</title>
+                  <path fill="#FBC02D" stroke="#000000" d="M336,-.5C336,-.5 366,-.5 366,-.5 372,-.5 378,-6.5 378,-12.5 378,-12.5 378,-38.1 378,-38.1 378,-44.1 372,-50.1 366,-50.1 366,-50.1 336,-50.1 336,-50.1 330,-50.1 324,-44.1 324,-38.1 324,-38.1 324,-12.5 324,-12.5 324,-6.5 330,-.5 336,-.5"></path>
+                  <text text-anchor="middle" x="351" y="-33.5" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+                  <polyline fill="none" stroke="#000000" points="324,-25.3 378,-25.3 "></polyline>
+                  <text text-anchor="middle" x="351" y="-8.7" font-family="Times,serif" font-size="14.00" fill="#000000">y</text>
+                  </g>
+                  <!-- node29 -->
+                  <g id="node2" class="node">
+                  <title>node29</title>
+                  <path fill="#FBC02D" stroke="#000000" d="M408,-.5C408,-.5 438,-.5 438,-.5 444,-.5 450,-6.5 450,-12.5 450,-12.5 450,-38.1 450,-38.1 450,-44.1 444,-50.1 438,-50.1 438,-50.1 408,-50.1 408,-50.1 402,-50.1 396,-44.1 396,-38.1 396,-38.1 396,-12.5 396,-12.5 396,-6.5 402,-.5 408,-.5"></path>
+                  <text text-anchor="middle" x="423" y="-33.5" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+                  <polyline fill="none" stroke="#000000" points="396,-25.3 450,-25.3 "></polyline>
+                  <text text-anchor="middle" x="423" y="-8.7" font-family="Times,serif" font-size="14.00" fill="#000000">e</text>
+                  </g>
+                  <!-- node30 -->
+                  <g id="node3" class="node">
+                  <title>node30</title>
+                  <path fill="#FBC02D" stroke="#000000" d="M12,-83.9C12,-83.9 42,-83.9 42,-83.9 48,-83.9 54,-89.9 54,-95.9 54,-95.9 54,-121.5 54,-121.5 54,-127.5 48,-133.5 42,-133.5 42,-133.5 12,-133.5 12,-133.5 6,-133.5 0,-127.5 0,-121.5 0,-121.5 0,-95.9 0,-95.9 0,-89.9 6,-83.9 12,-83.9"></path>
+                  <text text-anchor="middle" x="27" y="-116.9" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+                  <polyline fill="none" stroke="#000000" points="0,-108.7 54,-108.7 "></polyline>
+                  <text text-anchor="middle" x="27" y="-92.1" font-family="Times,serif" font-size="14.00" fill="#000000">l</text>
+                  </g>
+                  <!-- node31 -->
+                  <g id="node4" class="node">
+                  <title>node31</title>
+                  <path fill="#FBC02D" stroke="#000000" d="M228,-167.3C228,-167.3 258,-167.3 258,-167.3 264,-167.3 270,-173.3 270,-179.3 270,-179.3 270,-204.9 270,-204.9 270,-210.9 264,-216.9 258,-216.9 258,-216.9 228,-216.9 228,-216.9 222,-216.9 216,-210.9 216,-204.9 216,-204.9 216,-179.3 216,-179.3 216,-173.3 222,-167.3 228,-167.3"></path>
+                  <text text-anchor="middle" x="243" y="-200.3" font-family="Times,serif" font-size="14.00" fill="#000000">5</text>
+                  <polyline fill="none" stroke="#000000" points="216,-192.1 270,-192.1 "></polyline>
+                  <text text-anchor="middle" x="243" y="-175.5" font-family="Times,serif" font-size="14.00" fill="#000000">o</text>
+                  </g>
+                  <!-- node32 -->
+                  <g id="node5" class="node">
+                  <title>node32</title>
+                  <path fill="#FBC02D" stroke="#000000" d="M156,-83.9C156,-83.9 186,-83.9 186,-83.9 192,-83.9 198,-89.9 198,-95.9 198,-95.9 198,-121.5 198,-121.5 198,-127.5 192,-133.5 186,-133.5 186,-133.5 156,-133.5 156,-133.5 150,-133.5 144,-127.5 144,-121.5 144,-121.5 144,-95.9 144,-95.9 144,-89.9 150,-83.9 156,-83.9"></path>
+                  <text text-anchor="middle" x="170.5533" y="-116.9" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+                  <polyline fill="none" stroke="#000000" points="144,-108.7 197.1066,-108.7 "></polyline>
+                  <text text-anchor="middle" x="170.5533" y="-92.1" font-family="Times,serif" font-size="14.00" fill="#000000">w</text>
+                  </g>
+                  <!-- node33 -->
+                  <g id="node6" class="node">
+                  <title>node33</title>
+                  <path fill="#FBC02D" stroke="#000000" d="M300,-83.9C300,-83.9 330,-83.9 330,-83.9 336,-83.9 342,-89.9 342,-95.9 342,-95.9 342,-121.5 342,-121.5 342,-127.5 336,-133.5 330,-133.5 330,-133.5 300,-133.5 300,-133.5 294,-133.5 288,-127.5 288,-121.5 288,-121.5 288,-95.9 288,-95.9 288,-89.9 294,-83.9 300,-83.9"></path>
+                  <text text-anchor="middle" x="315" y="-116.9" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+                  <polyline fill="none" stroke="#000000" points="288,-108.7 342,-108.7 "></polyline>
+                  <text text-anchor="middle" x="315" y="-92.1" font-family="Times,serif" font-size="14.00" fill="#000000">_</text>
+                  </g>
+                  <!-- node34 -->
+                  <g id="node7" class="node">
+                  <title>node34</title>
+                  <path fill="#FBC02D" stroke="#000000" d="M228,-83.9C228,-83.9 258,-83.9 258,-83.9 264,-83.9 270,-89.9 270,-95.9 270,-95.9 270,-121.5 270,-121.5 270,-127.5 264,-133.5 258,-133.5 258,-133.5 228,-133.5 228,-133.5 222,-133.5 216,-127.5 216,-121.5 216,-121.5 216,-95.9 216,-95.9 216,-89.9 222,-83.9 228,-83.9"></path>
+                  <text text-anchor="middle" x="243" y="-116.9" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+                  <polyline fill="none" stroke="#000000" points="216,-108.7 270,-108.7 "></polyline>
+                  <text text-anchor="middle" x="243" y="-92.1" font-family="Times,serif" font-size="14.00" fill="#000000">d</text>
+                  </g>
+                  <!-- node35 -->
+                  <g id="node8" class="node">
+                  <title>node35</title>
+                  <path fill="#FBC02D" stroke="#000000" d="M84,-83.9C84,-83.9 114,-83.9 114,-83.9 120,-83.9 126,-89.9 126,-95.9 126,-95.9 126,-121.5 126,-121.5 126,-127.5 120,-133.5 114,-133.5 114,-133.5 84,-133.5 84,-133.5 78,-133.5 72,-127.5 72,-121.5 72,-121.5 72,-95.9 72,-95.9 72,-89.9 78,-83.9 84,-83.9"></path>
+                  <text text-anchor="middle" x="99" y="-116.9" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+                  <polyline fill="none" stroke="#000000" points="72,-108.7 126,-108.7 "></polyline>
+                  <text text-anchor="middle" x="99" y="-92.1" font-family="Times,serif" font-size="14.00" fill="#000000">r</text>
+                  </g>
+                  <!-- node36 -->
+                  <g id="node9" class="node">
+                  <title>node36</title>
+                  <path fill="yellow" stroke="#000000" d="M372,-90.7C372,-90.7 402,-90.7 402,-90.7 408,-90.7 414,-96.7 414,-102.7 414,-102.7 414,-114.7 414,-114.7 414,-120.7 408,-126.7 402,-126.7 402,-126.7 372,-126.7 372,-126.7 366,-126.7 360,-120.7 360,-114.7 360,-114.7 360,-102.7 360,-102.7 360,-96.7 366,-90.7 372,-90.7"></path>
+                  <text text-anchor="middle" x="387" y="-104.5" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+                  </g>
+                  <!-- node36&#45;&gt;node28 -->
+                  <g id="edge1" class="edge">
+                  <title>node36-&gt;node28</title>
+                  <path fill="none" stroke="#000000" d="M379.1885,-90.6034C375.2937,-81.5804 370.4499,-70.3589 365.8823,-59.7774"></path>
+                  <polygon fill="#000000" stroke="#000000" points="368.977,-58.1151 361.8004,-50.321 362.5502,-60.8893 368.977,-58.1151"></polygon>
+                  <text text-anchor="middle" x="376.5" y="-62.8" font-family="Times,serif" font-size="14.00" fill="#000000">0</text>
+                  </g>
+                  <!-- node36&#45;&gt;node29 -->
+                  <g id="edge2" class="edge">
+                  <title>node36-&gt;node29</title>
+                  <path fill="none" stroke="#000000" d="M394.8115,-90.6034C398.7063,-81.5804 403.5501,-70.3589 408.1177,-59.7774"></path>
+                  <polygon fill="#000000" stroke="#000000" points="411.4498,-60.8893 412.1996,-50.321 405.023,-58.1151 411.4498,-60.8893"></polygon>
+                  <text text-anchor="middle" x="412.5" y="-62.8" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+                  </g>
+                  <!-- node37 -->
+                  <g id="node10" class="node">
+                  <title>node37</title>
+                  <path fill="yellow" stroke="#000000" d="M84,-174.1C84,-174.1 114,-174.1 114,-174.1 120,-174.1 126,-180.1 126,-186.1 126,-186.1 126,-198.1 126,-198.1 126,-204.1 120,-210.1 114,-210.1 114,-210.1 84,-210.1 84,-210.1 78,-210.1 72,-204.1 72,-198.1 72,-198.1 72,-186.1 72,-186.1 72,-180.1 78,-174.1 84,-174.1"></path>
+                  <text text-anchor="middle" x="99" y="-187.9" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+                  </g>
+                  <!-- node37&#45;&gt;node30 -->
+                  <g id="edge4" class="edge">
+                  <title>node37-&gt;node30</title>
+                  <path fill="none" stroke="#000000" d="M83.3771,-174.0034C75.1899,-164.52 64.9063,-152.6081 55.371,-141.5631"></path>
+                  <polygon fill="#000000" stroke="#000000" points="57.785,-139.0033 48.6008,-133.721 52.4863,-143.5776 57.785,-139.0033"></polygon>
+                  <text text-anchor="middle" x="73.5" y="-146.2" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+                  </g>
+                  <!-- node37&#45;&gt;node35 -->
+                  <g id="edge3" class="edge">
+                  <title>node37-&gt;node35</title>
+                  <path fill="none" stroke="#000000" d="M99,-174.0034C99,-165.1645 99,-154.216 99,-143.826"></path>
+                  <polygon fill="#000000" stroke="#000000" points="102.5001,-143.7209 99,-133.721 95.5001,-143.721 102.5001,-143.7209"></polygon>
+                  <text text-anchor="middle" x="102.5" y="-146.2" font-family="Times,serif" font-size="14.00" fill="#000000">0</text>
+                  </g>
+                  <!-- node38 -->
+                  <g id="node11" class="node">
+                  <title>node38</title>
+                  <path fill="yellow" stroke="#000000" d="M156,-174.1C156,-174.1 186,-174.1 186,-174.1 192,-174.1 198,-180.1 198,-186.1 198,-186.1 198,-198.1 198,-198.1 198,-204.1 192,-210.1 186,-210.1 186,-210.1 156,-210.1 156,-210.1 150,-210.1 144,-204.1 144,-198.1 144,-198.1 144,-186.1 144,-186.1 144,-180.1 150,-174.1 156,-174.1"></path>
+                  <text text-anchor="middle" x="171" y="-187.9" font-family="Times,serif" font-size="14.00" fill="#000000">4</text>
+                  </g>
+                  <!-- node38&#45;&gt;node32 -->
+                  <g id="edge5" class="edge">
+                  <title>node38-&gt;node32</title>
+                  <path fill="none" stroke="#000000" d="M171,-174.0034C171,-165.1645 171,-154.216 171,-143.826"></path>
+                  <polygon fill="#000000" stroke="#000000" points="174.5001,-143.7209 171,-133.721 167.5001,-143.721 174.5001,-143.7209"></polygon>
+                  <text text-anchor="middle" x="174.5" y="-146.2" font-family="Times,serif" font-size="14.00" fill="#000000">0</text>
+                  </g>
+                  <!-- node38&#45;&gt;node34 -->
+                  <g id="edge6" class="edge">
+                  <title>node38-&gt;node34</title>
+                  <path fill="none" stroke="#000000" d="M186.6229,-174.0034C194.8101,-164.52 205.0937,-152.6081 214.629,-141.5631"></path>
+                  <polygon fill="#000000" stroke="#000000" points="217.5137,-143.5776 221.3992,-133.721 212.215,-139.0033 217.5137,-143.5776"></polygon>
+                  <text text-anchor="middle" x="217.5" y="-146.2" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+                  </g>
+                  <!-- node39 -->
+                  <g id="node12" class="node">
+                  <title>node39</title>
+                  <path fill="yellow" stroke="#000000" d="M300,-174.1C300,-174.1 330,-174.1 330,-174.1 336,-174.1 342,-180.1 342,-186.1 342,-186.1 342,-198.1 342,-198.1 342,-204.1 336,-210.1 330,-210.1 330,-210.1 300,-210.1 300,-210.1 294,-210.1 288,-204.1 288,-198.1 288,-198.1 288,-186.1 288,-186.1 288,-180.1 294,-174.1 300,-174.1"></path>
+                  <text text-anchor="middle" x="315" y="-187.9" font-family="Times,serif" font-size="14.00" fill="#000000">5</text>
+                  </g>
+                  <!-- node39&#45;&gt;node33 -->
+                  <g id="edge8" class="edge">
+                  <title>node39-&gt;node33</title>
+                  <path fill="none" stroke="#000000" d="M315,-174.0034C315,-165.1645 315,-154.216 315,-143.826"></path>
+                  <polygon fill="#000000" stroke="#000000" points="318.5001,-143.7209 315,-133.721 311.5001,-143.721 318.5001,-143.7209"></polygon>
+                  <text text-anchor="middle" x="318.5" y="-146.2" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+                  </g>
+                  <!-- node39&#45;&gt;node36 -->
+                  <g id="edge7" class="edge">
+                  <title>node39-&gt;node36</title>
+                  <path fill="none" stroke="#000000" d="M330.6229,-174.0034C340.624,-162.4188 353.7536,-147.2104 364.8258,-134.3851"></path>
+                  <polygon fill="#000000" stroke="#000000" points="367.5221,-136.6179 371.4076,-126.7612 362.2234,-132.0435 367.5221,-136.6179"></polygon>
+                  <text text-anchor="middle" x="361.5" y="-146.2" font-family="Times,serif" font-size="14.00" fill="#000000">0</text>
+                  </g>
+                  <!-- node40 -->
+                  <g id="node13" class="node">
+                  <title>node40</title>
+                  <path fill="yellow" stroke="#000000" d="M156,-250.7C156,-250.7 186,-250.7 186,-250.7 192,-250.7 198,-256.7 198,-262.7 198,-262.7 198,-274.7 198,-274.7 198,-280.7 192,-286.7 186,-286.7 186,-286.7 156,-286.7 156,-286.7 150,-286.7 144,-280.7 144,-274.7 144,-274.7 144,-262.7 144,-262.7 144,-256.7 150,-250.7 156,-250.7"></path>
+                  <text text-anchor="middle" x="171" y="-264.5" font-family="Times,serif" font-size="14.00" fill="#000000">7</text>
+                  </g>
+                  <!-- node40&#45;&gt;node37 -->
+                  <g id="edge9" class="edge">
+                  <title>node40-&gt;node37</title>
+                  <path fill="none" stroke="#000000" d="M153.937,-250.5469C144.7013,-240.7211 133.141,-228.4222 123.0106,-217.6446"></path>
+                  <polygon fill="#000000" stroke="#000000" points="125.3397,-215.0122 115.9405,-210.1228 120.2392,-219.8064 125.3397,-215.0122"></polygon>
+                  <text text-anchor="middle" x="149.5" y="-229.6" font-family="Times,serif" font-size="14.00" fill="#000000">0</text>
+                  </g>
+                  <!-- node40&#45;&gt;node38 -->
+                  <g id="edge10" class="edge">
+                  <title>node40-&gt;node38</title>
+                  <path fill="none" stroke="#000000" d="M171,-250.5469C171,-241.4843 171,-230.3178 171,-220.1816"></path>
+                  <polygon fill="#000000" stroke="#000000" points="174.5001,-220.1228 171,-210.1228 167.5001,-220.1229 174.5001,-220.1228"></polygon>
+                  <text text-anchor="middle" x="174.5" y="-229.6" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+                  </g>
+                  <!-- node41 -->
+                  <g id="node14" class="node">
+                  <title>node41</title>
+                  <path fill="yellow" stroke="#000000" d="M228,-250.7C228,-250.7 258,-250.7 258,-250.7 264,-250.7 270,-256.7 270,-262.7 270,-262.7 270,-274.7 270,-274.7 270,-280.7 264,-286.7 258,-286.7 258,-286.7 228,-286.7 228,-286.7 222,-286.7 216,-280.7 216,-274.7 216,-274.7 216,-262.7 216,-262.7 216,-256.7 222,-250.7 228,-250.7"></path>
+                  <text text-anchor="middle" x="243" y="-264.5" font-family="Times,serif" font-size="14.00" fill="#000000">10</text>
+                  </g>
+                  <!-- node41&#45;&gt;node31 -->
+                  <g id="edge11" class="edge">
+                  <title>node41-&gt;node31</title>
+                  <path fill="none" stroke="#000000" d="M243,-250.5469C243,-243.5166 243,-235.2203 243,-227.121"></path>
+                  <polygon fill="#000000" stroke="#000000" points="246.5001,-227.0773 243,-217.0774 239.5001,-227.0774 246.5001,-227.0773"></polygon>
+                  <text text-anchor="middle" x="246.5" y="-229.6" font-family="Times,serif" font-size="14.00" fill="#000000">0</text>
+                  </g>
+                  <!-- node41&#45;&gt;node39 -->
+                  <g id="edge12" class="edge">
+                  <title>node41-&gt;node39</title>
+                  <path fill="none" stroke="#000000" d="M260.063,-250.5469C269.2987,-240.7211 280.859,-228.4222 290.9894,-217.6446"></path>
+                  <polygon fill="#000000" stroke="#000000" points="293.7608,-219.8064 298.0595,-210.1228 288.6603,-215.0122 293.7608,-219.8064"></polygon>
+                  <text text-anchor="middle" x="287.5" y="-229.6" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+                  </g>
+                  <!-- node42 -->
+                  <g id="node15" class="node">
+                  <title>node42</title>
+                  <path fill="yellow" stroke="#000000" d="M192,-320.5C192,-320.5 222,-320.5 222,-320.5 228,-320.5 234,-326.5 234,-332.5 234,-332.5 234,-344.5 234,-344.5 234,-350.5 228,-356.5 222,-356.5 222,-356.5 192,-356.5 192,-356.5 186,-356.5 180,-350.5 180,-344.5 180,-344.5 180,-332.5 180,-332.5 180,-326.5 186,-320.5 192,-320.5"></path>
+                  <text text-anchor="middle" x="207" y="-334.3" font-family="Times,serif" font-size="14.00" fill="#000000">17</text>
+                  </g>
+                  <!-- node42&#45;&gt;node40 -->
+                  <g id="edge13" class="edge">
+                  <title>node42-&gt;node40</title>
+                  <path fill="none" stroke="#000000" d="M197.5414,-320.1609C193.7682,-312.8449 189.343,-304.265 185.1994,-296.231"></path>
+                  <polygon fill="#000000" stroke="#000000" points="188.2149,-294.4422 180.5204,-287.159 181.9936,-297.6509 188.2149,-294.4422"></polygon>
+                  <text text-anchor="middle" x="197.5" y="-299.4" font-family="Times,serif" font-size="14.00" fill="#000000">0</text>
+                  </g>
+                  <!-- node42&#45;&gt;node41 -->
+                  <g id="edge14" class="edge">
+                  <title>node42-&gt;node41</title>
+                  <path fill="none" stroke="#000000" d="M216.4586,-320.1609C220.2318,-312.8449 224.657,-304.265 228.8006,-296.231"></path>
+                  <polygon fill="#000000" stroke="#000000" points="232.0064,-297.6509 233.4796,-287.159 225.7851,-294.4422 232.0064,-297.6509"></polygon>
+                  <text text-anchor="middle" x="233.5" y="-299.4" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+                  </g>
+                  </g>
+                  </svg>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="display: flex;justify-content: center;align-items: center;">
+              <div class="box-table">
+              <table id="mytable" class="table center table-striped" style="text-align: center;">
+                  <tr class="bg-info" onclick="getId(this)">
+                      <td>Node-value</td>
+                      <td>Content</td>
+                  </tr>
+                </table>
+              </div>
+    </div>
+        
+        <div class="container" style="width: 15%; ">
+          <div class="row"  >
+      
+           <div class="col-sm"><button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></div>
+           <div class="col-sm"><textarea class="form-control"  id="floatingText" > 2x</textarea>
+           </div>
+           <div class="col-sm"><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12"><textarea readonly class="form-control"  id="floatingText" > Speedometer</textarea>
+            </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row" >
+           <div class="col-sm-6">
+            <pre><code class="C++Code" >
+    //C++ code for Huffman Encoding
+    struct MinHeapNode {
+      char data;unsigned freq;
+      // Left and right child
+      MinHeapNode *left, *right;
+        
+      MinHeapNode(char data, unsigned freq){
+          left = right = NULL;
+          this->data = data;
+          this->freq = freq;
+      
+        }
+      };
+           
+    struct compare {
+        bool operator()(MinHeapNode* l, MinHeapNode* r){
+            return (l->freq > r->freq);
+          }
+      };
+
+    void HuffmanCodes(char data[], int freq[], int size){
+    struct MinHeapNode *left, *right, *top;
+ 
+    // Create a min heap & inserts all characters of data[]
+    priority_queue< MinHeapNode*, 
+    vector< MinHeapNode*>, compare> minHeap;
+ 
+    for (int i = 0; i < size; ++i)
+        minHeap.push(new MinHeapNode(data[i], freq[i]));
+ 
+    // Iterate while size of heap doesn't become 1
+    while (minHeap.size() != 1) {
+ 
+        // Extract the two minimum
+        // freq items from min heap
+        left = minHeap.top();
+        minHeap.pop();
+ 
+        right = minHeap.top();
+        minHeap.pop();
+ 
+        // Create a new internal node with
+        // frequency equal to the sum of the
+        // two nodes frequencies. Make the
+        // two extracted node as left and right children
+        // of this new node. Add this node
+        // to the min heap '$' is a special value
+        // for internal nodes, not used
+        top = new MinHeapNode('$', left->freq + right->freq);
+ 
+        top->left = left;
+        top->right = right;
+ 
+        minHeap.push(top);
+    }
+}
+          </code>
+          </pre>
+            
+          </div>
+           <div class="col-sm-6">
+            <pre style="border-color:  rgb(44, 18, 31) ; background-color:goldenrod; "><code class="C++Code" >
+  //JAVA code for Huffman Encoding
+  class HuffmanNode {
+    int data;
+    char c;
+    HuffmanNode left,right;
+  }
+
+  class MyComparator implements Comparator<HuffmanNode>{
+    public int compare(HuffmanNode x, HuffmanNode y){
+        return x.data - y.data;
+    }
+  }
+ 
+  class Huffman {
+
+    public static void main(String[] args){
+        PriorityQueue< HuffmanNode> q
+            = new PriorityQueue< HuffmanNode>(n, new MyComparator());
+ 
+        for (int i = 0; i < n; i++) {
+            HuffmanNode hn = new HuffmanNode();
+            hn.c = charArray[i]; //given array
+            hn.data = charfreq[i];//given array
+            hn.left = null;
+            hn.right = null;
+            q.add(hn);
+        }
+ 
+        // create a root node
+        HuffmanNode root = null;
+        while (q.size() > 1) {
+            // first min extract.
+            HuffmanNode x = q.peek();
+            q.poll();
+ 
+            // second min extarct.
+            HuffmanNode y = q.peek();
+            q.poll();
+            HuffmanNode f = new HuffmanNode();
+            f.data = x.data + y.data;
+            f.c = '-';
+ 
+            // first extracted node as left child.
+            f.left = x;
+ 
+            // second extracted node as the right child.
+            f.right = y;
+ 
+            // marking the f node as the root node.
+            root = f;
+ 
+            // add this node to the priority-queue.
+            q.add(f);
+        }
+    }
+}
+          </code>
+          </pre>
+            
+           </div>
+          </div>
+          
+        </div>
+    </body>
+    <script type="text/javascript" src="huffman.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,109 @@
+body{
+    overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.header{
+    background-color: darkgreen;
+    padding: 20px 10px;
+}
+.header a {
+    float: left;
+    color: yellow;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  .header a:hover {
+    background-color: #f2f2f2;
+    color: black;
+  }
+  
+  .header a.logo{
+    font-size: 30px;
+    font-weight: bold;
+  }
+h1{
+    text-align: center;
+    color: yellow;
+}
+.ct{
+    width: 100%;
+    background-color: #DDEEDD;
+}
+.ct h1{
+    color:black;
+}
+.mycard{
+      margin: 10px;
+      padding: 5px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      background-color: darkgreen;
+      perspective: 1000px;
+}
+.mycard:hover ,.mycard1:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+.mycard1{
+    margin: 10px;
+    padding: 5px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    background-color: darkgreen;
+    perspective: 1000px;
+}
+
+.card-img-top{
+    width: 100%;
+    height:200px;
+}
+.card-body{
+    height: 150px;
+    background-color: tomato;
+}
+.card-body2{
+    height: 150px;
+    background-color:yellow;
+}
+.card-body3{
+    height: 150px;
+    background-color: darkseagreen;
+}
+.card-body4{
+    height: 150px;
+    background-color: crimson;
+}
+.card-body5{
+    height: 150px;
+    background-color: dodgerblue;
+}
+.card-body6{
+    height: 150px;
+    background-color: darkorange;
+}
+.card-title{
+    text-align: center;
+}
+#r2,#r3,#r4{
+    display: none;
+}
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 3px;
+    background-color:darkgreen;
+    color: white;
+}
+footer p{
+    font-weight: bold;
+    padding-left: 20px;;
+}

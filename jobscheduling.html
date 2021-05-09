@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Job Sequencing</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <link rel = "stylesheet" href= "job.css">
+    </head>
+    <body>
+      <div class="header">
+        <a href="code_visualizer.html" class="logo">Code Visualizer</a>
+        <h1>Job Scheduling Problem To Maximize Profit</h1>
+      </div>
+      <div class="ct">
+        <div class="ques">
+            <b>Problem Description:</b><br>Given an array of jobs where every job has a deadline and associated profit if the job is finished before the deadline. 
+            It is also given that every job takes the single unit of time, so the minimum possible deadline for any job is 1. 
+            <b>How to maximize total profit if only one job can be scheduled at a time?</b>
+            <table class="table table-striped" style="text-align: center;">
+              <thead>
+                <tr class="bg-dark" style="color: aliceblue;">
+                  <th>Job ID</th>
+                  <th>Deadline</th>
+                  <th>Profit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>a</td>
+                  <td>1</td>
+                  <td>93</td>
+                </tr>
+                <tr>
+                  <td>b</td>
+                  <td>2</td>
+                  <td>135</td>
+                </tr>
+                <tr>
+                  <td>c</td>
+                  <td>3</td>
+                  <td>24</td>
+                </tr>
+                <tr>
+                  <td>d</td>
+                  <td>1</td>
+                  <td>66</td>
+                </tr>
+                <tr>
+                  <td>e</td>
+                  <td>2</td>
+                  <td>108</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 20px;">
+          <form>
+                <div class="form-group">
+                    <textarea class="form-control"  id="floatingTextarea2" >Job Sequencing....</textarea>
+                </div>
+          </form>  
+          <div class="row">
+            <div class="col-sm-6 pycode">
+                //PYTHON code for Fractional Knapsack Problem
+                <div id="l1">def printJobScheduling(arr, t):</div>
+                <div id="l2">&nbsp;&nbsp;n = len(arr)</div> 
+                <div><br></div>
+                <div id="l3">&nbsp;&nbsp;for i in range(n):</div> 
+                <div id="l4">&nbsp;&nbsp;&nbsp;for j in range(n - 1 - i):</div> 
+                <div id="l5">&nbsp;&nbsp;&nbsp;&nbsp;if arr[j][2] < arr[j + 1][2]:</div> 
+                <div id="l6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j], arr[j + 1] = arr[j + 1], arr[j]</div> 
+                <div><br></div>
+                <div id="l7">&nbsp;&nbsp;result = [False] * t</div>                 
+                <div><br></div>
+                <div id="l8">&nbsp;&nbsp;job = ['-1'] * t</div> 
+                <div><br></div>
+                <div id="l9">&nbsp;&nbsp;for i in range(len(arr)):</div> 
+                <div id="l10">&nbsp;&nbsp;&nbsp;for j in range(min(t - 1, arr[i][1] - 1), -1, -1):</div> 
+                <div id="l11">&nbsp;&nbsp;&nbsp;&nbsp;if result[j] is False:</div> 
+                <div id="l12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result[j] = True</div> 
+                <div id="l13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;job[j] = arr[i][0]</div> 
+                <div id="l14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</div> 
+            </div>
+            <div class="col-sm-6" style="margin: 5px;">
+                <h2>Job ID:</h2>
+                <div class="row g1 my-flex-box"></div>
+                <h2>Deadline:</h2>
+                <div class="row g2 my-flex-box"></div>
+                <h2>Profit:</h2>
+                <div class="row g3 my-flex-box"></div>
+                <h2>Final ans (Job corresponding to the time interval in which it it done):</h2>
+                <div class="row g4 my-flex-box"></div>
+            </div>
+        </div>
+      </div>
+        <div class="container" style="width: 15%; ">
+            <div class="row"  >
+        
+             <div class="col-sm"><button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></div>
+             <div class="col-sm"><textarea class="form-control"  id="floatingTextarea" > 2x</textarea>
+             </div>
+             <div class="col-sm"><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12"><textarea readonly class="form-control"  id="floatingTextarea" > Speedometer</textarea>
+              </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" >
+             <div class="col-sm-6">
+              <pre><code class="C++Code" >
+              //C++ code for Job-Scheduling
+              struct Job{
+                  char id; int deadline;int profit;
+              }
+
+              void printJobScheduling(Job arr[],int l){
+
+               // Sort all jobs according to decreasing order of profit
+                sort(arr, arr+l, comparison);
+ 
+                int result[l]; // To store result (Sequence of jobs)
+                bool slot[l];  // To keep track of free time slots
+ 
+                // Initialize all slots to be free
+                for (int i=0; i < l; i++)
+                    slot[i] = false;
+ 
+                for (int i= 0; i< l ; i++){
+                    int j= min(l,arr[i].deadline)-1;
+                   for (; j>=0; j--){
+                    // Free slot found
+                    if (slot[j]==false){
+                        result[j] = i;  // Add this job to result
+                        slot[j] = true; // Make this slot occupied
+                        break;
+                    }
+                    }
+                }
+              }
+            </code>
+            </pre>
+              
+            </div>
+             <div class="col-sm-6">
+              <pre style="border-color:  rgb(44, 18, 31) ; background-color:goldenrod; "><code class="C++Code" >
+              //JAVA code for Job-Scheduling
+              class Job{
+                char id;
+                int deadline, profit;
+                void printJobScheduling(ArrayList <Job> arr, int t){
+                  // Length of array
+                  int n = arr.size();
+
+                  Collections.sort(arr,(a, b) -> b.profit - a.profit);
+                     
+                  boolean result[] = new boolean[t];
+                     
+                  // To store result (Sequence of jobs)
+                  char job[] = new char[t];
+                     
+                  // Iterate through all given jobs
+                  for (int i = 0; i < n; i++){
+                    int j = Math.min(t - 1, arr.get(i).deadline - 1);
+                    for (; j >= 0; j--) {
+                        if (result[j] == false){
+                          result[j] = true;
+                          job[j] = arr.get(i).id;
+                          break;
+                        }
+                        
+                        }
+                    }
+                }
+              }
+            </code>
+            </pre>
+              
+             </div>
+            </div>
+            
+          </div>
+    </body>
+    <script type="text/javascript" src="job.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+</html>
