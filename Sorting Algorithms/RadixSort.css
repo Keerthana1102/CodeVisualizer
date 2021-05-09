@@ -146,8 +146,8 @@ h2{
     justify-content: flex-centre;
 }
 .codez{
-    height = 200px;
-    width = 50%;
+    height : 200px;
+    width : 50%;
     background-color: blue;
 }
 .col-sm-12{
