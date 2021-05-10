@@ -1,31 +1,41 @@
 .code{
-  padding: 30px;
-  background-color: greenyellow;
+  padding: 15px;
+  background-color: white;
   width: 100%;
+  height: 480px;
+  border: 10px;
+  border-color: black;
 }
 
 .code .line{
   margin-bottom: 20px;
   /* margin-left: 20px; */
-  background-color: #ADFF2F;
+  background-color: white;
+  /* color: aliceblue; */
 }
 
 #ct1{
      
   background-color: whitesmoke;
-  padding: 30px;
-  margin: 50px;
+  padding: 10px;
+  padding-left: 40px;
+  padding-bottom: 40px;
+  margin: 15px;
+  margin-left: 60px;
+  align-self: center;
   width: 100%;
+
 }
 
 #ct2{
-  background-color: #DCDCDC;
-  padding: 30px;
+  background-color: #dcdcdc;
+  padding: 20px;
   width: 750px;
-  height: 600px;
+  height: 480px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  
 }
 
 #ct3{
@@ -46,19 +56,19 @@
 #row{
   display: flex;
   flex-flow: row wrap;
-  height: 90px;
+  height: 100%;
   border: 2px #e07c09;
-  font-size: 35px; 
+  font-size: 20px; 
   background-color:#f7890a;
   width: 100%;
 }
 .header{
-  background-color: darkgreen;
-  padding: 20px 10px;
+  background-color: darkcyan;
+  padding: 5px 10px;
 }
 .header a {
   float: left;
-  color: yellow;
+  color: whitesmoke;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -81,12 +91,12 @@ table{
   background-color: #f2f2f2;
   color: black;
 }
-h1{
+/* h1{
   text-align: center; 
   color: yellow;
-}
+} */
 .header a.logo{
-  font-size: 30px;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -95,6 +105,7 @@ h1{
   margin: 8px;
   text-align: center;
 }
+
 .column{
 float: left;
 width: 10%;
@@ -103,7 +114,7 @@ width: 10%;
 pre{
   border:1px rgb(37, 54, 12) solid; 
   margin: 10px;
-  background-color:greenyellow; 
+  background-color:#008575; 
   width: 100%; 
   font-size: medium; 
   font-weight: bolder; 
@@ -158,16 +169,16 @@ th,tr{
 #currentelementrow 
     {
         height: 50px;
-        width: 80px;
+        width: 60px;
         border: 2px black solid;
         margin: 20px;
         margin-left: 300px;
-        font-size: 25px;
+        font-size: 20px;
         color: black;
         background-color: #ffc107;
         text-align: center;
-        
     }
+
     #currentelementtext 
     {
         height: 50px;
