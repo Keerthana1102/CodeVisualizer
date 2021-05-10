@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Code-Visualizer</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        {% load static %}
+        <link rel = "stylesheet" href= "{% static 'css/code_visualizer.css' %}">
+    </head>
+    <body>
+        <div class="header">
+          <div class="row">
+          <div class="col-sm-4"><i class="fa fa-code fa-4x text-light " aria-hidden="true" ></i></div>
+          <div class="col-sm-4"><h1>Code Visualizer</h1>
+          </div>
+          </div>
+        </div>
+        <div class="ct">
+            <div class="container">
+                <div class="row" style="padding-top: 35px;padding-bottom: 10px;">
+                    <div class="col-sm-4 card mycard">
+                        <div class="card" style="width: 100%;">
+                          {% load static %}
+                            <img class="card-img-top" src="{% static 'images/sort.png' %}" alt="Card image cap">
+                        </div>
+                        <button class="collapsible" style="background-color: darkgreen;color: white;" onclick="show('r1')">View>></button>
+                    </div>
+                    <div class="col-sm-4 card mycard" >
+                        <div class="card" style="width: 100%;">
+                          {% load static %}
+                            <img class="card-img-top" src="{% static 'images/graph.png' %}" alt="Card image cap">
+                            </div>
+                            <button class="collapsible" style="background-color: darkgreen;color: white;" onclick="show('r2')"><!--<a href = "#r2" style="text-decoration: none;color:white">-->View>></button>
+                    </div>
+                    <div class="col-sm-4 card mycard" >
+                        <div class="card" style="width: 100%;">
+                          {% load static %}
+                            <img class="card-img-top" src="{% static 'images/greedy.png' %}" alt="Card image cap">
+                            </div>
+                            <button class="collapsible" style="background-color: darkgreen;color: white;" onclick="show('r3')">View>></button>
+                    </div>
+                    <div class="col-sm-4 card mycard">
+                        <div class="card" style="width: 100%;">
+                          {% load static %}
+                            <img class="card-img-top" src="{% static 'images/dp.jfif' %}" alt="Card image cap">
+                            </div>
+                            <button class="collapsible" style="background-color: darkgreen;color: white;"  onclick="show('r4')">View>></button>
+                    </div>
+                </div>
+                <div class="row" id="r1" style="padding-top: 25px;padding-bottom: 10px;">
+                    <h1>Sorting Algorithms:</h1>
+                    <div class="row">
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body ">
+                              <h5 class="card-title"><br><a href = "/sorting_algo/bucketsort" style="text-decoration: none;color: black;">Bucket Sort</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1" >
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body2">
+                              <h5 class="card-title"><br><a href = "#" style="text-decoration: none;color: black;">Bubble Sort</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1" >
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body3">
+                              <h5 class="card-title"><br><a href = "/sorting_algo/quicksort" style="text-decoration: none;color: black;">Quick Sort</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1" >
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body4">
+                              <h5 class="card-title"><br><a href = "/sorting_algo/selectionsort" style="text-decoration: none;color: black;">Selection Sort</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1" >
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body5">
+                              <h5 class="card-title"><br><a href = "/sorting_algo/insertionsort" style="text-decoration: none;color: black;">Insertion Sort</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body6">
+                              <h5 class="card-title"><br><a href = "/sorting_algo/radixsort" style="text-decoration: none;color: black;">Radix Sort</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="row" id="r2" style="padding-top: 25px;padding-bottom: 10px;">
+                    <h1>Graph Algorithms:</h1>
+                    <div class="row">
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                              <h5 class="card-title"><br><a href = "/graph_algo/bfs" style="text-decoration: none;color: black;">BFS</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body2">
+                              <h5 class="card-title"><br><a href = "/graph_algo/dfs" style="text-decoration: none;color: black;">DFS</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body3">
+                              <h5 class="card-title"><br><a href = "/graph_algo/dijkstra" style="text-decoration: none;color: black;">Dijkstra's Algorithm</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body4">
+                              <h5 class="card-title"><br><a href = "/graph_algo/floyd" style="text-decoration: none;color: black;">Floyd-Warshall Algorithm</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body5">
+                              <h5 class="card-title"><br><a href = "/graph_algo/kruskal" style="text-decoration: none;color: black;">Kruskal's Algorithm</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body6">
+                              <h5 class="card-title"><br><a href = "/graph_algo/prim" style="text-decoration: none;color: black;">Prim's Algorithm</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+              </div>
+                <div class="row" id="r3" style="padding-top: 25px;padding-bottom: 10px;">
+                    <h1>Greedy Algorithms:</h1>
+                    <div class="row">
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                              <h5 class="card-title"><br><a href = "/greedy_algo/fknapsack" style="text-decoration: none;color: black;">Fractional Knapsack Problem</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body2">
+                              <h5 class="card-title"><br><a href = "/greedy_algo/jobscheduling" style="text-decoration: none;color: black;">Job Scheduling Problem</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body3">
+                              <h5 class="card-title"><br><a href = "/greedy_algo/huffman" style="text-decoration: none;color: black;">Huffman Encoding</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body4">
+                              <h5 class="card-title"><br><a href = "/greedy_algo/miceholes" style="text-decoration: none;color: black;">Holes Mice problem</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body5">
+                              <h5 class="card-title"><br><a href = "/greedy_algo/egyptian" style="text-decoration: none;color: black;">Egyptian Fraction</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body6">
+                              <h5 class="card-title"><br><a href = "/greedy_algo/largestlexicographicarray" style="text-decoration: none;color: black;">Largest Lexicographic array</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" id="r4" style="padding-top: 25px;padding-bottom: 10px;">
+                    <h1>Dynamic Programming Algorithms:</h1>
+                    <div class="row">                      
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                              <h5 class="card-title"><br><a href = "#" style="text-decoration: none;color: black;">Integer Partition</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body2">
+                              <h5 class="card-title"><br><a href = "#" style="text-decoration: none;color: black;">Longest Commom Subsequence</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body3">
+                              <h5 class="card-title"><br><a href = "#" style="text-decoration: none;color: black;">Shortest Commom Subsequence</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body4">
+                              <h5 class="card-title"><br><a href = "/dp_algo/knapsack" style="text-decoration: none;color: black;">0-1 Knapsack Problem</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body5">
+                              <h5 class="card-title"><br><a href = "/dp_algo/kmp" style="text-decoration: none;color: black;">KMP</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2 card mycard1">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body6">
+                              <h5 class="card-title"><br><a href = "/dp_algo/maxsumpath" style="text-decoration: none;color: black;">Maximum Sum Path</a></h5>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p style="text-align: center;">For further queries contact:
+            <span></span><i class="fa fa-envelope" style="margin-left: 20px;"> code_visualizer@gmail.com</i></span>
+          </p>
+        </footer>
+    </body>
+    {% load static %}
+    <script type="text/javascript" src="{% static 'js/code.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+</html>
