@@ -211,7 +211,7 @@ async function getLPS(squares1, squares2, m, squares3){
                 squares3[i].innerHTML = 0;
 
                 colorev(squares3, i);
-                deHgli8('line l9');
+                deHgli8('line l10');
                 await setTimeDelay(3*timer/speed);
                 i++;
             }
