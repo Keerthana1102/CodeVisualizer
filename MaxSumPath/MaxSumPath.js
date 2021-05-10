@@ -4,7 +4,6 @@ let timeOut = 1000;
 
 let p = [];
 let dp = [];
-// let revS=[];
 
 let m = 4;
 let n = 5;
@@ -70,7 +69,6 @@ function subSp(){
 }
 
 async function start(){
-    // alert("Start");
     lineHgli8('line l1');
     textEdit("Start");
     await setTimeDelay(3*timer/speed);
@@ -93,7 +91,6 @@ async function lineHgli8(i){
     for (index = 0; index < list.length; ++index) {
         list[index].setAttribute('style', 'background-color: #20c997');
     }
-    //document.getElementsByClassName(i).setAttribute('style', 'background-color: #20c997'); // green
 }
 
 async function deHgli8(i){
