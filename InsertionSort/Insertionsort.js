@@ -6,8 +6,9 @@ let speed=2;
 let timer=1000;
 let current = document.getElementById("currentelementrow");
 let paused = 0;
-for(let i=0;i<N;i++)
-{
+
+
+for(let i=0;i<N;i++){
 	let sq=document.createElement("div");
 	sq.setAttribute('id',i);
 	sq.setAttribute('class',"col-sm");
@@ -16,6 +17,8 @@ for(let i=0;i<N;i++)
 	grid.appendChild(sq);
 	squares.push(sq);
 }
+
+
 function sleep(ms) {
   if(paused!=1)
 	return new Promise(resolve => setTimeout(resolve, ms));
@@ -27,72 +30,75 @@ function sleep(ms) {
       }
     }    
   }
-  
-  }
-  function addSp()
-  {
-	  if(speed<5){speed++;
-	document.querySelector("#floatingTextarea").innerHTML=speed+"x";
-	}
-  }
-  function subSp()
-  {
-	  if(speed>0){speed--;
-		document.querySelector("#floatingTextarea").innerHTML=speed+"x";
-	}
-  }
-  function start()
-  {
-   
+}
 
+
+function addSp()
+{
+  if(speed<5){speed++;
+    document.querySelector("#floatingTextarea").innerHTML=speed+"x";
   }
-  function pause()
-  {
-    paused = 1;
+}
+function subSp()
+{
+  if(speed>0){speed--;
+    document.querySelector("#floatingTextarea").innerHTML=speed+"x";
   }
-  function play()
-  {
-    paused = 0;
-  }
-  function start()
-  {
-    InsertionSort();
-  }
+}
+
+function pause()
+{
+  paused = 1;
+}
+function play()
+{
+  paused = 0;
+}
+function start()
+{
+  InsertionSort();
+}
+
+
 async function textEdit(msg)
 {
 	document.querySelector(".form-control").innerHTML="Elements at correct place are colored in blue after each iteration!!!\nElement to be inserted is shown at top box and element it is compared to is shown with pink colour \n"+msg;
 }
+
 async function textremove()
 {
   document.querySelector(".form-control").innerHTML="Elements at correct place are colored in blue after each iteration!!!"
 }
+
 async function colorev(i)
 {
 	squares[i].setAttribute('style','background-color: #ffc107 ');
 }
+
 async function colorChange(i,j)
 {
 	squares[i].setAttribute('style','background-color: #0dcaf0 ');
 	squares[j].setAttribute('style','background-color: #0dcaf0 ');
-	
 }
 
 async function shift(j)
 {
 	squares[j+1].innerHTML=squares[j].innerHTML;
     squares[j].innerHTML="  ";
-
 }
+
+
 async function currentElem(i)
 {
 	squares[i].setAttribute('style','background-color: #d63384 ');
-	
 }
+
 async function currElem(i)
 {
 	squares[i].setAttribute('style','background-color: lightblue ');
-	
 }
+
+
 async function lineHighlight(i){
   console.log(document.getElementsByClassName(i));
   var list, index;
@@ -181,15 +187,7 @@ async function InsertionSort()
 
         }
         await sleep(2*timer/speed);
-
-        
-
-
     }
     textEdit("Array is sorted hurrayy!!")
-    	
 
-	
-	
 }
-
