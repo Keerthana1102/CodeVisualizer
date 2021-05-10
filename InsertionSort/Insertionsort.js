@@ -2,7 +2,7 @@ var grid=document.querySelector(".rows")
 let time=1000;
 let squares=[];
 let N=10;
-let speed=2;
+let speed=1;
 let timer=1000;
 let current = document.getElementById("currentelementrow");
 let paused = 0;
@@ -35,13 +35,13 @@ function sleep(ms) {
 
 function addSp()
 {
-  if(speed<5){speed++;
+  if(speed<10){speed++;
     document.querySelector("#floatingTextarea").innerHTML=speed+"x";
   }
 }
 function subSp()
 {
-  if(speed>0){speed--;
+  if(speed>1){speed--;
     document.querySelector("#floatingTextarea").innerHTML=speed+"x";
   }
 }
@@ -114,7 +114,7 @@ async function linedehighlight(i){
   var list, index;
   list = document.getElementsByClassName(i);
   for (index = 0; index < list.length; ++index) {
-      list[index].setAttribute('style', 'background-color: greenyellow');
+      list[index].setAttribute('style', 'background-color: white');
   }
  
 }
