@@ -7,14 +7,12 @@
 
 .code .line{
     margin-bottom: 20px;
-    /* margin-left: 20px; */
     background-color: #ADFF2F;
 }
 
 #ct1{    
     position: relative;
     width: 100%;
-    /* min-height: 100vh;   */
     height: 100%;
     float: left;
     background-color: whitesmoke;
@@ -23,17 +21,14 @@
     margin-top: 50px;
     margin-right: 150px;
     margin-left: 100px;
-    /* width: 25%; */
 }
 
 #ct2{
     position: relative;
     width: 120%;
-    /* min-height: 100vh; */
     float: right;
     background-color: #DCDCDC;
     padding: 30px;
-    /* width: 75%; */
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -41,8 +36,6 @@
 }
 
 #ct3{
-    /* padding: 10px; */
-    /* background-color: brown; */
     margin-top: 25px;
     width: 100%;
 }
@@ -114,7 +107,6 @@ button
     height: 125px;
     width: 100%; 
     border: 3px rebeccapurple solid; 
-    /* margin: 40px;  */
     font-weight: bolder;
     font-size: large;
     color: purple;   
