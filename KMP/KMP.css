@@ -50,17 +50,6 @@
     width: 100%;
 }
 
-/* #ct3{
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* justify-content: space-between; */
-    /* align-items: flex-start; */
-    /* padding: 25px;  */
-    /* background-color: brown; */
-    /* margin-top: 20px; */
-    /* width: 100%; */
-
-
 .code .line l1{
     margin-top: 20px;
 }
@@ -116,19 +105,7 @@ button{
     margin:20px;
     color: white;
 }
-
-/* #floatingTextarea {
-    height: 40px; 
-    width: 10%; 
-    border: 3px chocolate solid; 
-    font-weight: bolder;
-    font-size:large; 
-    color:saddlebrown;
-    padding: 0;
-    text-align: center;
-    margin:30px;
-} */
-
+ 
 .col-sm-7{
     padding-left: 10px;
     padding-right: 50px;
