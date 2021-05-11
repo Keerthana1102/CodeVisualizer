@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
+   <link rel="stylesheet" href="IntegerPartition.css">
+    <title>Integer Partition</title>
+  </head>
+  <body style="color: blanchedalmond;">
+    <div class="container" id="ct1" style="background-color: black">
+      <div class="row">
+        <div class="col-sm">
+          <h1 style="text-align: center; margin-top: 30px;">Integer Partition</h1>
+        </div>
+        <div class="col-sm">
+             <!--div class="col-sm"><button type="button" onclick="Pause()" class="btn btn-danger" id="sub" >PAUSE</button></div-->
+             <div class="container">
+               <div class="row align-items-center" style="border: 1px solid palevioletred;  margin-top: 10%;">
+                 
+                  <div class="col"><button type="button" onclick="subSp()" class="btn btn-warning" id="sub" >-1x</button></div>
+                 
+                 
+                  <div class="col"><button type="button" disabled class="btn btn-warning" id="SpeedCount" style="background-color: yellow;" >3x</button></div>
+                
+                 
+                  <div class="col"><button type="button" onclick="addSp()" class="btn btn-warning" id="add" >+1x</button></div>
+                 
+                 
+                  <div class="col"><button type="button" onclick="begin()" class="btn btn-warning" id="begin" >Start</button></div>
+                 
+               </div>
+             </div>
+           
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="code" style="color: black;" >
+          
+              <div id="l1">for(i=1;i &lt=largestNumber;i++)</div>
+              <div id="l2">&nbsp;table[0][i]=1;</div>
+              <div id="l3"> for(i=1;i &lt=sum;i++){ </div>
+                <div id="l4">&nbsp; for (j=1;j &lt=largestNumber;j++){</div>
+                  <div id="l5">&nbsp;&nbsp;if (i-j&lt0){</div>
+                    <div id="l6">&nbsp;&nbsp;&nbsp;table[i][j]=table[i][j-1];</div>
+                      <div id="l7">&nbsp;&nbsp;&nbsp;continue;</div>
+                        <div id="l8"> &nbsp;&nbsp;} </div>
+            <div id="l9"> &nbsp;&nbsp;table[i][j]=table[i][j-1]+table[i-j][j]; </div>
+                    <div id="l10"> &nbsp; } </div>
+                <div id="l11">  } </div>
+          
+          
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control"  id="floatingTextarea2" style="height:130px;"> Integer Partition</textarea>
+            
+          </div>
+        </div>
+        
+        <div class="col-sm" >
+          <br>
+          <h4 id="largestNumber">Largest Number that can be used for producing Sum: </h4>
+          <h3 id="sum">Sum:</h3>
+         
+          <div class="container" id="cont2">
+           
+          </div>
+          
+        </div>
+      </div>
+   
+ 
+  
+  
+    </div>
+    </div>
+   
+   
+  <script type="text/javascript" src="IntegerPartition.js"></script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

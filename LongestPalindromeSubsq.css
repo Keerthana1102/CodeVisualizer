@@ -1,0 +1,65 @@
+
+      #stringMain
+      {
+      
+        display: flex;
+        flex-flow: row wrap;
+        height: auto;
+        border: 2px black solid;
+       
+        padding: 1%;
+        font-size: 20px; 
+        font-weight:bold;
+        background-color: rgb(243, 149, 41);
+      }
+      #row
+      {
+        display: flex;
+        flex-flow: row wrap;
+        height: auto;
+        border: 2px black solid;
+        padding-top: 10%;
+        font-size: 10px; 
+        background-color: green;
+      }
+      #stringMain div
+      {
+         border: 2px aliceblue solid;
+         margin: 1%;
+         padding: 1%;
+      
+      }
+
+      /*#row div
+      {
+         border: 2px aliceblue solid;
+         margin: 8px;
+      
+      }*/
+      .code
+      {
+        border:1px rgb(37, 54, 12) solid; 
+        margin: 10px; background-color:greenyellow; 
+        width: 100%; 
+        font-size: medium; 
+        font-weight: bolder; 
+      }
+      button
+      {
+       margin: 5%;
+         color: white;
+       width: 100%;
+      }
+     
+      #floatingTextarea2
+      {
+          padding-top: 0%;
+      height: 120px;
+       width: 90%; 
+      border: 3px rebeccapurple solid; 
+      margin: 40px; 
+      font-weight: bolder;
+      font-size: large;
+       color: purple;
+      }
+   
