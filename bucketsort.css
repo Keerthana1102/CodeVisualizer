@@ -8,6 +8,17 @@
    
    
 }
+
+#floatingTextarea{
+height: 70px;
+
+border: 1px  solid black; 
+
+font-weight: bolder;
+font-size: large;
+color: purple;
+
+}
 #ct4{
        
     background-color: pink;
