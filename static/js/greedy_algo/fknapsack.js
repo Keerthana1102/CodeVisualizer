@@ -1,6 +1,6 @@
 let speed = 2, timer = 1000;
 let s1= [], s2 = [], s3=[], s4=[]
-
+let pause=0;
 let grid1 =  document.querySelector('.g1')
 let grid2 =  document.querySelector('.g2')
 let grid3 =  document.querySelector('.g3')
