@@ -13,12 +13,6 @@
         <a href="/" class="logo">Code Visualizer</a>
         <h1>Selection Sort</h1>
       </div>
-      <div class="ct">
-        <div class="ques">
-            <b>Problem Description:</b>
-            <br>Sort given array of elements.
-        </div>
-      </div>
       <div class="container" style="margin-top: 20px;">
         <form>
             <div class="form-group">
@@ -42,18 +36,20 @@
             </div>
           </div>
       </div>
-        <div class="container" style="width: 15%; ">
+        <div class="container" style="width: 25%; ">
             <div class="row"  >
-        
-             <div class="col-sm"><button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></div>
+              <div class="col"><!--<button type="button" onclick="begin()" class="btn btn-warning" id="begin" >Start</button>-->
+                <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
+              </div>
+              <div class="col-sm"><button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></div>
              <div class="col-sm"><textarea class="form-control"  id="floatingTextarea" > 2x</textarea>
              </div>
              <div class="col-sm"><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></div>
             </div>
-            <div class="row">
+            <!--<div class="row">
               <div class="col-sm-12"><textarea readonly class="form-control"  id="floatingTextarea" > Speedometer</textarea>
               </div>
-            </div>
+            </div>-->
             </div>
     </body>
     <script type="text/javascript" src="{% static 'js/sorting_algo/ss.js' %}"></script>

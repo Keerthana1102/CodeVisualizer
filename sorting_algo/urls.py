@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('bubblesort/',views.bubblesort, name="bubblesort"),
     path('bucketsort/',views.bucketsort, name="bucketsort"),
     path('insertionsort/',views.insertionsort, name="insertionsort"),
     path('quicksort/',views.quicksort, name="quicksort"),

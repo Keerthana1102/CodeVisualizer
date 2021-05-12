@@ -1,7 +1,17 @@
 let speed = 2, timer = 1000;
-
+let pause=0;
 async function sleep(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+function start(){
+    if(pause==0)
+    { pause=1;
+        document.getElementById("start").innerHTML="Restart";
+        huffman();}
+    else
+    {
+        location.reload();
+    }
 }
 async function subSp(){
     if(speed >0){
@@ -10,7 +20,7 @@ async function subSp(){
     }
 }
 async function addSp(){
-    if(speed<5){
+    if(speed<10){
         speed++;
         document.querySelector('#floatingText').innerHTML = speed+"x";
     }
@@ -143,6 +153,3 @@ async function sortTable() {
     await sleep(3*timer/speed);
     textEdit("The code can be generated for any character by just compiling the 0s and 1s on the way of traversal from root to the required node!");
 }
-
-
-huffman();

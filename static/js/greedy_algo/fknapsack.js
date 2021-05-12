@@ -49,6 +49,16 @@ s1[1].innerHTML = 100;s2[1].innerHTML = 10; s3[1].innerHTML = 10;
 s1[2].innerHTML = 120;s2[2].innerHTML = 20; s3[2].innerHTML = 6;
 s1[3].innerHTML = 120;s2[3].innerHTML = 24; s3[3].innerHTML = 5;
 
+function start(){
+    if(pause==0)
+    { pause=1;
+        document.getElementById("start").innerHTML="Restart";
+        fknapsack();}
+    else
+    {
+        location.reload();
+    }
+}
 async function sleep(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -118,7 +128,7 @@ async function dehighli(i){
     var x = document.getElementById(i);
     x.style.backgroundColor = "#DDEEDD";
 }
-async function job_scheduling(){
+async function fknapsack(){
     textEdit("Greedy approach to slove the fractional knapsack problem!!");
     await sleep(2*timer/speed);
     linehighli("l1");
@@ -200,5 +210,3 @@ async function job_scheduling(){
     dehighli("l15")
     textEdit("Final ans = 100 + 280+ 120 * (10/20) = 380 + 60 = 440");
 }
-
-job_scheduling();

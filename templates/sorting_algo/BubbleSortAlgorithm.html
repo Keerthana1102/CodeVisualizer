@@ -1,0 +1,89 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
+   <link rel="stylesheet" href="{% static 'css/sorting_algo/BubbleSortAlgorithm.css' %}">
+    <title>Bubble Sort</title>
+  </head>
+  <body>
+    <div class="header">
+      <a href="/" class="logo">Code Visualizer</a>
+      <h1>Bubble Sort</h1>
+    </div>
+    <div class="container" id="ct1" style="background-color: black">
+      <div class="row">
+        <div class="col-sm">
+          <h1 style="text-align: center; margin-top: 30px; color: white;">Bubble Sort</h1>
+        </div>
+        <div class="col-sm">
+          <div class="container">
+            <div class="row align-items-center" style="border: 1px solid palevioletred;  margin-top: 10%;">
+              
+               <div class="col"><button type="button" onclick="subSp()" class="btn btn-warning" id="sub" >-1x</button></div>
+              
+              
+               <div class="col"><button type="button" disabled class="btn btn-warning" id="SpeedCount" style="background-color: yellow;">3x</button></div>
+             
+              
+               <div class="col"><button type="button" onclick="addSp()" class="btn btn-warning" id="add" >+1x</button></div>
+              
+              
+               <div class="col"><button type="button" onclick="begin()" class="btn btn-warning" id="begin" >Start</button></div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-sm">
+            <div class="code">
+              
+              <div id="l1"> for (i = 0; i &lt n-1; i++)</div>
+                <br>
+              <div id="l2">&nbsp; for (j = 0; j &lt n-i-1; j++) </div>
+              <br>
+                <div id="l3">&nbsp;&nbsp;  if (arr[j] > arr[j+1])</div>
+                <br>
+                <div id="l4">&nbsp;&nbsp;&nbsp;  swap(&arr[j], &arr[j+1]); </div>
+               
+           
+            </div>
+
+            <div class="form-floating">
+              <textarea class="form-control"  id="floatingTextarea2" style="height: 200%;" > Bubble Sort</textarea>
+              
+            </div>
+          </div>
+          <div class="col-sm-7">
+            <div class="container">
+              <div class="row" id="mainStr">
+               <!--div class="col-sm">23</div>
+               <div class="col-sm">1</div-->
+              </div>
+              
+              </div>
+              
+          </div>
+        </div>
+    
+   </div>
+  <script type="text/javascript" src="{% static 'js/sorting_algo/BubbleSortAlgorithm.js' %}"></script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

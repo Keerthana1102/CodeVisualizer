@@ -44,7 +44,16 @@ square4.innerHTML = i-1 +" - "+ i;
 grid4.append(square4)
 s4.push(square4)
 }
-
+function start(){
+    if(pause==0)
+    { pause=1;
+        document.getElementById("start").innerHTML="Restart";
+        job_scheduling();}
+    else
+    {
+        location.reload();
+    }
+}
 async function sleep(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -211,5 +220,3 @@ async function job_scheduling(){
     await sleep(2*timer/speed);
     textEdit("All the jobs have been scheduled (within given deadlines) 'greedily' to gain max profit!!");
 }
-
-job_scheduling();

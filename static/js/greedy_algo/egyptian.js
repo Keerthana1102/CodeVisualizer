@@ -12,18 +12,7 @@ function add(i)
  x++;
  //document.getElementById("text1").value = "";
 }
-
-/*function display_array()
-{
-   var e = "<hr/>";   
-    
-   for (var y=0; y<array.length; y++)
-   {
-     e += "Element " + y + " = " + array[y] + "<br/>";
-   }
-   document.getElementById("Result").innerHTML = e;
-}*/
-document.querySelector(".form-control").innerHTML= "The fraction that we are going to find is "+ nr + " / "+dr +"\n"+"2x" ;
+document.querySelector("#floatingTextareaz").innerHTML= "The fraction that we are going to find is "+ nr + " / "+dr +"\n" ;
 //textEdit1();
 
 function sleep(ms) {
@@ -45,25 +34,17 @@ function sleep(ms) {
 
   async function textEdit1(msg)
 {
-  document.querySelector(".form-control").innerHTML="The fraction that we are going to find is "+ nr + " / "+dr +"\n"+  msg;
+  document.querySelector(".form-control").innerHTML="\n"+  msg;
 }
 
   async function textEdit(msg)
 {
   document.querySelector(".form-control-1").innerHTML="Let's find the egyptian fractions!!! \n"+msg;
 }
-/*async function textEdit2(msg)
-{
-  document.querySelector(".form-control-2").innerHTML="The egyptian fractions are!!! \n"+msg;
-}*/
 function start(){
 
  printEgyptian(nr, dr);
 }
-
-
-
-
 
 async function lineHgli8(i){
     console.log(document.getElementsByClassName(i));
@@ -82,21 +63,10 @@ async function deHgli8(i){
     for (index = 0; index < list.length; ++index) {
         list[index].setAttribute('style', 'background-color: greenyellow');
     }
-    //document.getElementsByClassName(i).setAttribute('style', 'background-color: #20c997');
-}
-
-
-
-
-
-
-
-
+  }
 
 async function printEgyptian(nr, dr)
     {
-        // If either numerator or
-        // denominator is 0
         lineHgli8('line l1');
         if (dr == 0 || nr == 0){
            textEdit("numerator or denominator is equal to 0. Therefore not a fraction");
@@ -114,8 +84,6 @@ async function printEgyptian(nr, dr)
         textEdit("If numerator divides denominator then simple division  makes the fraction in 1/n form");
         //await sleep(3*timer/speed);
         
-
-
         if (dr % nr == 0)
         {   lineHgli8('line l3');
             await sleep(2*timer/speed);
@@ -151,8 +119,6 @@ async function printEgyptian(nr, dr)
           
             deHgli8('line l4');
        
-      
-       
         await sleep(3*timer/speed);
         textEdit(" If numerator is more than denominator");
          lineHgli8('line l6');
@@ -181,10 +147,6 @@ async function printEgyptian(nr, dr)
         let n = parseInt(dr / nr, 10) + 1;
         document.querySelector(".form-control-2").innerHTML="The egyptian fractions are: \n"+ "1/" + n  ;
         add("1/" + n );
-        //textEdit2("1/" + n + " + ");
-        //console.log("1/" + n + " + "); 
-
-        //document.querySelector(".form-control-2").innerHTML="The egyptian fractions are!!! \n"+"1/" + n + " + " ;
          await sleep(3*timer/speed);
           deHgli8('line l8');
         deHgli8('line l9');
@@ -197,14 +159,3 @@ async function printEgyptian(nr, dr)
         document.querySelector(".form-control-2").innerHTML="The egyptian fractions are!!! "+ array;
 
     }
-     
-     // let nr = 6, dr = 14;
-
-     
-
-    //document.write( "Egyptian Fraction Representation of " + nr + "/" + dr + " is\n ");
-    //printEgyptian(nr, dr);
- 
-
-
- 

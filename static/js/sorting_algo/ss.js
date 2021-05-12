@@ -2,6 +2,7 @@ let grid = document.querySelector('.g1')
 let squares = []
 let speed=2;
 let timer=1000;
+let pause=0;
 
 for(let i=0; i<9;i++){
     let square = document.createElement('div')
@@ -15,13 +16,23 @@ for(let i=0; i<9;i++){
 function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
   }
+function start(){
+    if(pause==0)
+    { pause=1;
+        document.getElementById("start").innerHTML="Restart";
+        selection_sort();}
+    else
+    {
+        location.reload();
+    }
+}
 function addSp(){
-	  if(speed<5){speed++;
+	  if(speed<10){speed++;
 	document.querySelector("#floatingTextarea").innerHTML=speed+"x";
 	}
 }
 function subSp(){
-	  if(speed>0){speed--;
+	  if(speed>1){speed--;
 		document.querySelector("#floatingTextarea").innerHTML=speed+"x";
 	}
 }
@@ -79,8 +90,7 @@ async function dehighli(i){
     var x = document.getElementById(i);
     x.style.backgroundColor = "#DDEEDD";
 }
-async function selection_sort()
-{
+async function selection_sort(){
 	textEdit("Unsorted Array !!!");
 	for(let i=0;i<squares.length-1;i++){
         await sleep(2*timer/speed);
@@ -143,5 +153,3 @@ async function selection_sort()
 	}
 	textEdit("Sorted Array Found!!!");
 }
-
-selection_sort();

@@ -1,0 +1,100 @@
+.header{
+  background-color: darkgreen;
+  padding: 20px 10px;
+}
+.header a {
+  float: left;
+  color: yellow;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+.header a:hover {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.header a.logo{
+  font-size: 30px;
+  font-weight: bold;
+}
+h1{
+  text-align: center; 
+  color: yellow;
+}
+      #row
+      {
+        display: flex;
+        flex-flow: row wrap;
+        height: 90px;
+        border: 2px black solid;
+        margin-top: 20px;
+        font-size: 35px; 
+        background-color: green;
+      }
+
+      #mainStr div
+      {
+         border: 2px aliceblue solid;
+         margin: 1%;
+        padding: 2%;
+        font-size: larger;
+      }
+      #mainStr
+      {
+        
+        margin-top: 10%;
+        display: flex;
+        flex-flow: row wrap;
+        height: auto;
+        border: 2px black solid;
+       
+        padding: 1%;
+        font-size: 20px; 
+        font-weight: bold;
+        background-color: rgb(243, 149, 41);
+
+      }
+      .code
+      {
+        padding: 5%;
+        border:1px rgb(37, 54, 12) solid; 
+        margin: 10px; background-color:greenyellow; 
+        width: 100%; 
+        font-size: medium; 
+        font-weight: bolder; 
+      }
+      button
+      {
+       margin: 5%;
+         color: white;
+       width: 100%;
+      }
+     
+      #floatingTextarea
+      {
+        height: 40px; 
+        width: 100%; 
+        border: 3px chocolate solid; 
+         font-weight: bolder;
+         font-size:large; 
+         color:saddlebrown;
+          padding: 0%;
+           margin-top: 30px;
+            margin-left: 0px; 
+            text-align: center;
+      }
+      #floatingTextarea2
+      {
+      height: 100px;
+       width: 90%; 
+      border: 3px rebeccapurple solid; 
+      margin: 40px; 
+      font-weight: bolder;
+      font-size: large;
+       color: purple;
+      }
+   

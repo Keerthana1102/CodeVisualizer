@@ -1,6 +1,9 @@
 from django.shortcuts import render
 
 # Create your views here.
+def bubblesort(request):
+    return render(request, 'sorting_algo/BubbleSortAlgorithm.html')
+
 def bucketsort(request):
     return render(request, 'sorting_algo/bucketsort.html')
 

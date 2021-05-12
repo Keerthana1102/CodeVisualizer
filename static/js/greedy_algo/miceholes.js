@@ -145,7 +145,7 @@ async function textEdit(msg)
 function start(){
   // alert("Start");
   //isPlaying = true;
-  Sort(s1, s2);
+  miceholes(s1, s2);
 }
 
 async function lineHgli8(i){
@@ -168,7 +168,7 @@ async function deHgli8(i){
     //document.getElementsByClassName(i).setAttribute('style', 'background-color: #20c997');
 }
 
-async function Sort(s1, s2){
+async function miceholes(s1, s2){
   textEdit("No. of mouse and holes should be same");
   lineHgli8('line l1');
   await sleep(5*timer/speed);
@@ -288,7 +288,6 @@ async function Sort(s1, s2){
         {     textEdit("Positions are sorted!!!");
               textEdit("lets see minimum time!!!")
               if (maxTime < Math.abs(s1[i] - s2[i]))
-
               {
                  textEdit("Positions are sorted!!!"); 
               maxTime = Math.abs(s1[i] - s2[i]);

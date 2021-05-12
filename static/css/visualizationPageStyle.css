@@ -50,7 +50,24 @@ body {
 	padding: 0 10px 0 20px; 
   
 } 
- 
+.VisualizationMainPage #header A{
+	float: left;
+  color: yellow;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+.VisualizationMainPage #header A .logo{
+	font-size: 30px;
+  font-weight: bold;
+}
+.VisualizationMainPage #header :hover {
+	background-color: #f2f2f2;
+	color: black;
+  }
 .VisualizationMainPage #header  A:visited 
 	  { text-decoration:none;
         color:#ffCC33; 
@@ -67,7 +84,6 @@ body {
     text-decoration:none;
     color:#ffCC33;
 	}
-	
 	
 .VisualizationMainPage #container {
 	background: #FFFFFF;
