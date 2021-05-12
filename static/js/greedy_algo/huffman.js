@@ -152,4 +152,8 @@ async function sortTable() {
     textEdit("Elements on the left of a node are marked 0 and those on the right of a node having greater node-value are marked 1!");
     await sleep(3*timer/speed);
     textEdit("The code can be generated for any character by just compiling the 0s and 1s on the way of traversal from root to the required node!");
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 618bdb693ed28cb84d6586223eb6404334d69ab8

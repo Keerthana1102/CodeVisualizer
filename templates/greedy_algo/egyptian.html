@@ -45,168 +45,60 @@ h1{
     <div class="header">
       <a href="/" class="logo">Code Visualizer</a>
       <h1>Egyptian Fraction</h1>
-    </div>
-      <div class="container" style ="margin-top: 10px;" id="ct1">
-          <div class="row">
-            <div class="col-sm">
-               <h2 style="text-align: left; margin-top: 5px;">Egyptian Fraction</h1>
-               <h5 style="text-align: left; margin-top: 0px;">(using greedy strategy)</h2>
-                <p style= "color: red;"> Every positive fraction can be represented as sum of unique unit fractions. <br>
-                  We can generate Egyptian Fractions using Greedy Algorithm.
-                      </p>
-            </div>
-            <div class="col-sm-7" >
-              <div class="row">
-                <div class="col-sm"><button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button></div>
-                <div class="col-sm"><button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></div>
-                <div class="col-sm"><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></div>
-              </div>
-              <div class="row">
-                <div class="col-sm" ><textarea class="form-control"  id="floatingTextarea">2x 
-                </textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br><br>
-          <div class="row">       
-                <div class="col-sm">
-                    <div class="code">
-                        <div class="line l1">if (dr == 0 || nr == 0){return;}</div>
-                        <div class="line l2">if (dr % nr == 0) {  </div>
-                        <div class="line l3">&nbsp; &nbsp; document.write("1/" + parseInt(dr / nr, 10));  return; }</div>
-                        <div class="line l4">if (nr % dr == 0){</div>
-                        <div class="line l5">&nbsp; &nbsp;document.write(parseInt(nr / dr, 10));  return;}</div>
-                        <div class="line l6">if (nr > dr){</div>
-                        <div class="line l7">&nbsp; &nbsp;document.write(parseInt(nr / dr, 10) + " + "); printEgyptian(nr % dr, dr); return;}</div>
-                        
-                        <div class="line l8">let n = parseInt(dr / nr, 10) + 1;</div>
-                        <div class="line l9"> document.write("1/" + n + " + ");</div>
-                        <div class="line l10">printEgyptian(nr * n - dr, dr * n);</div>
-                      </div>
-                </div>
-                <div class="col-sm">
-                   <div class="row">
-                       <div claa="code">
-                        <div class="col-sm" ><textarea class="form-control-1"  id="floatingTextarea2" > Let's find the egyptian fractions!!!</textarea>
-                        </div>
-                       
-                         <br><br><br>
-                      
-
-                        <div class="col-sm" ><textarea class="form-control-2"  id="floatingTextarea3" > The egyptian fractions are:</textarea>
-                        </div>
-                      </div>
-                   </div> 
-                </div>
-
-          </div>  
-          <br><br><br>        
-           <div class="row">
-          
-       <!--<div class="col-sm-6" style="border: 2px solid brown;">
-        
-          <pre style="border-color:  rgb(44, 18, 31) ; background-color:pink; "><code class="C++Code" >
-          //C++ code 
-using namespace std;
- 
-void printEgyptian(int nr, int dr)
-{
-   
-    if (dr == 0 || nr == 0)
-        return;
- 
-    if (dr%nr == 0)
-    {
-        cout << "1/" << dr/nr;
-        return;
-    }
- 
-    if (nr%dr == 0)
-    {
-        cout << nr/dr;
-        return;
-    }
-    if (nr > dr)
-    {
-        cout << nr/dr << " + ";
-        printEgyptian(nr%dr, dr);
-        return;
-    }
-    int n = dr/nr + 1;
-    cout << "1/" << n << " + ";
- 
-    printEgyptian(nr*n-dr, dr*n);
- }
-
-int main()
-{
-    int nr = 6, dr = 14;
-    cout << "Egyptian Fraction Representation of "
-         << nr << "/" << dr << " is\n ";
-    printEgyptian(nr, dr);
-    return 0;
-}
-            
-       </code>
-      </pre>
-    </div>
-
-
-       <div class="col-sm-6" style="border: 2px solid brown;">
-        <pre style="border-color:  black ; background-color:pink; "><code class="C++Code" >
-          //JAVA code 
-
-class EF {
-
-  static void printEgyptian(int nr, int dr) {
-    if (dr == 0 || nr == 0) {
-      return;
-    }
-
-    if (dr % nr == 0) {
-      System.out.print("1/" + dr / nr);
-      return;
-    }
-
-    if (nr % dr == 0) {
-      System.out.print(nr / dr);
-      return;
-    }
-
-    if (nr > dr) {
-      System.out.print(nr / dr + " + ");
-      printEgyptian(nr % dr, dr);
-      return;
-    }
-    int n = dr / nr + 1;
-    System.out.print("1/" + n + " + ");
-
-    // Recur for remaining part
-    printEgyptian(nr * n - dr, dr * n);
-  }
-  public static void main(String[] args) {
-    int nr = 6, dr = 14;
-
-    System.out.print("Egyptian Fraction Representation of "
-        + nr + "/" + dr + " is\n ");
-
-    printEgyptian(nr, dr);
-  }
-}
-
-
- 
-      </code>
-      </pre>
-        
-       </div>
-      -->
-
-           
-            </div>
-
+    </div><div class="container" id="ct1">
+      <div class="row">
+        <div class="col-sm">
+           <h2 style="text-align: left; margin-top: 5px;">Egyptian Fraction</h1>
+           <h5 style="text-align: left; margin-top: 0px;">(using greedy strategy)</h2>
+            <p style= "color: red;"> Every positive fraction can be represented as sum of unique unit fractions. <br>
+              We can generate Egyptian Fractions using Greedy Algorithm.
+                  </p>
+        </div>
+       <div class="col-sm" >
+                <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
+                 <button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button>
+                
+               <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button>
+                <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control"  id="floatingTextarea" > 2x</textarea>
+                 </div>
+               </div>
       </div>
+      <br><br>
+      <div class="row">       
+            <div class="col-sm">
+                <div class="code">
+                    <div class="line l1">if (dr == 0 || nr == 0){return;}</div>
+                    <div class="line l2">if (dr % nr == 0) {  </div>
+                    <div class="line l3">&nbsp; &nbsp; document.write("1/" + parseInt(dr / nr, 10));  return; }</div>
+                    <div class="line l4">if (nr % dr == 0){</div>
+                    <div class="line l5">&nbsp; &nbsp;document.write(parseInt(nr / dr, 10));  return;}</div>
+                    <div class="line l6">if (nr > dr){</div>
+                    <div class="line l7">&nbsp; &nbsp;document.write(parseInt(nr / dr, 10) + " + "); printEgyptian(nr % dr, dr); return;}</div>
+                    
+                    <div class="line l8">let n = parseInt(dr / nr, 10) + 1;</div>
+                    <div class="line l9"> document.write("1/" + n + " + ");</div>
+                    <div class="line l10">printEgyptian(nr * n - dr, dr * n);</div>
+                  </div>
+            </div>
+            <div class="col-sm">
+               <div class="row">
+                   <div claa="code">
+                    <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control-1"  id="floatingTextarea2" > Let's find the egyptian fractions!!!</textarea>
+                    </div>
+                   
+                     <br><br><br>
+                  
+
+                    <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control-2"  id="floatingTextarea3" > The egyptian fractions are:</textarea>
+                    </div>
+                  </div>
+               </div> 
+            </div>
+
+      </div>  
+
+  </div>
+
     <script type="text/javascript" src="{% static 'js/greedy_algo/egyptian.js' %}"></script>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">

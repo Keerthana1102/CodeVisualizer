@@ -12,10 +12,10 @@
 
     <body>
         <div class="header">
-            <a href="/" class="logo">Code Visualizer</a>
-            <h1>Largest Lexicographic Array</h1>
-          </div>
-          <div class="container" id="ct1">
+          <a href="/" class="logo">Code Visualizer</a>
+          <h1>Largest Lexicographic Array</h1>
+        </div>
+        <div class="container" id="ct1">
             <div class="row">
              <div class="col-sm">
                <h2 style="text-align: left; margin-top: 5px;">Largest lexicographic array</h1>
@@ -23,14 +23,14 @@
                 <p style= "color: red;">the lexicographically largest array that can be obtained by performing at-most k consecutive swaps
                       </p>
              </div>
-            <div class="col-sm-7" >
-                     <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
-                     <div class="col-sm"><button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></div>
-                     <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control"  id="floatingTextarea">Largest Lexicographic array with 3 consective swaps!!!                                                              2x
-                     </textarea>
+             <div class="col-sm" >
+                    <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
+                     <button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button>
+                    
+                   <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button>
+                    <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control"  id="floatingTextarea" > 2x</textarea>
                      </div>
-                   <div class="col-sm"><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></div>
-            </div>
+                   </div>
           </div><br><br>
              <div class="row">       
                 <div class="col-sm">
@@ -61,126 +61,7 @@
                    </div>
                 </div>    
               </div> 
-            <br><br><br>
- 
-      <div class="row">
-          
-       <div class="col-sm-6" style="border: 2px solid brown;">
-        
-          <pre style="border-color:  rgb(44, 18, 31) ; background-color:pink; "><code class="C++Code" >
-          //C++ code 
-          void KSwapMaximum(int arr[], int n, int k)
-{
-    for (int i = 0; i < n - 1 && k > 0; ++i) {
-
-        int indexPosition = i;
-        for (int j = i + 1; j < n; ++j) {
-
-            if (k <= j - i)
-                break;
-
-            if (arr[j] > arr[indexPosition])
-                indexPosition = j;
-        }
- 
-        for (int j = indexPosition; j > i; --j)
-            swap(arr[j], arr[j - 1]);
-
-        k -= indexPosition - i;
-    }
-}
-
-int main()
-{
-    int arr[] = {213,312,231,12, 132 };
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int k = 3;
- 
-    KSwapMaximum(arr, n, k);
- 
-    // Print the final Array
-    for (int i = 0; i < n; ++i)
-        cout << arr[i] << " ";
-       }
-
-       </code>
-      </pre>
-    </div>
-
-
-       <div class="col-sm-6" style="border: 2px solid brown;">
-        <pre style="border-color:  black ; background-color:pink; "><code class="C++Code" >
-          //JAVA code 
-        class LLA
-{
-    static void SwapInts(int array[],
-                         int position1,
-                         int position2)
-    {
-        int temp = array[position1];
-        array[position1] = array[position2];
-        array[position2] = temp;
-    }
-    static void KSwapMaximum(int []arr,
-                             int n, int k)
-    {
-        for (int i = 0;
-                 i < n - 1 && k > 0; ++i)
-        {
-            int indexPosition = i;
-            for (int j = i + 1; j < n; ++j)
-            {
-                if (k <= j - i)
-                    break;
-     
-                if (arr[j] > arr[indexPosition])
-                    indexPosition = j;
-            }
-            for (int j = indexPosition; j > i; --j)
-                SwapInts(arr, j, j - 1);
-            k -= indexPosition - i;
-        }
-    }
-    public static void main(String args[])
-    {
-        int []arr = { 213,312,231,12, 132 };
-        int n = arr.length;
-        int k = 3;
-     
-        KSwapMaximum(arr, n, k);
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-    }
-}
- 
-      </code>
-      </pre>
-        
-       </div>
-
-
-           
-            </div> 
       </div>  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <script type="text/javascript" src="{% static 'js/greedy_algo/Largestlexicographicarray.js' %}">
         
         </script>

@@ -17,120 +17,116 @@
 <div class="header">
   <a href="/" class="logo">Code Visualizer</a>
   <h1>Bucket Sort</h1>
-</div>
-     <div class="container" id="ct1">
-       <div class="row">
-               <div class="col-sm">
-                    <h2 style="text-align: left; margin-top: 5px;">Bucket Sort</h1>
-                    <h5>(Scatter--> Sort--> Gather)</h2>
-                      <p style= "color: red;">Bucket sort or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually by different sorting algorithms.</p>
-
-               </div>
-                <div class="col-sm-7" >
-                    <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
-                     <div class="col-sm"><button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></div>
-                     <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control"  id="floatingTextarea" > 2x</textarea>
-                     </div>
-                   <div class="col-sm"><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></div>
-                   </div>
-
-                </div> 
-       <br><br><br>
-        <div class="row">       
-                <div class="col-sm">
-                    <div class="code">
- 
-                       <div class="line l1"> for (i := 0 to n-1){</div>
-                      
-                        <div class="line l2">&nbsp; &nbsp; insert array[i] into the bucket index (size * array[i]) </div>
-                         <div class="line l3"> } </div>
-                        <div class="line l4"> for (i := 0 to n-1){  </div>
-                        <div class="line l5"> &nbsp; &nbsp;  sort bucket[i] </div>
-                         <div class="line l6"> } </div>
-                        <div class="line l7"> for (i := 0 to n-1){ do</div>
-                        
-                        <div class="line l8"> &nbsp; &nbsp;concatenation of buckets}</div>
-                       
-
-                       
-                           
-  
-
-                       
-                         
-   
-
-                       
-                           
-                   
-                     
-                       
-                 </div>
-                </div>
-                <div class="col-sm">
-                <div class = "container box" >
-                  <div class="row"id="ct5">
-                               <div class="col-sm"  style="background-color:greenyellow; border-color: black">Input Array</div>
-                               <div class="col-sm" style="background-color:lavender;">11</div>
-  
-                               <div class="col-sm" style="background-color:yellow;">9</div>
-    
-                               <div class="col-sm" style="background-color:lavender;">21</div>
-   
-                              <div class="col-sm" style="background-color:yellow;">8</div>
- 
-                               <div class="col-sm" style="background-color:lavender;">17</div>
-
-                               <div class="col-sm" style="background-color:yellow;">19</div>
-  
-                               <div class="col-sm" style="background-color:lavender;">13</div>
-    
-                               <div class="col-sm" style="background-color:yellow;">1</div>
-   
-                               <div class="col-sm" style="background-color:lavender;">24</div>
- 
-                              <div class="col-sm" style="background-color:yellow;">12</div>
-                      </div><br>
-                 <div class="row"id="ct5">
-                            <div class="col-sm" style="background-color:greenyellow;">BUCKETS</div>
-                             <div class="col-sm" style="background-color:pink;">8 , 1</div>
-  
-                             <div class="col-sm" style="background-color:yellow;">11, 9, 13, 12</div>
-    
-                             <div class="col-sm" style="background-color:pink;">21 ,17 ,19 ,24</div>
-   
-                            
-                        </div>
-                
-                <div class="row g1 my-flex-box">
-                </div>
-                <div class="row g2 my-flex-box">
-                </div>
-                <div class="row g3 my-flex-box">
-                </div>
-                 
-              
-
-               
-
-            </div>
-                </div>    
-              </div>  
-        
-
-    <div class="row">  
+</div><div class="container" id="ct1">
+  <div class="row">
           <div class="col-sm">
-              <div class="row g4 my-flex-box">
-                </div> 
+               <h2 style="text-align: left; margin-top: 5px;">Bucket Sort</h1>
+               <h5>(Scatter--> Sort--> Gather)</h2>
+                 <p style= "color: red;">Bucket sort or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually by different sorting algorithms.</p>
+
+          </div>
+           <div class="col-sm" >
+               <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
+                <button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button>
+               
+              <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button>
+               <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control"  id="floatingTextarea" > 2x</textarea>
+                </div>
+              </div>
+
+           </div> 
+  <br><br><br>
+   <div class="row">       
+           <div class="col-sm">
+               <div class="code">
+
+                  <div class="line l1"> for (i := 0 to n-1){</div>
+                 
+                   <div class="line l2">&nbsp; &nbsp; insert array[i] into the bucket index (size * array[i]) </div>
+                    <div class="line l3"> } </div>
+                   <div class="line l4"> for (i := 0 to n-1){  </div>
+                   <div class="line l5"> &nbsp; &nbsp;  sort bucket[i] </div>
+                    <div class="line l6"> } </div>
+                   <div class="line l7"> for (i := 0 to n-1){ do</div>
+                   
+                   <div class="line l8"> &nbsp; &nbsp;concatenation of buckets}</div>
+                  
+
+                  
+                      
+
+
+                  
+                    
+
+
+                  
+                      
+              
+                
+                  
             </div>
-          </div>  
+           </div>
+           <div class="col-sm">
+           <div class = "container box" >
+             <div class="row"id="ct5">
+                          <div class="col-sm"  style="background-color:greenyellow; border-color: black">Input Array</div>
+                          <div class="col-sm" style="background-color:lavender;">11</div>
+
+                          <div class="col-sm" style="background-color:yellow;">9</div>
+
+                          <div class="col-sm" style="background-color:lavender;">21</div>
+
+                         <div class="col-sm" style="background-color:yellow;">8</div>
+
+                          <div class="col-sm" style="background-color:lavender;">17</div>
+
+                          <div class="col-sm" style="background-color:yellow;">19</div>
+
+                          <div class="col-sm" style="background-color:lavender;">13</div>
+
+                          <div class="col-sm" style="background-color:yellow;">1</div>
+
+                          <div class="col-sm" style="background-color:lavender;">24</div>
+
+                         <div class="col-sm" style="background-color:yellow;">12</div>
+                 </div><br>
+            <div class="row"id="ct5">
+                       <div class="col-sm" style="background-color:greenyellow;">BUCKETS</div>
+                        <div class="col-sm" style="background-color:pink;">8 , 1</div>
+
+                        <div class="col-sm" style="background-color:yellow;">11, 9, 13, 12</div>
+
+                        <div class="col-sm" style="background-color:pink;">21 ,17 ,19 ,24</div>
+
+                       
+                   </div>
+           
+           <div class="row g1 my-flex-box">
+           </div>
+           <div class="row g2 my-flex-box">
+           </div>
+           <div class="row g3 my-flex-box">
+           </div>
+            
+         
+
+          
+
        </div>
+           </div>    
+         </div>  
+   
 
-</div>                
+<div class="row">  
+     <div class="col-sm">
+         <div class="row g4 my-flex-box" style="font-size: 30px; color: black; text-align: right;">"The sorted array is" 
+           </div> 
+       </div>
+     </div>  
+  </div>
 
-
-
-     
+</div>  
      <script type="text/javascript" src="{% static 'js/sorting_algo/bucketsort.js' %}"></script>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
