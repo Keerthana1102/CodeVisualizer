@@ -139,7 +139,7 @@ async function currentElem2(i,j){
 
 async function textEdit(msg)
 {
-  document.querySelector(".form-control").innerHTML="Elements should be sorted in ascending order of positions!!! \n"+msg;
+  document.querySelector(".form-control").innerHTML="Mice-Holes!!! \n"+msg;
 }
 
 function start(){
