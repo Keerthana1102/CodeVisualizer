@@ -38,6 +38,7 @@ function sleep(ms) {
       //document.getElementById("#begin").disabled="True";
       if(!pause)
         { pause=1;
+	 document.getElementById("begin").innerHTML="Restart";
       LongestPalindromeSubs();}
       else
       {location.reload();
