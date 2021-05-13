@@ -32,6 +32,7 @@ function sleep(ms) {
      
       if(!pause)
         { pause=1;
+	 document.getElementbyId("begin").innerHTML="Restart";
       IntegerPartition();}
       else
       {location.reload();
