@@ -36,7 +36,9 @@ function sleep(ms) {
   {
       //document.getElementById("#begin").disabled="True";
       if(!pause)
-        { pause=1;BubbleSort();}
+        { pause=1;
+	  document.getElementById("begin").innerHTML="Restart";
+	 BubbleSort();}
       else
       {location.reload();
       }
