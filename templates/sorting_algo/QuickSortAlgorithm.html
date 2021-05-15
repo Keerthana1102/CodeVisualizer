@@ -11,50 +11,90 @@
         <title>Quick Sort</title>    
     </head>
 
-    <body>
+    <body style="background: #141414">
         <!-- <h1 style="text-align: center; margin-top: 10px;">Quick Sort</h1>
         <h2 style="text-align: center; margin-top: 5px; margin-bottom: 20px;">(With first element as pivot)</h2> -->
 
         <div class="header">
             <a href="/" class="logo">Code Visualizer</a>
             <h1>Quick Sort</h1>
-          </div>
-        <div class="container" id="ct1">
+        </div>
+
+        <div class="contain" id="ct1">
             <div class="row">
+                <div class="col-sm"><h2 style="text-align: left; margin-top: 5px; color: white;">Readme</h2></div>
                 <div class="col-sm">
-                    <h2 style="text-align: left; margin-top: 5px;">Quick Sort</h1>
-                    <h5 style="text-align: left; margin-top: 0px;">(With first element as pivot)</h2>
+                    <!-- <h2 style="text-align: left; margin-top: 5px;">Quick Sort</h2>
+                    <h5 style="text-align: left; margin-top: 0px;">(With first element as pivot)</h5> -->
+                    <h2 style="text-align: left; margin-top: 5px; margin-left: 80px; color: white;">Implementation</h2>
                 </div>
 
                 <div class="col-sm-7">
-                    <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
+                    <button type="button" onclick="start()" class="btn" style="background-color: #3bd16f;" id="start">Start</button>
                     <!-- <button type="button" onclick="paused()" class="btn btn-danger" id="pause">Pause</button> -->
                     <!-- <button type="button" onclick="first()" class="btn btn-danger" id="first"><<</button> -->
-                    <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button>
-                    <button type="button" class="btn btn-danger" id="speed" >2x</button>
+                    <button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button>
+                    <button type="button" disabled class="btn" style="background-color: #3bd16f;" id="speed" >2x</button>
                     <!-- <textarea class="form-control" id="floatingTextarea">2x</textarea> -->
-                    <button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button>
-                    <button type="button" onclick="last()" class="btn btn-danger" id="last">>></button>
+                    <button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button>
+                    <button type="button" onclick="last()" class="btn" style="background-color: #3bd16f;" id="last">Last</button>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-sm">
+                <div class="col-sm-3">
+                    <div class="readMe" style="color: white;">
+                        <p>Quicksort is a divide and conquer algorithm. First the large array is divided into two smaller sub-arrays: the low elements and the high elements. Quicksort can then recursively sort these sub-arrays. The steps are: 
+                        <ol class="points">
+                          <li>Pick an element, called a pivot, from the array.</li>
+                          <li>Partitioning: reorder the array such that all elements which are less than the pivot come before the pivot, while all elements with  values greater than the pivot come after it (equal values can go either way). After this partitioning, the pivot is in its final position.</li><li>Recursively apply the above steps to the sub-array of elements with smaller values and separately to the sub-array of elements with greater values.</li>
+                        </ol>
+                        </p>
+                        <div class="contain">
+                          <h5>Complexity:</h5>          
+                          <table class="table table-bordered" style="color: white;">
+                            <thead>
+                              <tr>
+                                <th>Best</th>
+                                <th>Average</th>
+                                <th>Worst</th>
+                                <th>Memory</th>
+                                <th>Stability</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>nlog(n)</td>
+                                <td>nlog(n)</td>
+                                <td>n<sup>2</sup></td>
+                                <td>log(n)</td>
+                                <td>No</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
                     <div class="code">
-                        <div class="line l1">int pivot = a[low];</div>
-                        <div class="line l2">while(i &lt j){ </div>
-                        <div class="line l3">&nbsp; &nbsp; &nbsp;do i++;</div>
-                        <div class="line l4">&nbsp; &nbsp; &nbsp;while(i &lt= n-1 && a[i] &lt= pivot);</div>
-                        <div class="line l5">&nbsp; &nbsp; &nbsp;do j--;</div>
-                        <div class="line l6">&nbsp; &nbsp; &nbsp;while(j >= 0 && a[j] > pivot);</div>
-                        <div class="line l7">&nbsp; &nbsp; &nbsp;if(i &lt j) swap(a[i], a[j]);</div>
-                        <div class="line l8">}</div>
-                        <div class="line l9">swap(a[low], a[j]);</div>
+                        <div class="line 100">(With first element as pivot)</div>
+                        <div class="line l0">int partition(int a[], int n, int low, int high){</div>
+                        <div class="line l1">&nbsp; int pivot = a[low];</div>
+                        <div class="line l2">&nbsp; while(i &lt j) </div>
+                        <div class="line l3">&nbsp; &nbsp; &nbsp; &nbsp;do i++;</div>
+                        <div class="line l4">&nbsp; &nbsp; &nbsp; &nbsp;while(i &lt= n-1 && a[i] &lt= pivot);</div>
+                        <div class="line l5">&nbsp; &nbsp; &nbsp; &nbsp;do j--;</div>
+                        <div class="line l6">&nbsp; &nbsp; &nbsp; &nbsp;while(j >= 0 && a[j] > pivot);</div>
+                        <div class="line l7">&nbsp; &nbsp; &nbsp; &nbsp;if(i &lt j) swap(a[i], a[j]);</div>
+                        <!-- <div class="line l8">&nbsp; }</div> -->
+                        <div class="line l9">&nbsp; swap(a[low], a[j]);</div>
+                        <div class="line l10">&nbsp; return j;</div>
+                        <div class="line l11">}</div>
             
                     </div>
                 </div>
 
-                <div class="col-sm">
+                <div class="col-sm-5">
                     <div class="container" id="ct2">
                         <div class="row">
                             <div class="container" id="ct3">

@@ -1,6 +1,7 @@
 let speed = 2, timer = 1000;
 let s1= [], s2 = [], s3=[]
 let squares4 = [];
+let pause = 0;
 
 let grid1 =  document.querySelector('.g1')
 let grid2 =  document.querySelector('.g2')
@@ -40,7 +41,6 @@ square4.setAttribute('class','col-sm');
 square4.setAttribute('style','background-color: #ffff66');
 square4.innerHTML = "B4";
 grid4.append(square4) 
-
 
 square5.setAttribute('id',i);
 square5.setAttribute('class',"col-sm");
@@ -192,12 +192,16 @@ s5.push(square5)
 */
 
 function start(){
-Sort();
+  if(!pause){ 
+        pause=1;
+        document.querySelector("#start").innerHTML="Restart";
+        Sort();
+    }
+    else{
+        location.reload();
+    }
  
 }
-
-
-
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -205,15 +209,18 @@ function sleep(ms) {
   function addSp()
   {
     if(speed<10){speed++;
-  document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+  document.querySelector("#speed").innerHTML=speed+"x";
   }
   }
   function subSp()
   {
     if(speed>0){speed--;
-    document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+    document.querySelector("#speed").innerHTML=speed+"x";
   }
   }
+  function last(){
+    speed = 0;
+}
 async function textEdit(msg)
 {
   document.querySelector(".form-control").innerHTML="Elements should be sorted in ascending order in the buckets!!! \n"+msg;

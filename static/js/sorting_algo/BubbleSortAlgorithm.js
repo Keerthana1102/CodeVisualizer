@@ -17,6 +17,16 @@ for(let i=0;i<N;i++)
 	grid.appendChild(sq);
 	squares.push(sq);
 }
+
+let s = "[";
+for(let i=0;i<N;i++){
+    s += squares[i].innerHTML;
+    if(i<N-1){
+        s += ", "
+    }
+}
+s += "]"
+
 function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
   }
@@ -46,16 +56,22 @@ function sleep(ms) {
     //  document.getElementById("#begin").disabled="True";
 
   }
+
+  function last(){
+    speed = 0;
+}
+
+
   async function setback(id,chk)
   {
   if(chk)
-  document.getElementById(id).setAttribute('style','background-color : hotpink');
+  document.getElementById(id).setAttribute('style','background-color : #20c997');
   else
   document.getElementById(id).setAttribute('style','background-color : greenyellow');
   }
 async function textEdit(msg)
 {
-	document.querySelector("#floatingTextarea2").innerHTML="Elements at correct place are colored in green!!! \n"+msg;
+	document.querySelector("#floatingTextarea2").innerHTML=/*"Elements at correct place are colored in green!!! \n*/"Unsorted Array: "+s+"\n"+msg;
 }
 async function colorev(i,j)
 {
@@ -121,5 +137,10 @@ async function BubbleSort()
 	}
 	squares[0].setAttribute('style','background-color: #20c997 ');
 	textEdit("Sorted Array Found!!!");
+
+	for(let i=0;i<N;i++){
+		squares[i].setAttribute('style','background-color: #ffc107 ');
+	}
 }
 
+textEdit(" ");

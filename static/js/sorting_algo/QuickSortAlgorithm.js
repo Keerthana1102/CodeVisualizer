@@ -5,7 +5,7 @@ let n = 7;
 let speed = 2;
 let timer = 1000;
 let count = 0;
-let isPlaying = false;
+let pause=0;
 
 for(let i=0;i<=n;i++){
     if(i==n){
@@ -66,8 +66,14 @@ function subSp(){
 
 function start(){
     // alert("Start");
-    isPlaying = true;
-    QuickSort(squares, n, 0, n);
+    if(!pause){ 
+        pause=1;
+        document.querySelector("#start").innerHTML="Restart";
+        QuickSort(squares, n, 0, n);
+    }
+    else{
+        location.reload();
+    }
 }
 
 function last(){
@@ -75,7 +81,7 @@ function last(){
 }
 
 async function textEdit(msg){
-    document.querySelector("#floatingTextarea2").innerHTML=/*"Elements at correct place are colored in green!!! \n*/"Unsorted Array: "+s+"\n"+msg;
+    document.querySelector("#floatingTextarea2").innerHTML=/*"Elements at correct place are colored in green!!! \n*/"Initial unsorted Array: "+s+"\n"+msg;
 }
 
 async function lineHgli8(i){
@@ -93,7 +99,7 @@ async function deHgli8(i){
     var list, index;
     list = document.getElementsByClassName(i);
     for (index = 0; index < list.length; ++index) {
-        list[index].setAttribute('style', 'background-color: greenyellow');
+        list[index].setAttribute('style', 'background-color: #CBEABA');
     }
 }
 
@@ -261,5 +267,4 @@ async function QuickSort(D, N, low, high){
     }
 }
 
-textEdit(" ");
 // QuickSort(squares, n, 0, n)

@@ -8,7 +8,7 @@ def bucketsort(request):
     return render(request, 'sorting_algo/bucketsort.html')
 
 def radixsort(request):
-    return render(request, 'sorting_algo/Radixsort.html')
+    return render(request, 'sorting_algo/RadixSort.html')
 
 def quicksort(request):
     return render(request, 'sorting_algo/QuickSortAlgorithm.html')

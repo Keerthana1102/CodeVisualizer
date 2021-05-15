@@ -17,25 +17,27 @@
 <div class="header">
   <a href="/" class="logo">Code Visualizer</a>
   <h1>Bucket Sort</h1>
-</div><div class="container" id="ct1">
+</div>
+
+<div class="container" id="ct1">
   <div class="row">
           <div class="col-sm">
-               <h2 style="text-align: left; margin-top: 5px;">Bucket Sort</h1>
-               <h5>(Scatter--> Sort--> Gather)</h2>
-                 <p style= "color: red;">Bucket sort or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually by different sorting algorithms.</p>
+               <h2 style="text-align: left; margin-top: 5px;">Implementation</h2>
+               <!-- <h5>(Scatter, Sort,  Gather)</h5>  -->
+                 <!-- <p style= "color: red;">Bucket sort or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually by different sorting algorithms.</p> -->
 
           </div>
-           <div class="col-sm" >
+           <div class="col-sm-7" >
                <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
+               <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button>
+               <button type="button" disabled class="btn btn-danger" id="speed">2x</button>
                 <button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button>
-               
-              <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button>
-               <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control"  id="floatingTextarea" > 2x</textarea>
-                </div>
-              </div>
+                <button type="button" onclick="last()" class="btn btn-danger" id="last">>></button>
+               <!-- <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control"  id="floatingTextarea"> Bucket Sort</textarea>
+               </div> -->
+           </div>
 
            </div> 
-  <br><br><br>
    <div class="row">       
            <div class="col-sm">
                <div class="code">
@@ -49,84 +51,89 @@
                     <div class="line l6"> } </div>
                    <div class="line l7"> for (i := 0 to n-1){ do</div>
                    
-                   <div class="line l8"> &nbsp; &nbsp;concatenation of buckets}</div>
-                  
-
-                  
-                      
-
-
-                  
-                    
-
-
-                  
-                      
-              
-                
+                   <div class="line l8"> &nbsp; &nbsp;concatenation of buckets}</div> 
                   
             </div>
            </div>
            <div class="col-sm">
-           <div class = "container box" >
+           <div class = "container box" id="ct2">
+            <div class="row">Input Array</div>
              <div class="row"id="ct5">
-                          <div class="col-sm"  style="background-color:greenyellow; border-color: black">Input Array</div>
-                          <div class="col-sm" style="background-color:lavender;">11</div>
+                          <div class="col-sm">11</div>
 
-                          <div class="col-sm" style="background-color:yellow;">9</div>
+                          <div class="col-sm">9</div>
 
-                          <div class="col-sm" style="background-color:lavender;">21</div>
+                          <div class="col-sm">21</div>
 
-                         <div class="col-sm" style="background-color:yellow;">8</div>
+                         <div class="col-sm">8</div>
 
-                          <div class="col-sm" style="background-color:lavender;">17</div>
+                          <div class="col-sm">17</div>
 
-                          <div class="col-sm" style="background-color:yellow;">19</div>
+                          <div class="col-sm">19</div>
 
-                          <div class="col-sm" style="background-color:lavender;">13</div>
+                          <div class="col-sm">13</div>
 
-                          <div class="col-sm" style="background-color:yellow;">1</div>
+                          <div class="col-sm">1</div>
 
-                          <div class="col-sm" style="background-color:lavender;">24</div>
+                          <div class="col-sm">24</div>
 
-                         <div class="col-sm" style="background-color:yellow;">12</div>
+                         <div class="col-sm">12</div>
                  </div><br>
-            <div class="row"id="ct5">
-                       <div class="col-sm" style="background-color:greenyellow;">BUCKETS</div>
-                        <div class="col-sm" style="background-color:pink;">8 , 1</div>
 
-                        <div class="col-sm" style="background-color:yellow;">11, 9, 13, 12</div>
+                 <div class="row">Buckets</div>
+                <div class="row"id="ct5">
+                            <div class="col-sm">8, 1</div>
 
-                        <div class="col-sm" style="background-color:pink;">21 ,17 ,19 ,24</div>
+                            <div class="col-sm">11, 9, 13, 12</div>
 
-                       
-                   </div>
+                            <div class="col-sm">21, 17, 19, 24</div>
+
+                           
+                </div>
+           <div class="row" style="margin-top: 10px" "margin-bottom: 0px">Array</div>
+           <div class="row">
+             <div class="col-sm">
+               <div class="row g1 my-flex-box">
+             </div>
+           </div>
+           </div>
+
+           <div class="row">
+             <div class="col-sm">
+               <div class="row g2 my-flex-box">
+             </div>
+           </div>
+           </div>
+
+           <div class="row">
+             <div class="col-sm">
+               <div class="row g3 my-flex-box">
+              </div>
+            </div>
+
+           </div>
            
-           <div class="row g1 my-flex-box">
-           </div>
-           <div class="row g2 my-flex-box">
-           </div>
-           <div class="row g3 my-flex-box">
-           </div>
-            
-         
-
-          
-
-       </div>
+               <div class="row">
+                  <div class="col-sm">
+                      <div class="form-floating">
+                          <textarea class="form-control"  id="floatingTextarea2" >    Bucket Sort</textarea>
+                      </div>
+                  </div>
+              </div>
+          </div>
            </div>    
          </div>  
    
 
-<div class="row">  
-     <div class="col-sm">
-         <div class="row g4 my-flex-box" style="font-size: 30px; color: black; text-align: right;">"The sorted array is" 
-           </div> 
-       </div>
-     </div>  
+    <!-- <div class="row">  
+         <div class="col-sm">
+             <div class="row g4 my-flex-box" style="font-size: 30px; color: black; text-align: right;">"The sorted array is" 
+               </div> 
+           </div>
+         </div>   -->
   </div>
 
-</div>  
+<!-- </div>  --> 
      <script type="text/javascript" src="{% static 'js/sorting_algo/bucketsort.js' %}"></script>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">

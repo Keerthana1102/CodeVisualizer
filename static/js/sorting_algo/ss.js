@@ -3,6 +3,7 @@ let squares = []
 let speed=2;
 let timer=1000;
 let pause=0;
+let n = 9;
 
 for(let i=0; i<9;i++){
     let square = document.createElement('div')
@@ -13,6 +14,16 @@ for(let i=0; i<9;i++){
     grid.append(square)
     squares.push(square)
 }
+
+let s = "[";
+for(let i=0;i<n;i++){
+    s += squares[i].innerHTML;
+    if(i<n-1){
+        s += ", "
+    }
+}
+s += "]"
+
 function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
   }
@@ -26,6 +37,10 @@ function start(){
         location.reload();
     }
 }
+
+function last(){
+    speed = 0;
+}
 function addSp(){
 	  if(speed<10){speed++;
 	document.querySelector("#floatingTextarea").innerHTML=speed+"x";
@@ -38,7 +53,8 @@ function subSp(){
 }
 async function textEdit(msg)
 {
-	document.querySelector("#floatingTextarea2").innerHTML="Elements at correct place are colored in green!!! \n"+msg;
+	// document.querySelector("#floatingTextarea2").innerHTML="Elements at correct place are colored in green!!! \n"+msg;
+    document.querySelector("#floatingTextarea2").innerHTML="Elements at correct place are colored in green!!! \n"+"Unsorted Array: "+s+"\n"+msg;
 }
 async function colorev(i,j)
 {
@@ -84,11 +100,13 @@ async function itrElem(i,j)
 async function linehighli(i){
     console.log(document.getElementById(i));
     var x = document.getElementById(i);
-    x.style.backgroundColor = "#ffffff";
+    // x.style.backgroundColor = "#ffffff";
+    x.style.backgroundColor = "#20c997";
 }
 async function dehighli(i){
     var x = document.getElementById(i);
-    x.style.backgroundColor = "#DDEEDD";
+    // x.style.backgroundColor = "#DDEEDD";
+    x.style.backgroundColor = "greenyellow";
 }
 async function selection_sort(){
 	textEdit("Unsorted Array !!!");
@@ -153,3 +171,5 @@ async function selection_sort(){
 	}
 	textEdit("Sorted Array Found!!!");
 }
+
+textEdit("");

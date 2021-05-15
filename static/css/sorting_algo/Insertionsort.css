@@ -1,6 +1,7 @@
 .ct{
   width: 100%;
 }
+
 .ques{
     background-color:#DDEEDD;
     margin: 0%;
@@ -8,6 +9,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     
 }
+
 footer {
   position: relative;
   left: 0;
@@ -17,6 +19,7 @@ footer {
   background-color:darkgreen;
   color: white;
 }
+
 footer p{
   font-weight: bold;
   padding-left: 20px;;
@@ -58,6 +61,11 @@ footer p{
   width: 100%;
 }
 
+#ct4{
+  width:10%;
+  background-color: #DCDCDC;
+}
+
 .code .line l1{
   margin-top: 20px;
 }
@@ -66,7 +74,7 @@ footer p{
   margin-bottom: 20px;
 }
 
-#row{
+/*#row{
   display: flex;
   flex-flow: row wrap;
   height: 90px;
@@ -74,6 +82,22 @@ footer p{
   font-size: 35px; 
   background-color:#f7890a;
   width: 100%;
+}*/
+#row{
+    display: flex;
+    flex-flow: row wrap;
+    height: 90px;
+    border: 2px #e07c09;
+    font-size: 35px; 
+    background-color:#f7890a;
+    width: 100%;
+    margin: 0px;
+}
+
+#row div{
+    border: 2px aliceblue solid;
+    margin: 8px;
+    text-align: center;
 }
 .header{
   background-color: darkgreen;
@@ -81,7 +105,7 @@ footer p{
 }
 .header a {
   float: left;
-  color: yellow;
+  color: black;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -170,14 +194,14 @@ th,tr{
 }
 
 #floatingTextarea2 {
-  height: 175px;
-  width: 100%; 
-  border: 3px rebeccapurple solid; 
-  /* margin: 40px;  */
-  font-weight: bolder;
-  font-size: large;
-  color: purple;   
+    height: 150px;
+    width: 100%; 
+    border: 3px rebeccapurple solid; 
+    font-weight: bolder;
+    font-size: large;
+    color: purple;   
 }
+
 #currentelementrow 
     {
         height: 50px;

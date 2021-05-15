@@ -23,7 +23,7 @@
 }
 h1{
   text-align: center; 
-  color: yellow;
+  color: black;
 }
       #row
       {
@@ -41,7 +41,7 @@ h1{
          border: 2px aliceblue solid;
          margin: 1%;
         padding: 2%;
-        font-size: larger;
+        /*font-size: larger;*/
       }
       #mainStr
       {
@@ -50,7 +50,7 @@ h1{
         display: flex;
         flex-flow: row wrap;
         height: auto;
-        border: 2px black solid;
+        /*border: 2px black solid;*/
        
         padding: 1%;
         font-size: 20px; 
@@ -58,20 +58,28 @@ h1{
         background-color: rgb(243, 149, 41);
 
       }
-      .code
+      /*.code
       {
         padding: 5%;
         border:1px rgb(37, 54, 12) solid; 
         margin: 10px; background-color:greenyellow; 
         width: 100%; 
         font-size: medium; 
-        font-weight: bolder; 
+      }*/
+      .code{
+          /*float: left;*/
+          padding: 30px;
+          background-color: greenyellow;
+          width: 75%;
       }
-      button
-      {
-       margin: 5%;
-         color: white;
-       width: 100%;
+
+      .code .line{
+          margin-bottom: 20px;
+          background-color: #ADFF2F;
+      }
+      button{
+        margin:20px;
+        color: white;
       }
      
       #floatingTextarea
@@ -87,14 +95,49 @@ h1{
             margin-left: 0px; 
             text-align: center;
       }
-      #floatingTextarea2
-      {
-      height: 100px;
-       width: 90%; 
-      border: 3px rebeccapurple solid; 
-      margin: 40px; 
-      font-weight: bolder;
-      font-size: large;
-       color: purple;
-      }
-   
+      #floatingTextarea2 {
+    height: 125px;
+    width: 100%; 
+    border: 3px rebeccapurple solid; 
+    font-weight: bolder;
+    font-size: large;
+    color: purple;   
+}
+
+#ct1{    
+    /*position: relative;*/
+    width: 100%;
+    height: 100%;
+    /*float: left;
+    background-color: whitesmoke;*/
+    padding: 30px;
+    /*margin-bottom: 25px;
+    margin-top: 50px;
+    margin-right: 150px;
+    margin-left: 100px;*/
+}
+
+#ct2{
+    /*position: relative;
+    width: 120%;*/
+    float: right;
+    background-color: #DCDCDC;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#ct3{
+    margin-top: 25px;
+    width: 100%;
+}
+
+.col-sm-7{
+    padding-left: 10px;
+    padding-right: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}

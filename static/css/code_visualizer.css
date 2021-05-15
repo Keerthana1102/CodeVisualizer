@@ -94,7 +94,7 @@ h1{
 #r2,#r3,#r4{
     display: none;
 }
-footer {
+/*footer {
     position: relative;
     left: 0;
     bottom: 0;
@@ -106,4 +106,18 @@ footer {
 footer p{
     font-weight: bold;
     padding-left: 20px;;
+}*/
+
+/*#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 3px;
+    background-color:darkgreen;
+    color: white;
 }
+#footer p{
+    font-weight: bold;
+    padding-left: 20px;;
+}*/

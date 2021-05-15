@@ -5,6 +5,7 @@ let N=10;
 let speed=2;
 let timer=1000;
 let current = document.getElementById("currentelementrow");
+let pause = 0;
 let paused = 0;
 
 
@@ -36,27 +37,45 @@ function sleep(ms) {
 function addSp()
 {
   if(speed<5){speed++;
-    document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+    document.querySelector("#speed").innerHTML=speed+"x";
   }
 }
 function subSp()
 {
   if(speed>0){speed--;
-    document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+    document.querySelector("#speed").innerHTML=speed+"x";
   }
 }
 
-function pause()
-{
-  paused = 1;
+// function pause()
+// {
+//   paused = 1;
+// }
+
+// function play()
+// {
+//   paused = 0;
+// }
+
+function start(){
+  // InsertionSort();
+  // if(!pause){ 
+  //     pause=1;
+  //     document.querySelector("#start").innerHTML="Restart";
+      InsertionSort();
+  // }
+  // else{
+  //     location.reload();
+  // }
 }
-function play()
-{
-  paused = 0;
+
+function newArray(){
+  //     document.querySelector("#start").innerHTML="Restart";
+  location.reload();
 }
-function start()
-{
-  InsertionSort();
+
+function last(){
+    speed = 0;
 }
 
 

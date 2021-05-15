@@ -11,66 +11,122 @@
     
    <link rel="stylesheet" href="{% static 'css/sorting_algo/BubbleSortAlgorithm.css' %}">
     <title>Bubble Sort</title>
+    <style>
+      .header a:hover {
+        background-color: yellow;
+        color: white;
+        font-size: 20px;
+      }
+      
+    </style>
   </head>
-  <body>
-    <div class="header">
-      <a href="/" class="logo">Code Visualizer</a>
+  <body style="background: #141414">
+    <div class="header" style="background: white;">
+      <a href="/" class="logo" style="color: black;">Code Visualizer</a>
+      <!-- <h1 style="color: black;">Bubble Sort</h1> -->
       <h1>Bubble Sort</h1>
     </div>
-    <div class="container" id="ct1" style="background-color: black">
+    <div class="contain" id="ct1">
       <div class="row">
         <div class="col-sm">
-          <h1 style="text-align: center; margin-top: 30px; color: white;">Bubble Sort</h1>
+          <h2 style="text-align: left; margin-top: 5px; color: white;">Readme</h2>
         </div>
         <div class="col-sm">
+          <h2 style="text-align: left; margin-top: 5px; margin-left: 80px; color: white;">Implementation</h2>
+        </div>
+        <!-- <div class="col-sm">
           <div class="container">
             <div class="row align-items-center" style="border: 1px solid palevioletred;  margin-top: 10%;">
+
+              <div class="col"><button type="button" onclick="begin()" class="btn btn-danger" id="begin">Start</button></div>
               
-               <div class="col"><button type="button" onclick="subSp()" class="btn btn-warning" id="sub" >-1x</button></div>
+               <div class="col"><button type="button" onclick="subSp()" class="btn btn-danger" id="sub">-1x</button></div>
               
               
-               <div class="col"><button type="button" disabled class="btn btn-warning" id="SpeedCount" style="background-color: yellow;">3x</button></div>
+               <div class="col"><button type="button" disabled class="btn btn-danger" id="SpeedCount">2x</button></div>
              
               
-               <div class="col"><button type="button" onclick="addSp()" class="btn btn-warning" id="add" >+1x</button></div>
+               <div class="col"><button type="button" onclick="addSp()" class="btn btn-danger" id="add">+1x</button></div>
               
               
-               <div class="col"><button type="button" onclick="begin()" class="btn btn-warning" id="begin" >Start</button></div>
+               <div class="col"><button type="button" onclick="last()" class="btn btn-danger" id="last">>></button></div>
               
             </div>
           </div>
+        </div> -->
+        <div class="col-sm-7">
+            <button type="button" onclick="begin()" class="btn btn-warning" id="begin">Start</button>
+            <!-- <button type="button" onclick="paused()" class="btn btn-danger" id="pause">Pause</button> -->
+            <!-- <button type="button" onclick="first()" class="btn btn-danger" id="first"><<</button> -->
+            <button type="button" onclick="subSp()" class="btn btn-warning" id="sub" >-1x</button>
+            <button type="button" disabled class="btn btn-warning" id="speed" >2x</button>
+            <!-- <textarea class="form-control" id="floatingTextarea">2x</textarea> -->
+            <button type="button" onclick="addSp()" class="btn btn-warning" id="add" >+1x</button>
+            <button type="button" onclick="last()" class="btn btn-warning" id="last">Last</button>
         </div>
+
       </div>
       <div class="row">
-          <div class="col-sm">
+          <div class="col-sm-3">
+            <div class="readMe" style="color: white;">
+            <p>Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order (ascending or descending arrangement). The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.</p>
+          </div>
+          </div>
+          <div class="col-sm-4">
             <div class="code">
-              
-              <div id="l1"> for (i = 0; i &lt n-1; i++)</div>
+              <div id="l0">Void BubbleSort(&nbsp;){</div>
                 <br>
-              <div id="l2">&nbsp; for (j = 0; j &lt n-i-1; j++) </div>
+              <div id="l1">&nbsp; for (i = 0; i &lt n-1; i++) {</div>
+                <br>
+              <div id="l2">&nbsp; &nbsp; for (j = 0; j &lt n-i-1; j++) {</div>
               <br>
-                <div id="l3">&nbsp;&nbsp;  if (arr[j] > arr[j+1])</div>
+                <div id="l3">&nbsp; &nbsp; &nbsp;  if (arr[j] > arr[j+1])</div>
                 <br>
-                <div id="l4">&nbsp;&nbsp;&nbsp;  swap(&arr[j], &arr[j+1]); </div>
-               
-           
+                <div id="l4">&nbsp; &nbsp; &nbsp; &nbsp;  swap(&arr[j], &arr[j+1]); </div>
+                <div id="l5">&nbsp; &nbsp; }</div>
+              <br>
+              <div id="l6">&nbsp; }</div>
+              <br>
+                <div id="l7">}</div>        
             </div>
 
-            <div class="form-floating">
-              <textarea class="form-control"  id="floatingTextarea2" style="height: 200%;" > Bubble Sort</textarea>
+            <!-- <div class="form-floating">
+              <textarea class="form-control"  id="floatingTextarea2" style="height: 200%;"> Bubble Sort</textarea>
               
-            </div>
+            </div> -->
           </div>
-          <div class="col-sm-7">
+
+          <div class="col-sm-5">
+              <div class="container" id="ct2">
+                  <div class="row">
+                      <div class="container" id="ct3">
+                          <div class="row" id="mainStr">
+              
+                          </div>
+              
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-sm">
+                          <div class="form-floating">
+                              <textarea class="form-control"  id="floatingTextarea2" >    Bubble Sort</textarea>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>              
+          </div>
+          <!-- <div class="col-sm-7">
             <div class="container">
               <div class="row" id="mainStr">
-               <!--div class="col-sm">23</div>
-               <div class="col-sm">1</div-->
+               <div class="col-sm">23</div>
+               <div class="col-sm">1</div
               </div>
               
               </div>
               
-          </div>
+          </div> -->
         </div>
     
    </div>
