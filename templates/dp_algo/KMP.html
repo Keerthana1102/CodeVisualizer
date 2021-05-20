@@ -11,57 +11,91 @@
         <title>KMP Algorithm</title>    
     </head>
 
-    <body>
+    <body style="background: #141414">
         <div class="header">
             <a href="/" class="logo">Code Visualizer</a>
-            <h1>Knuth-Morris-Pratt(KMP)</h1>
+            <h1>Knuth-Morris-Pratt (KMP)</h1>
           </div>
-        <div class="container" id="ct1">
+        <div class="contain" id="ct1">
             
             <div class="row">
+                <div class="col-sm"><h2 style="text-align: left; margin-top: 5px; color: white;">Readme</h2></div>
                 <div class="col-sm">
-                    <h2 style="text-align: left; margin-top: 5px;">Knuth-Morris-Pratt</h1>
-                        <h5 style="text-align: left; margin-top: 0px;">(Substring Search)</h2>
+                    <h2 style="text-align: left; margin-top: 5px; margin-left: 80px; color: white;">Implementation</h2>
+                    <!-- <h5 style="text-align: left; margin-top: 0px;">(Substring Search)</h5> -->
                 </div>
 
                 <div class="col-sm-7">
-                    <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
+                    <button type="button" onclick="start()" class="btn" style="background-color: #3bd16f;" id="start">Start</button>
                     <!-- <button type="button" onclick="paused()" class="btn btn-danger" id="pause">Pause</button> -->
                     <!-- <button type="button" onclick="first()" class="btn btn-danger" id="first"><<</button> -->
-                    <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button>
-                    <button type="button" class="btn btn-danger" id="speed" >2x</button>
-                    <button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button>
-                    <button type="button" onclick="last()" class="btn btn-danger" id="last">>></button>
+                    <button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button>
+                    <button type="button" disabled class="btn" style="background-color: #3bd16f;" id="speed" >2x</button>
+                    <!-- <textarea class="form-control" id="floatingTextarea">2x</textarea> -->
+                    <button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button>
+                    <button type="button" onclick="last()" class="btn" style="background-color: #3bd16f;" id="last">Last</button>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6">
+
+                <div class="col-sm-3">
+                    <div class="readMe" style="color: white;">
+                        <p>The Knuth-Morris-Pratt string search algorithm (inshort KMP algorithm) searches for a given substring in the given string i.e., it searches for the occurence of a pattern string within the main text string by employing whenever a mismatch occurs, the pattern string itself assess as to from where it has to start comparison again with the help of the LPS array thus bypassing the re-examination of the previously matching characters.
+                        <!-- <ol class="points">
+                          <li>Pick an element, called a pivot, from the array.</li>
+                          <li>Partitioning: reorder the array such that all elements which are less than the pivot come before the pivot, while all elements with  values greater than the pivot come after it (equal values can go either way). After this partitioning, the pivot is in its final position.</li><li>Recursively apply the above steps to the sub-array of elements with smaller values and separately to the sub-array of elements with greater values.</li>
+                        </ol> -->
+                        </p>
+                        <div class="contain">
+                          <h5>Complexity:</h5>          
+                          <table class="table table-bordered" style="color: white;">
+                            <thead>
+                              <tr>
+                                <th>Time</th>
+                                <th>Memory</th>
+                                <!-- <th>Stability</th> -->
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>O(|W| + |T|)</td>
+                                <td>O(|W|)</td>
+                                <!-- <td>No</td> -->
+                              </tr>
+                            </tbody>
+                          </table>
+                      where, |W| denotes the length of the pattern string and </br>|T| denotes the length of the text string.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
                     <div class="row">
                         <div class="code">
                             <div class="line l1">void getLPS(string p, int m, int lps[]){</div>
-                            <div class="line l2">&nbsp; int index = 0;</div>
-                            <div class="line l3">&nbsp; for(int i=1;i&ltm;){</div>
-                            <div class="line l4">&nbsp; &nbsp; if(p[i]==p[index]){</div>
+                            <!-- <div class="line l2">&nbsp; int index = 0;</div> -->
+                            <div class="line l3">&nbsp; for(int i=1;i&ltm;) // index is initialized to "0"</div>
+                            <div class="line l4">&nbsp; &nbsp; if(p[i]==p[index])</div>
                             <div class="line l5">&nbsp; &nbsp; &nbsp; lps[i] = index+1;</div>
                             <div class="line l6">&nbsp; &nbsp; &nbsp; i++; index++;</div>
-                            <div class="line l7">&nbsp; &nbsp; }</div>
-                            <div class="line l8">&nbsp; &nbsp; else{</div>
+                            <!-- <div class="line l7">&nbsp; &nbsp; }</div> -->
+                            <div class="line l8">&nbsp; &nbsp; else</div>
                             <div class="line l9">&nbsp; &nbsp; &nbsp; if(index != 0) &nbsp; index = lps[index-1];</div>
                             <div class="line l10">&nbsp; &nbsp; &nbsp; else &nbsp; lps[i] = 0; i++;</div>
-                            <div class="line l11">&nbsp; }</div>
+                            <!-- <div class="line l11">&nbsp; }</div> -->
                             <div class="line l12">}</div>
-                            <div class="line l13">bool KMP(string s, string p){</div>
-                            <div class="line l14">&nbsp; int n = s.length(); int m = p.length(); int lps[m];</div>
-                            <div class="line l15">&nbsp; getLPS(p, m, lps);</div>
-                            <div class="line l16">&nbsp; int i=0; int j=0;</div>
-                            <div class="line l17">&nbsp; while(i &lt n & j &lt m){</div>
+                            <div class="line l13">bool KMP(string s, string p){ // n=len(s), m=len(p)</div>
+                            <!-- <div class="line l14">&nbsp; int n = s.length(); int m = p.length(); int lps[m];</div> -->
+                            <div class="line l15">&nbsp; getLPS(p, m, lps); // lps[m] is the lps array</div>
+                            <!-- <div class="line l16">&nbsp; int i=0; int j=0;</div> -->
+                            <div class="line l17">&nbsp; while(i &lt n & j &lt m) &nbsp; // i and j are initialized to "0"</div>
                             <div class="line l18">&nbsp; &nbsp; if(s[i]==p[j]) &nbsp; i++; j++;</div>
-                            <div class="line l19">&nbsp; &nbsp;else {</div>
+                            <div class="line l19">&nbsp; &nbsp;else </div>
                             <div class="line l20">&nbsp; &nbsp; &nbsp;if(j!=0) &nbsp; j = lps[j-1];</div>
                             <div class="line l21">&nbsp; &nbsp; &nbsp;else &nbsp; i++;</div>
-                            <div class="line l22">&nbsp; &nbsp; }</div>
-                            <div class="line l23">&nbsp; }</div>
+                            <!-- <div class="line l22">&nbsp; &nbsp; }</div> -->
+                            <!-- <div class="line l23">&nbsp; }</div> -->
                             <div class="line l24">if(j==m) return true;</div>
                             <div class="line l25">else return false;</div>
                             <div class="line l26">}</div>
@@ -70,7 +104,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm">
+                <div class="col-sm-5">
                     <div class="container" id="ct2">
 
                         <div class="row">
