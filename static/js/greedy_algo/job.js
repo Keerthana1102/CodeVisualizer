@@ -1,4 +1,4 @@
-let speed = 2, timer = 1000;
+let speed = 2, timer = 1000,pause=0;
 let s1= [], s2 = [], s3=[], s4=[]
 
 let grid1 =  document.querySelector('#row1')
@@ -222,4 +222,4 @@ async function job_scheduling(){
     await sleep(2*timer/speed);
     textEdit("All the jobs have been scheduled (within given deadlines) 'greedily' to gain max profit!!");
 }
-job_scheduling();
+//job_scheduling();
