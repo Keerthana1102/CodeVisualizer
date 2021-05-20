@@ -6,6 +6,7 @@ let N=10;
 let speed=2;
 let timer=1000;
 let pause=0;
+
 for(let i=0;i<N;i++)
 {
 	let sq=document.createElement("div");
@@ -67,7 +68,7 @@ function sleep(ms) {
   if(chk)
   document.getElementById(id).setAttribute('style','background-color : #20c997');
   else
-  document.getElementById(id).setAttribute('style','background-color : greenyellow');
+  document.getElementById(id).setAttribute('style','background-color : #CBEABA');
   }
 async function textEdit(msg)
 {

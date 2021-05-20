@@ -11,32 +11,71 @@
         <title>Knapsack</title>    
     </head>
 
-    <body>
+    <body style="background: #141414">
         <div class="header">
             <a href="/" class="logo">Code Visualizer</a>
-            <h1>Knapsack</h1>
+            <h1>0/1 Knapsack</h1>
           </div>
-        <div class="container" id="ct1">
+        <div class="contain" id="ct1">
             <div class="row">
+                <div class="col-sm"><h2 style="text-align: left; margin-top: 5px; color: white;">Readme</h2></div>
                 <div class="col-sm">
-                    <h2 style="text-align: left; margin-top: 5px;">Knapsack</h1>
+                    <!-- <h2 style="text-align: left; margin-top: 5px;">Quick Sort</h2>
+                    <h5 style="text-align: left; margin-top: 0px;">(With first element as pivot)</h5> -->
+                    <h2 style="text-align: left; margin-top: 5px; margin-left: 80px; color: white;">Implementation</h2>
                 </div>
 
                 <div class="col-sm-7">
-                    <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
+                    <button type="button" onclick="start()" class="btn" style="background-color: #3bd16f;"id="start">Start</button>
                     <!-- <button type="button" onclick="paused()" class="btn btn-danger" id="pause">Pause</button> -->
                     <!-- <button type="button" onclick="first()" class="btn btn-danger" id="first"><<</button> -->
-                    <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button>
-                    <button type="button" class="btn btn-danger" id="speed" >2x</button>
-                    <button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button>
-                    <button type="button" onclick="last()" class="btn btn-danger" id="last">>></button>
+                    <button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button>
+                    <button type="button" disabled class="btn" style="background-color: #3bd16f;" id="speed" >2x</button>
+                    <button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button>
+                    <button type="button" onclick="last()" class="btn" style="background-color: #3bd16f;" id="last">>></button>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-3">
+                    <div class="readMe" style="color: white;">
+                        <p>The Knapsack problem is a problem in the combinatorial optimization. Here is discussed the 0/1 Knapsack problem. We are given a set of items each with a given weight and value, we have to determine the number of items to include (select either complete item or don't select it) such that the total weight is atmost the given weight and as large as possible.</br></br>Consider there are n items given. Let them be numbered from 1 to n, each with weight w<sub>i</sub> and value v<sub>i</sub> and the maximum weight capacity is W. Then, 
+                            <p class="sigmaClass">
+                                maximize <span>&Sigma;</span>
+                                v<sub>i</sub>x<sub>i</sub>
+                            </p>
+
+                            <p class="sigmaClass">
+                                subject to <span>&Sigma;</span>
+                                w<sub>i</sub>x<sub>i</sub> &le; W and x<sub>i</sub> &isin; {0, 1}
+                            </p>
+                            where x<sub>i</sub> denotes if the item is to be included or not ie., if</br>x<sub>i</sub> = 0, item is not included, if x<sub>i</sub> = 1, then the item is included.<!-- </br></br>In simpler words, here we need to maximize the sum of the values of the items in the knapsack such that the total sum of weights is atmost the knapsack's capacity. -->
+                        </p>
+                        <div class="contain">
+                          <h5>Complexity:</h5>          
+                          <table class="table table-bordered" style="color: white;">
+                            <thead>
+                              <tr>
+                                <th>Time</th>
+                                <th>Memory</th>
+                                <!-- <th>Stability</th> -->
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>O(n*W)</td>
+                                <td>O(n*W)</td>
+                                <!-- <td>No</td> -->
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
                     <div class="row">
                         <div class="code">
+                            <div class="line l0">// Here consider W = 7</div>
                             <div class="line l1">for (int i = 1; i &lt= values.length; i++) {</div>
                             <div class="line l2">&nbsp; for (int j = 0; j &lt= target; j++) {</div>
                             <div class="line l3">&nbsp; &nbsp; if (weights[i-1] > j) DP[i][j] = DP[i-1][j];</div>
@@ -50,8 +89,8 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-sm">
+                    <div class="row" style="background-color: #CBEABA" >
+                        <div class="col-sm" style="padding: 0px; margin-bottom: 20px; margin-left: 20px; margin-right: 20px;">
                             <div class="form-floating">
                                 <textarea class="form-control"  id="floatingTextarea2" >    Knapsack</textarea>
                             </div>
@@ -59,7 +98,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm">
+                <div class="col-sm-5">
                     <div class="container" id="ct2">
 
                         <div class="row">

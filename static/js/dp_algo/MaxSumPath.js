@@ -11,6 +11,7 @@ let speed = 2;
 let timer = 1000;
 let count = 0;
 let isPlaying = false;
+let pause = 0;
 
 for(let i=0;i<n;i++){
     let rw = document.createElement("div");
@@ -69,11 +70,18 @@ function subSp(){
 }
 
 async function start(){
-    lineHgli8('line l1');
-    textEdit("Start");
-    await setTimeDelay(3*timer/speed);
-    deHgli8('line l1');
-    maxSumPath(p, dp);
+    if(!pause){ 
+        pause=1;
+        document.querySelector("#start").innerHTML="Restart";
+        lineHgli8('line l1');
+        textEdit("Start");
+        await setTimeDelay(3*timer/speed);
+        deHgli8('line l1');
+        maxSumPath(p, dp);
+    }
+    else{
+        location.reload();
+    }
 }
 
 function last(){
@@ -98,7 +106,7 @@ async function deHgli8(i){
     var list, index;
     list = document.getElementsByClassName(i);
     for (index = 0; index < list.length; ++index) {
-        list[index].setAttribute('style', 'background-color: greenyellow');
+        list[index].setAttribute('style', 'background-color: #CBEABA');
     }
 }
 
