@@ -8,90 +8,144 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <link rel = "stylesheet" href= "{% static 'css/greedy_algo/job.css' %}">
     </head>
-    <body>
-        <div class="header">
+    <body style="background: #141414">
+        <div class="header" >
             <a href="/" class="logo">Code Visualizer</a>
             <h1>Fractional Knapsack Problem: Greedy Approach</h1>
         </div>
-        <div class="ct">
-            <div class="ques">
-                <b>Problem Description:</b><br>Given weights and values of n items, we need to put these items in a knapsack of capacity W to get the maximum total value in the knapsack. <br><i>Knapsack Capacity: 60</i>
-                    <br><b>NOTE:  we can break items for maximizing the total value of knapsack. </b>
-                    <table class="table table-striped" style="text-align: center;">
-                        <thead>
-                            <tr class="bg-dark" style="color: aliceblue;">
-                            <th>Value</th>
-                            <th>Weight</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>280</td>
-                            <td>40</td>
-                          </tr>
-                          <tr>
-                            <td>100</td>
-                            <td>10</td>
-                          </tr>
-                          <tr>
-                            <td>120</td>
-                            <td>20</td>
-                          </tr>
-                          <tr>
-                            <td>120</td>
-                            <td>24</td>
-                          </tr>
-                        </tbody>
-                    </table>
-            </div>
-        </div>
-        <div class="container" style="margin-top: 20px;">
-            <form>
-                <div class="form-group">
-                    <textarea class="form-control"  id="floatingTextarea2" >Job Sequencing....</textarea>
-                </div>
-            </form>  
+        <div class="contain" id="ct1">
             <div class="row">
-                <div class="col-sm-6 pycode">
-                    //Pseudo code for Fractional Knapsack Problem
-                    <br>class FractionalKnapSack:
-                    <div id="l1">def getMaxValue(wt, val, capacity):</div>
-                    <div id="l2">&nbsp;&nbsp;iVal.sort(reverse=True)</div> 
-                    <div id="l3">&nbsp;&nbsp;totalValue = 0</div> 
-                    <div id="l4">&nbsp;&nbsp;for i in iVal:</div> 
-                    <div id="l5">&nbsp;&nbsp;&nbsp;curWt = int(i.wt)</div> 
-                    <div id="l6">&nbsp;&nbsp;&nbsp;curVal = int(i.val)</div> 
-                    <div id="l7">&nbsp;&nbsp;&nbsp;if capacity - curWt >= 0:</div> 
-                    <div id="l8">&nbsp;&nbsp;&nbsp;&nbsp;capacity -= curWt</div> 
-                    <div id="l9">&nbsp;&nbsp;&nbsp;&nbsp;totalValue += curVal</div> 
-                    <div id="l10">&nbsp;&nbsp;&nbsp;else:</div> 
-                    <div id="l11">&nbsp;&nbsp;&nbsp;&nbsp;fraction = capacity / curWt</div> 
-                    <div id="l12">&nbsp;&nbsp;&nbsp;&nbsp;totalValue += curVal * fraction</div> 
-                    <div id="l13">&nbsp;&nbsp;&nbsp;&nbsp;capacity = int(capacity - (curWt * fraction))</div> 
-                    <div id="l14">&nbsp;&nbsp;&nbsp;&nbsp;break</div> 
-                    <div id="l15">&nbsp;&nbsp;return totalValue</div> 
+                <div class="col-sm"><h2 style="text-align: left; margin-top: 5px; color: white;">Readme</h2></div>
+                <div class="col-sm">
+                    <!-- <h2 style="text-align: left; margin-top: 5px;">Quick Sort</h2>
+                    <h5 style="text-align: left; margin-top: 0px;">(With first element as pivot)</h5> -->
+                    <h2 style="text-align: left; margin-top: 5px; margin-left: 80px; color: white;">Implementation</h2>
                 </div>
-                <div class="col-sm-6" style="margin: 5px;">
-                    <h2>Value:</h2>
-                    <div class="row g1 my-flex-box"></div>
-                    <h2>Weight:</h2>
-                    <div class="row g2 my-flex-box"></div>
-                    <h2>Ratio (value/weight):</h2>
-                    <div class="row g3 my-flex-box"></div>
-                    <h2>Final ans:</h2>
-                    <div class="row g4 my-flex-box"></div>
+
+                <div class="col-sm-7">
+                    <button type="button" onclick="start()" class="btn" style="background-color: #3bd16f;" id="start">Start</button>
+                    <!-- <button type="button" onclick="paused()" class="btn btn-danger" id="pause">Pause</button> -->
+                    <!-- <button type="button" onclick="first()" class="btn btn-danger" id="first"><<</button> -->
+                    <button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button>
+                    <button type="button" disabled class="btn" style="background-color: #3bd16f;" id="speed" >2x</button>
+                    <!-- <textarea class="form-control" id="floatingTextarea">2x</textarea> -->
+                    <button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button>
+                    <button type="button" onclick="last()" class="btn" style="background-color: #3bd16f;" id="last">Last</button>
                 </div>
             </div>
-        </div>
-        <div class="container" style="width: 25%; ">
-            <div class="row"  >
-                <div class="col"><!--<button type="button" onclick="begin()" class="btn btn-warning" id="begin" >Start</button>-->
-                    <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
-                  </div>
-             <div class="col-sm"><button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></div>
-             <div class="col-sm"><textarea class="form-control"  id="floatingTextarea" > 2x</textarea>
-             </div>
-             <div class="col-sm"><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="readMe" style="color: white;">
+                        <p>Given weights and values of n items, we need to put these items in a knapsack of capacity W to get the maximum total value in the knapsack.
+                        <ol class="points">
+                          <li>A brute-force solution would be to try all possible subset with all different fraction but that will be too much time taking. </li>
+                          <li>An efficient solution is to use Greedy approach. The basic idea of the greedy approach is to calculate the ratio value/weight for each item and sort the item on basis of this ratio.
+                            Then take the item with the highest ratio and add them until we can’t add the next item as a whole and at the end add the next item as much as we can. Which will always be the optimal solution to this problem.
+                          </ol>
+                        </p>
+                        <div class="contain">
+                          <h5>Complexity:</h5> 
+                          Time Complexity = time for sorting + time for maximizing profit
+                          <br> = time for sorting + O(N)    
+                          <br>Suppose some nlog(n) time taking sorting algo is used     
+                          <table class="table table-bordered" style="color: white;">
+                            <thead>
+                              <tr>
+                                <th>Best</th>
+                                <th>Average</th>
+                                <th>Worst</th>
+                                <th>Memory</th>
+                                <th>Stability</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>nlog(n)</td>
+                                <td>nlog(n)</td>
+                                <td>n<sup>2</sup></td>
+                                <td>O(1)</td>
+                                <td>Depends on sorting algo</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="code">
+                    <div class="line" id="l1">getMaxValue(wt, val, capacity):</div>
+                    <div class="line" id="l2">&nbsp;&nbsp;iVal.sort(reverse=True)</div> 
+                    <div class="line" id="l3">&nbsp;&nbsp;totalValue = 0</div> 
+                    <div class="line" id="l4">&nbsp;&nbsp;for i in iVal:</div> 
+                    <div class="line" id="l5">&nbsp;&nbsp;&nbsp;curWt = int(i.wt)</div> 
+                    <div class="line" id="l6">&nbsp;&nbsp;&nbsp;curVal = int(i.val)</div> 
+                    <div class="line" id="l7">&nbsp;&nbsp;&nbsp;if capacity - curWt >= 0:</div> 
+                    <div class="line" id="l8">&nbsp;&nbsp;&nbsp;&nbsp;capacity -= curWt</div> 
+                    <div class="line" id="l9">&nbsp;&nbsp;&nbsp;&nbsp;totalValue += curVal</div> 
+                    <div class="line" id="l10">&nbsp;&nbsp;&nbsp;else:</div> 
+                    <div class="line" id="l11">&nbsp;&nbsp;&nbsp;&nbsp;fraction = capacity / curWt</div> 
+                    <div class="line" id="l12">&nbsp;&nbsp;&nbsp;&nbsp;totalValue += curVal * fraction</div> 
+                    <div class="line" id="l13">&nbsp;&nbsp;&nbsp;&nbsp;capacity = int(capacity - (curWt * fraction))</div> 
+                    <div class="line" id="l14">&nbsp;&nbsp;&nbsp;&nbsp;break</div> 
+                    <div class="line" id="l15">&nbsp;&nbsp;return totalValue</div> 
+                    <div><br></div>
+                    <div><br></div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="container" id="ct2">
+                        <h2>Value:</h2>
+                        
+                        <div class="row">
+                            <div class="container ct3">
+                                <div class="rows" id="row1">
+                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                        <h2>Weight:</h2>
+                        <div class="row">
+                            <div class="container ct3">
+                                <div class="rows" id="row2">
+                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                        
+                        <h2>Ratio:</h2>
+                        <div class="row">
+                            <div class="container ct3">
+                                <div class="rows" id="row3">
+                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                        <h2>Final Ans:</h2>
+                        <div class="row">
+                            <div class="container ct3">
+                                <div class="rows" id="row4">
+                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="form-floating">
+                                    <textarea class="form-control"  id="floatingTextarea2" >   Fractional Knapsack....</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+            
+                    
+                </div>
             </div>
         </div>
     </body>

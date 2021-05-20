@@ -13,16 +13,19 @@ function start(){
         location.reload();
     }
 }
+function last(){
+    speed = 0;
+}
 async function subSp(){
     if(speed >0){
         speed--;
-        document.querySelector('#floatingText').innerHTML= speed + "x";
+        document.querySelector('#speed').innerHTML= speed + "x";
     }
 }
 async function addSp(){
     if(speed<10){
         speed++;
-        document.querySelector('#floatingText').innerHTML = speed+"x";
+        document.querySelector('#speed').innerHTML = speed+"x";
     }
 }
 async function huffman(){
@@ -57,24 +60,24 @@ async function changeColor(a,b,i){
     y0 = b.getElementsByTagName('td')[0];
     x1= a.getElementsByTagName('td')[1];
     y1 = b.getElementsByTagName('td')[1];
-    x0.style.backgroundColor = '#4FC3F7';
-    x1.style.backgroundColor = '#4FC3F7';
-    y0.style.backgroundColor = '#4FC3F7';
-    y1.style.backgroundColor = '#4FC3F7';
+    x0.style.backgroundColor = '#3bd16f';
+    x1.style.backgroundColor = '#3bd16f';
+    y0.style.backgroundColor = '#3bd16f';
+    y1.style.backgroundColor = '#3bd16f';
     await sleep(2*timer/speed);
     if(i%2){colorreverse(x0,x1,'#f2f2f2');colorreverse(y0,y1,'#ffffff');}
     else {colorreverse(y0,y1,'#f2f2f2');colorreverse(x0,x1,'#ffffff');}
 }
 async function textEdit(msg){
-    document.querySelector("#floatingTextarea2").innerHTML = msg+"\n";
+    document.querySelector("#floatingTextarea2").innerHTML = msg;
 }
 async function linehighli(i){
     var x = document.getElementById(i);
-    x.style.backgroundColor = "#ffffff";
+    x.style.backgroundColor = "#20c997";
 }
 async function dehighli(i){
     var x = document.getElementById(i);
-    x.style.backgroundColor = "#DDEEDD";
+    x.style.backgroundColor = "#CBEABA";
 }
 async function sortTable() {
     for(let p = 0;p<7;p++){
@@ -151,9 +154,6 @@ async function sortTable() {
     await sleep(2*timer/speed);
     textEdit("Elements on the left of a node are marked 0 and those on the right of a node having greater node-value are marked 1!");
     await sleep(3*timer/speed);
-    textEdit("The code can be generated for any character by just compiling the 0s and 1s on the way of traversal from root to the required node!");
-<<<<<<< HEAD
+    textEdit("The code can be generated for any character by just compiling the 0s and 1s on the way of traversal from root to the required node!\nThe encoding (obtained after performing Huffman Encoding): 1100 1101 001 001 10 010 111 010 10 10 011 111 011 10 10 000 111");
+    
 }
-=======
-}
->>>>>>> 618bdb693ed28cb84d6586223eb6404334d69ab8

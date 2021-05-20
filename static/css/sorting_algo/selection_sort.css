@@ -2,184 +2,185 @@
     padding: 0;
     margin: 0;
 }
+*{
+  padding: 0;
+  margin: 0;
+}
 
 .header{
-  background-color: darkgreen;
-  padding: 20px 10px;
+background-color: white;
+padding: 20px 10px;
 }
+
 .header a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px; 
-  line-height: 25px;
-  border-radius: 4px;
+float: left;
+color: black;
+text-align: center;
+padding: 12px;
+text-decoration: none;
+font-size: 18px; 
+line-height: 25px;
+border-radius: 4px;
+opacity: 1;
+transition: 0.3s;
 }
+
 .header a:hover {
-  background-color: #f2f2f2;
-  color: black;
+background-color: #CBEABA;
+/*background-color: #3bd16f;*/
+color: black;
+font-size: 20px;
+opacity: 0.5;
 }
 
 .header a.logo{
-  font-size: 30px;
-  font-weight: bold;
+font-size: 30px;
+/*font-weight: bold;*/
 }
+
 h1{
-  text-align: center; 
-  color: yellow;
+text-align: center; 
+color: black;
 }
+
 .ct{
-  width: 100%;
+width: 100%;
 }
+
 .ques{
-    background-color:#DDEEDD;
-    margin: 0%;
-    padding: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
+  background-color:#DDEEDD;
+  margin: 0%;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
 }
 footer {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 3px;
-  background-color:darkgreen;
-  color: white;
+position: relative;
+left: 0;
+bottom: 0;
+width: 100%;
+padding: 3px;
+background-color:darkgreen;
+color: white;
 }
 footer p{
-  font-weight: bold;
-  padding-left: 20px;;
+font-weight: bold;
+padding-left: 20px;;
 }
-/*.pycode{
-  float: left;
-  padding: 30px;
-  background-color: #DDEEDD;
-  width: 45%;
-  font-size: large;
-}
-#l1,#l2,#l3,#l4,#l5,#l6{
-  background-color: #DDEEDD;
-} */
-
-/*#row{
-    display: flex;
-    flex-flow: row wrap;
-    height: 90px;
-    border: 2px #e07c09;
-    font-size: 35px; 
-    background-color:#f7890a;
-    width: 100%;
-}
-
-#row div{
-    border: 2px aliceblue solid;
-    margin: 8px;
-    text-align: center;
-}*/
-
 .code{
-    float: left;
-    padding: 30px;
-    background-color: greenyellow;
-    width: 75%;
+  /*float: left;*/
+  padding: 30px;
+  background-color: #CBEABA;
+  width: 100%;
+  height: 100%;
 }
 
 .code .line{
-    margin-bottom: 20px;
-    background-color: #ADFF2F;
+  margin-bottom: 20px;
+  /*background-color: #ADFF2F;*/
+  background-color: #CBEABA;
 }
 
 #ct1{    
-    position: relative;
-    width: 100%;
-    height: 100%;
-    float: left;
-    background-color: whitesmoke;
-    padding: 30px;
-    margin-bottom: 25px;
-    margin-top: 50px;
-    margin-right: 150px;
-    margin-left: 100px;
+  /*position: relative;*/
+  width: 100%;
+  height: 100%;
+  /*float: left;*/
+  /*background-color: black;*/
+  padding: 30px;
+  /*margin-bottom: 25px;
+  margin-top: 50px;
+  margin-right: 150px;
+  margin-left: 100px;*/
 }
 
 #ct2{
-    position: relative;
-    width: 120%;
-    float: right;
-    background-color: #DCDCDC;
-    padding: 30px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  /*position: relative;
+  width: 120%;*/
+  float: right;
+  /*background-color: #D4D4D4;*/
+  background-color: #DCDCDC;
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 #ct3{
-    margin-top: 25px;
-    width: 100%;
+  margin-top: 25px;
+  width: 100%;
 }
 
-.col-sm-7{
-    padding-left: 10px;
-    padding-right: 50px;
-    margin: 20px;
-    display: flex;
-    justify-content: space-around;
+.code .line l1{
+  margin-top: 20px;
 }
 
-.my-flex-box{
+.code .line l9{
+  margin-bottom: 20px;
+}
+
+#row{
   display: flex;
   flex-flow: row wrap;
-  height: auto;
-  /*border: 2px black solid;*/
-  /*margin-top: 20px;*/
+  height: 90px;
+  border: 2px #e07c09;
   font-size: 35px; 
   background-color:#f7890a;
   width: 100%;
 }
 
-.my-flex-box div{
-   border: 2px aliceblue solid;
-   margin: 8px;
-   text-align: center;
+#row div{
+  border: 2px aliceblue solid;
+  margin: 8px;
+  text-align: center;
 }
 
-pre
-{
+pre{
   border:1px rgb(37, 54, 12) solid; 
-  margin: 10px; background-color:bisque; 
+  margin: 10px;
+  background-color:greenyellow; 
   width: 100%; 
   font-size: medium; 
   font-weight: bolder; 
 }
+
 button
 {
-  margin-top:30px;
-   color: white;
+  margin:20px;
+  color: white;
+  background-color: #3bd16f;
 }
-#floatingTextarea
-{
+
+#floatingTextarea {
   height: 40px; 
-  width: 100%; 
+  width: 10%; 
   border: 3px chocolate solid; 
-   font-weight: bolder;
-   font-size:large; 
-   color:saddlebrown;
-    padding: 0%;
-     margin-top: 30px;
-      margin-left: 0px; 
-      text-align: center;
+  font-weight: bolder;
+  font-size:large; 
+  color:saddlebrown;
+  padding: 0;
+  text-align: center;
+  margin:30px;
+}
+
+.col-sm-7{
+  padding-left: 10px;
+  padding-right: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.col-sm-12{
+  margin-left: 125px; 
 }
 
 #floatingTextarea2 {
-    height: 150px;
-    width: 100%; 
-    border: 3px rebeccapurple solid; 
-    font-weight: bolder;
-    font-size: large;
-    color: purple;   
+  height: 190px;
+  width: 100%; 
+  border: 3px rebeccapurple solid; 
+  font-weight: bolder;
+  font-size: large;
+  color: purple;   
 }
-

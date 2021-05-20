@@ -1,10 +1,10 @@
 let speed = 2, timer = 1000;
 let s1= [], s2 = [], s3=[], s4=[]
 let pause=0;
-let grid1 =  document.querySelector('.g1')
-let grid2 =  document.querySelector('.g2')
-let grid3 =  document.querySelector('.g3')
-let grid4 =  document.querySelector('.g4')
+let grid1 =  document.querySelector('#row1')
+let grid2 =  document.querySelector('#row2')
+let grid3 =  document.querySelector('#row3')
+let grid4 =  document.querySelector('#row4')
 
 let square1 = document.createElement('div')
 let square2 = document.createElement('div')
@@ -17,7 +17,7 @@ square1.setAttribute('id', i)
 square1.setAttribute('class',"col-sm");
 square1.setAttribute('style','background-color: #ffc107');
 square1.innerHTML = 0;
-grid1.append(square1)
+grid1.appendChild(square1)
 s1.push(square1)
 
 square2 = document.createElement('div')
@@ -25,7 +25,7 @@ square2.setAttribute('id',i)
 square2.setAttribute('class',"col-sm");
 square2.setAttribute('style','background-color: #ffc107');
 square2.innerHTML = 0;
-grid2.append(square2)
+grid2.appendChild(square2)
 s2.push(square2)
 
 square3 = document.createElement('div')
@@ -33,7 +33,7 @@ square3.setAttribute('id',i)
 square3.setAttribute('class',"col-sm");
 square3.setAttribute('style','background-color: #ffc107');
 square3.innerHTML = 0;
-grid3.append(square3)
+grid3.appendChild(square3)
 s3.push(square3)
 
 square4 = document.createElement('div')
@@ -41,7 +41,7 @@ square4.setAttribute('id',i)
 square4.setAttribute('class',"col-sm");
 square4.setAttribute('style','background-color: #ffc107');
 square4.innerHTML = "W";
-grid4.append(square4)
+grid4.appendChild(square4)
 s4.push(square4)
 }
 s1[0].innerHTML = 280;s2[0].innerHTML = 40; s3[0].innerHTML = 7;
@@ -65,14 +65,17 @@ async function sleep(ms){
 async function subSp(){
     if(speed >0){
         speed--;
-        document.querySelector('#floatingTextarea').innerHTML= speed + "x";
+        document.querySelector('#speed').innerHTML= speed + "x";
     }
 }
 async function addSp(){
-    if(speed<5){
+    if(speed<10){
         speed++;
-        document.querySelector('#floatingTextarea').innerHTML = speed+"x";
+        document.querySelector('#speed').innerHTML = speed+"x";
     }
+}
+function last(){
+    speed = 0;
 }
 async function textEdit(msg){
     document.querySelector("#floatingTextarea2").innerHTML = "\n"+msg;
@@ -122,11 +125,11 @@ async function insertElem(i,j){
 }
 async function linehighli(i){
     var x = document.getElementById(i);
-    x.style.backgroundColor = "#ffffff";
+    x.style.backgroundColor = "#20c997";
 }
 async function dehighli(i){
     var x = document.getElementById(i);
-    x.style.backgroundColor = "#DDEEDD";
+    x.style.backgroundColor = "#CBEABA";
 }
 async function fknapsack(){
     textEdit("Greedy approach to slove the fractional knapsack problem!!");
