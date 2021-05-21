@@ -1,17 +1,18 @@
 let buckets = [...Array(10)].map(() => []);
-let timer=100;
+let timer=1000;
 let speed = 1;
+let pause=0;
 function addSp(){
     if(speed < 10){
         speed++;
-        document.querySelector("#spd").innerHTML=speed+"x";
+        document.querySelector("#speed").innerHTML=speed+"x";
     }
 }
 
 function subSp(){
     if(speed > 1){
         speed--;
-        document.querySelector("#spd").innerHTML=speed+"x";
+        document.querySelector("#speed").innerHTML=speed+"x";
     }
 }
 async function radixSort(arr) {
@@ -83,7 +84,7 @@ async function radixSort(arr) {
    }
    textEdit("All numbers came into one bucket !!!");
    await setTimeDelay(3*timer/speed);
-   textEdit("Sorting Done!"+"\n"+"Final Array : [3,5,23,65,88,234,235,4632]");
+   textEdit("Sorting Done!"+"\n"+"Final Array : [3,15,23,65,88,234,235]");
    lineHgli8('line l11');
    await setTimeDelay(3*timer/speed);
    deHgli8('line l11');
@@ -108,7 +109,7 @@ async function lineHgli8(i){
     var list, index;
     list = document.getElementsByClassName(i);
     for (index = 0; index < list.length; ++index) {
-        list[index].setAttribute('style', 'background-color: greenyellow');
+        list[index].setAttribute('style', 'background-color:#CBEABA');
     }
     //document.getElementsByClassName(i).setAttribute('style', 'background-color: #20c997');
 }
@@ -134,7 +135,7 @@ async function bucketdisp(i,num){
 
     console.log(buckets[i]);
 
-   if(buckets[i].length>1) textbucket[i]=textbucket[i]+"\n,"+num;
+   if(buckets[i].length>1) textbucket[i]=textbucket[i]+"\n "+num;
    else{
     textbucket[i]= textbucket[i]+"\n"+num;
    }
@@ -142,19 +143,44 @@ async function bucketdisp(i,num){
  
 }
 async function textEdit(msg){
-    document.querySelector("#floatingTextarea2").innerHTML="Initial Array : [5,3,88,235,65,23,4632,234] "+"\n"+msg;
+    document.querySelector("#floatingTextarea2").innerHTML="Initial Array : [15,3,88,235,65,23,234] "+"\n"+msg;
+}
+
+function start(){
+    // alert("Start");
+    if(!pause){ 
+        pause=1;
+        document.querySelector("#start").innerHTML="Restart";
+        QuickSort(squares, n, 0, n);
+    }
+    else{
+        location.reload();
+    }
+}
+
+function last(){
+    speed = 0;
 }
 
 async function start(){
-    textbucket=[" "];
+    
+
+    if(!pause){ 
+        pause=1;
+        document.querySelector("#start").innerHTML="Restart";
+        textbucket=[" "];
     const button = document.querySelector('#start');
-    button.disabled = true;
+     
     speed=1;
-    document.querySelector("#spd").innerHTML=speed+"x";
+    document.querySelector("#speed").innerHTML=speed+"x";
     for(let i=0;i<10;i++){
         textbucket[i]=" ";
     }
     updatetext();
-    finalarr = await radixSort([5,3,88,235,65,23,4632,234]) ;
-    button.disabled = false;
+    finalarr = await radixSort([15,3,88,235,65,23,234]) ;
+     
+    }
+    else{
+        location.reload();
+    }
 }

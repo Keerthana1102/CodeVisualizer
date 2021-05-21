@@ -11,66 +11,61 @@
     
    <link rel="stylesheet" href="{% static 'css/sorting_algo/BubbleSortAlgorithm.css' %}">
     <title>Bubble Sort</title>
-    <style>
-      .header a:hover {
-        background-color: yellow;
-        color: white;
-        font-size: 20px;
-      }
-      
-    </style>
   </head>
   <body style="background: #141414">
-    <div class="header" style="background: white;">
-      <a href="/" class="logo" style="color: black;">Code Visualizer</a>
+    <div class="header">
+      <a href="/" class="logo">Code Visualizer</a>
       <!-- <h1 style="color: black;">Bubble Sort</h1> -->
       <h1>Bubble Sort</h1>
     </div>
     <div class="contain" id="ct1">
       <div class="row">
-        <div class="col-sm">
-          <h2 style="text-align: left; margin-top: 5px; color: white;">Readme</h2>
-        </div>
-        <div class="col-sm">
-          <h2 style="text-align: left; margin-top: 5px; margin-left: 80px; color: white;">Implementation</h2>
-        </div>
-        <!-- <div class="col-sm">
-          <div class="container">
-            <div class="row align-items-center" style="border: 1px solid palevioletred;  margin-top: 10%;">
-
-              <div class="col"><button type="button" onclick="begin()" class="btn btn-danger" id="begin">Start</button></div>
-              
-               <div class="col"><button type="button" onclick="subSp()" class="btn btn-danger" id="sub">-1x</button></div>
-              
-              
-               <div class="col"><button type="button" disabled class="btn btn-danger" id="SpeedCount">2x</button></div>
-             
-              
-               <div class="col"><button type="button" onclick="addSp()" class="btn btn-danger" id="add">+1x</button></div>
-              
-              
-               <div class="col"><button type="button" onclick="last()" class="btn btn-danger" id="last">>></button></div>
-              
-            </div>
-          </div>
-        </div> -->
+        <div class="col-sm"><h2 style="text-align: left; margin-top: 5px; color: white;">Readme</h2></div>
+                <div class="col-sm">
+                    <!-- <h2 style="text-align: left; margin-top: 5px;">Quick Sort</h2>
+                    <h5 style="text-align: left; margin-top: 0px;">(With first element as pivot)</h5> -->
+                    <h2 style="text-align: left; margin-top: 5px; margin-left: 80px; color: white;">Implementation</h2>
+                </div>
         <div class="col-sm-7">
-            <button type="button" onclick="begin()" class="btn btn-warning" id="begin">Start</button>
-            <!-- <button type="button" onclick="paused()" class="btn btn-danger" id="pause">Pause</button> -->
-            <!-- <button type="button" onclick="first()" class="btn btn-danger" id="first"><<</button> -->
-            <button type="button" onclick="subSp()" class="btn btn-warning" id="sub" >-1x</button>
-            <button type="button" disabled class="btn btn-warning" id="speed" >2x</button>
-            <!-- <textarea class="form-control" id="floatingTextarea">2x</textarea> -->
-            <button type="button" onclick="addSp()" class="btn btn-warning" id="add" >+1x</button>
-            <button type="button" onclick="last()" class="btn btn-warning" id="last">Last</button>
-        </div>
+                    <button type="button" onclick="start()" class="btn" style="background-color: #3bd16f;" id="start">Start</button>
+                    <!-- <button type="button" onclick="paused()" class="btn btn-danger" id="pause">Pause</button> -->
+                    <!-- <button type="button" onclick="first()" class="btn btn-danger" id="first"><<</button> -->
+                    <button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button>
+                    <button type="button" disabled class="btn" style="background-color: #3bd16f;" id="speed" >2x</button>
+                    <!-- <textarea class="form-control" id="floatingTextarea">2x</textarea> -->
+                    <button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button>
+                    <button type="button" onclick="last()" class="btn" style="background-color: #3bd16f;" id="last">Last</button>
+                </div>
 
       </div>
       <div class="row">
           <div class="col-sm-3">
             <div class="readMe" style="color: white;">
-            <p>Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order (ascending or descending arrangement). The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.</p>
-          </div>
+            <p>Bubble sort, also referred to as sinking sort, is a simple sorting algorithm that repeatedly iterates through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order (ascending or descending arrangement). The pass through the list is repeated until no swaps are needed, indicating that the list is sorted.</p>
+            <div class="contain">
+                          <h5>Complexity:</h5>          
+                          <table class="table table-bordered" style="color: white;">
+                            <thead>
+                              <tr>
+                                <th>Best</th>
+                                <th>Average</th>
+                                <th>Worst</th>
+                                <th>Memory</th>
+                                <th>Stability</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>O(n)</td>
+                                <td>O(n<sup>2</sup>)</td>
+                                <td>O(n<sup>2</sup>)</td>
+                                <td>O(1)</td>
+                                <td>Yes</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+        </div>
           </div>
           <div class="col-sm-4">
             <div class="code">

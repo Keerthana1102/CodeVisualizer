@@ -1,9 +1,3 @@
-
-//var grid1=document.querySelector("#stringMain1");
-//var grid2=document.querySelector("#stringMain2");
-//let time=1000;
-//let squares1=[];
-//let squares2=[];
 let N=Math.floor(Math.random() * 10)+1;
 let M=Math.max(Math.floor(Math.random() * 10),N+1);
 let speed=3;
@@ -18,29 +12,27 @@ function sleep(ms) {
   function addSp()
   {
 	  if(speed<20){speed++;
-        document.getElementById("SpeedCount").innerHTML=speed+"x";
+        document.getElementById("speed").innerHTML=speed+"x";
 	}
   }
   function subSp()
   {
 	  if(speed>1){speed--;
-		document.getElementById("SpeedCount").innerHTML=speed+"x";
+		document.getElementById("speed").innerHTML=speed+"x";
 	}
   }
-  function begin()
-  {
-     
+  function start(){
       if(!pause)
         { pause=1;
-            document.getElementById("begin").innerHTML="Restart";
+            document.getElementById("start").innerHTML="Restart";
       IntegerPartition();}
       else
       {location.reload();
       }
-      
- 
-
   }
+  function last(){
+    speed = 0;
+}
 async function textEdit(msg)
 {
 	document.querySelector("#floatingTextarea2").innerHTML="we create a table where each column represents the larger number we have available, and each row represents a possible sum we want to reach\n"+msg;
@@ -81,9 +73,9 @@ async function setColorelem(i,j,dp)
 async function setback(id,chk)
 {
 if(chk)
-document.getElementById(id).setAttribute('style','background-color : hotpink');
+document.getElementById(id).setAttribute('style','background-color : #20c997');
 else
-document.getElementById(id).setAttribute('style','background-color : greenyellow');
+document.getElementById(id).setAttribute('style','background-color :#CBEABA');
 }
 async function IntegerPartition()
 {
@@ -114,8 +106,6 @@ async function IntegerPartition()
         }
         box.appendChild(rw);
         dp.push(dpr);
-    
-      
     }
     
     await sleep(2*timer/speed);

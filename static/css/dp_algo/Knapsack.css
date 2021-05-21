@@ -1,7 +1,8 @@
-.header{
+/*.header{
     background-color: darkgreen;
     padding: 20px 10px;
   }
+
   .header a {
     float: left;
     color: yellow;
@@ -20,12 +21,63 @@
   .header a.logo{
     font-size: 30px;
     font-weight: bold;
-  }
-  h1{
-    text-align: center; 
-    color: yellow;
-  }
+  }*/
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+  background-color: white;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.header a:hover {
+  background-color: #CBEABA;
+  /*background-color: #3bd16f;*/
+  color: black;
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.header a.logo{
+  font-size: 30px;
+  /*font-weight: bold;*/
+}
+
+h1{
+text-align: center; 
+color: black;
+}
+
 .code{
+    /*float: left;*/
+    padding: 30px;
+    background-color: #CBEABA;
+    width: 100%;
+}
+
+.code .line{
+    margin-bottom: 20px;
+    /*background-color: #ADFF2F;*/
+    background-color: #CBEABA;
+}
+
+/*.code{
     float: left;
     padding: 30px;
     background-color: greenyellow;
@@ -35,7 +87,7 @@
 .code .line{
     margin-bottom: 20px;
     background-color: #ADFF2F;
-}
+}*/
 
 #tag{
     display: flex;
@@ -44,23 +96,24 @@
 }
 
 #ct1{    
-    position: relative;
+    /*position: relative;*/
     width: 100%;
     height: 100%;
-    float: left;
-    background-color: whitesmoke;
+    /*float: left;
+    background-color: whitesmoke;*/
     padding: 30px;
-    margin-bottom: 25px;
+    /*margin-bottom: 25px;
     margin-top: 50px;
     margin-right: 150px;
-    margin-left: 100px;
+    margin-left: 100px;*/
 }
 
 #ct2{
-    position: relative;
-    width: 100%;
+    p/*osition: relative;
+    width: 100%;*/
     float: right;
     background-color: #DCDCDC;
+    padding: 30px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -68,7 +121,8 @@
 }
 
 #ct3{
-    padding: 25px; 
+    margin-top: 25px;
+    /*padding: 25px;*/ 
     width: 100%;
 }
 
@@ -83,12 +137,11 @@
 #row{
     display: flex;
     flex-flow: row wrap;
-    height: 100%;
+    height: 90px;
     border: 2px #e07c09;
-    margin-top: 10px;
-    font-size: 20px; 
+    font-size: 35px; 
     background-color:#f7890a;
-    width: 75%;
+    width: 100%;
 }
 
 #row div{
@@ -150,4 +203,39 @@ button{
     font-weight: bolder;
     font-size: large;
     color: purple;   
+}
+
+#sigmaClass {
+    height: 50px;
+    line-height: 50px;
+}
+
+span {
+    position: relative;
+    font-size: 2.5em;
+    display: inline-block;
+    line-height: .7em;
+    vertical-align: middle;
+}
+
+span:before {
+    font-size: 12px;
+    display: block;
+    position absolute;
+    left: 0;
+    top: 0;
+    content: "n";
+    width: 22px;
+    text-align: center;
+}
+
+span:after {
+    font-size: 12px;
+    display: block;
+    position absolute;
+    left: 0;
+    bottom: 0;
+    content: "i = 1";
+    width: 27px;
+    text-align: center;
 }

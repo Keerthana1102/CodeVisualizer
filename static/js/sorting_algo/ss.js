@@ -1,17 +1,17 @@
-let grid = document.querySelector('.g1')
+let grid = document.querySelector('.rows')
 let squares = []
 let speed=2;
 let timer=1000;
 let pause=0;
-let n = 9;
+let n = 8;
 
-for(let i=0; i<9;i++){
+for(let i=0; i<8;i++){
     let square = document.createElement('div')
     square.setAttribute('id', i)
     square.setAttribute('class',"col-sm");
 	square.setAttribute('style','background-color: #ffc107');
     square.innerHTML = 110 %(i+3) - 15% (i+1);
-    grid.append(square)
+    grid.appendChild(square)
     squares.push(square)
 }
 
@@ -43,12 +43,12 @@ function last(){
 }
 function addSp(){
 	  if(speed<10){speed++;
-	document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+	document.querySelector("#speed").innerHTML=speed+"x";
 	}
 }
 function subSp(){
 	  if(speed>1){speed--;
-		document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+		document.querySelector("#speed").innerHTML=speed+"x";
 	}
 }
 async function textEdit(msg)
@@ -106,7 +106,7 @@ async function linehighli(i){
 async function dehighli(i){
     var x = document.getElementById(i);
     // x.style.backgroundColor = "#DDEEDD";
-    x.style.backgroundColor = "greenyellow";
+    x.style.backgroundColor = "#CBEABA";
 }
 async function selection_sort(){
 	textEdit("Unsorted Array !!!");
@@ -169,6 +169,7 @@ async function selection_sort(){
 		squares[i].setAttribute('style','background-color: #20c997 ');
 
 	}
+    squares[n-1].setAttribute('style','background-color: #20c997 ');
 	textEdit("Sorted Array Found!!!");
 }
 

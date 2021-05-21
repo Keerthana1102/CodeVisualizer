@@ -11,6 +11,7 @@ let speed = 2;
 let timer = 1000;
 let count = 0;
 let isPlaying = false;
+let pause=0;
 
 for(let i=0;i<n;i++){
     let box = document.createElement("div")
@@ -104,22 +105,31 @@ function subSp(){
 
 function start(){
     // alert("Start");
-    isPlaying = true;
-    Knapsack(squares1, squares2, squares3, n, w);
+    if(!pause){ 
+        pause=1;
+        document.querySelector("#start").innerHTML="Restart";
+        Knapsack(squares1, squares2, squares3, n, w);
+    }
+    else{
+        location.reload();
+    }
 }
 
-function first(){
-    
-}
+// function start(){
+//     // alert("Start");
+//     isPlaying = true;
+//     Knapsack(squares1, squares2, squares3, n, w);
+// }
 
-function pause(){
-    count++;
-    // alert("Stop");
-    var pauseBtn = document.getElementById("pause");
-    // tl = new TimelineMax();
-    // tl.paused(!tl.paused());
-    pauseBtn.innerHTML = (count%2==1) ? "Play" : "Pause";
-}
+
+// function pause(){
+//     count++;
+//     // alert("Stop");
+//     var pauseBtn = document.getElementById("pause");
+//     // tl = new TimelineMax();
+//     // tl.paused(!tl.paused());
+//     pauseBtn.innerHTML = (count%2==1) ? "Play" : "Pause";
+// }
 
 function last(){
     speed = 0;
@@ -144,7 +154,7 @@ async function deHgli8(i){
     var list, index;
     list = document.getElementsByClassName(i);
     for (index = 0; index < list.length; ++index) {
-        list[index].setAttribute('style', 'background-color: greenyellow');
+        list[index].setAttribute('style', 'background-color: #CBEABA');
     }
     //document.getElementsByClassName(i).setAttribute('style', 'background-color: #20c997');
 }
