@@ -36,7 +36,7 @@
 		
 		<div id = "container">
 			
-			<div id="header">  
+			<div class="header">  
 				<a href="/" class="logo">Code Visualizer</a>
 				<h1>Breadth-First Search</h1>
 			</div>
@@ -44,7 +44,7 @@
 			<div  id = "mainContent"> 
 				<div class = "head">
 				<div class = "bg">
-				<div id = "algoControlSection">
+				<div id = "algoControlSection" style = "margin-top : 40px;margin-left : 20px;margin-right : 120px;">
 					<table id="AlgorithmSpecificControls"> 
 						
 					</table> 
@@ -54,15 +54,15 @@
 					
 					</table>
 				</div>
-				<table id="speed">
+				<table id="speed" style = "margin-top : 40px;>
 					<tr>
-						<td align="center" colspan="3"><b>Animation Speed</b></td>
+						<td align="center" colspan="3"><b></b></td>
 					</tr>
 					<tr>
-						<th>
-							<button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></th>
-							<th><h1 value="1" id="floatingTextarea" >1x</h1></th>
-							<th><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></th>
+						<th><button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button></th>
+						<th><button type="button" disabled class="btn" style="background-color: #3bd16f;" id="floatingTextarea" >1x</button></th>
+						<th><button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button></th>
+
 					</tr>
 					
 		
@@ -77,10 +77,45 @@
 				
 				<div class="bg">				
 				
+				
+                    <div class="readme" style="color: white;">
+                        
+						<p>BFS is a graph traversal algorithm. First the starting vertex is selected and it further moves onto its neighbours and if they are not visited yet; adds them into the tree. It continues until no vertex has non-visited neighbouring vertices.The steps are:
+                        <ol class="points">
+							<li>Take a queue</li>
+							<li>Push startvertex into queue</li>
+							<li>Pop the queue and add push all neighbours of popped vertex that are not visited yet</li>
+							<li>Continue until queue is empty</li>
+                        </ol>
+                        </p>
+                        <div class="contain">
+                          <h5>Complexity:</h5>          
+                          <table class="table table-bordered" style="color: white;">
+                            <thead>
+								<tr>
+									<th>Best</th>
+									<th>Average</th>
+									<th>Worst</th>
+									<th>Memory</th>
+		
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td>O(1)</td>
+									<td>O(V+E)</td>
+									<td>O(V+E)</td>
+									<td>O(V)</td>
+								  </tr>
+                            </tbody>
+                          </table>
+                        </div>
+						</div>
+                    
 				<div class="code">
 				<div class="line l1" value = "hi"> BFS(u), Q = {u}</div>
 
-				<div class="line l2">while !Q.empty // Q is a normal queue</div>
+				<div class="line l2">while !Q.empty </div>
 
 				<div class="line l3">for each neighbor v of u = Q.front, Q.pop</div>
 

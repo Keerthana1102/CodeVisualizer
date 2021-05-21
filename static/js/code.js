@@ -19,3 +19,11 @@ function show(v){
         el.style.display = "block";
     }
 }
+
+document.getElementById("graph").addEventListener('mousemove',(e)=>{
+    addgif();
+    console.log(e.offsetX);
+})
+function addgif(){
+    graph.src = "{% static 'images/gifgraphs.gif' %}"
+}

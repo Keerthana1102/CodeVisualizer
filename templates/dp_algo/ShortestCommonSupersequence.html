@@ -11,60 +11,96 @@
     
    <link rel="stylesheet" href="{% static 'css/dp_algo/ShortestCommonSupersequence.css' %}">
     <title>Shortest Common Supersequence</title>
+    <style>
+      .header a:hover {
+        background-color: yellow;
+        color: white;
+        font-size: 20px;
+      }
+      
+    </style>
   </head>
-  <body>
-    <div class="header">
-      <a href="/" class="logo">Code Visualizer</a>
-      <h1>Shortest Common Supersequence</h1>
+  <body style="background: #141414">
+    <div id="header" style="background: white;">
+      <a href="/" class="logo" style="color: black;">Code Visualizer</a>
+      <h1>Shortest Common Supersequence Algorithm</h1>
     </div>
-    <div class="container" id="ct1" style="background-color: bisque">
+    <div class="contain" id="ct1">
       <div class="row">
         <div class="col-sm">
-          <!--<h1 style="text-align: center; margin-top: 30px;"></h1>-->
+        <h2 style="text-align: left; margin-top: 5px; color: white;">Readme</h2>
         </div>
         <div class="col-sm">
-             <!--div class="col-sm"><button type="button" onclick="Pause()" class="btn btn-danger" id="sub" >PAUSE</button></div-->
-             <div class="container">
-               <div class="row align-items-center" style="border: 1px solid palevioletred;  margin-top: 10%;">
-                 
-                  <div class="col"><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></div>
-                 
-                 
-                  <div class="col"><button type="button" disabled class="btn btn-danger" id="SpeedCount" >3x</button></div>
-                
-                 
-                  <div class="col"><button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></div>
-                 
-                 
-                  <div class="col"><button type="button" onclick="begin()" class="btn btn-danger" id="begin" >Start</button></div>
-                 
-               </div>
-             </div>
-           
+            <h2 style="text-align: left; margin-top: 5px; margin-left: 80px; color: white;">Implementation</h2>
+        </div>
+        <div class="col-sm-7">
+            <button type="button" onclick="star()" class="btn" style="background-color: #3bd16f;" id="start">Start</button>
+            <!-- <button type="button" onclick="paused()" class="btn btn-danger" id="pause">Pause</button> -->
+            <!-- <button type="button" onclick="first()" class="btn btn-danger" id="first"><<</button> -->
+            <button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button>
+            <button type="button" disabled class="btn" style="background-color: #3bd16f;border: 3px chocolate solid;font-weight: bolder;" id="SpeedCount" >2x</button>
+            <!-- <textarea class="form-control" id="floatingTextarea">2x</textarea> -->
+            <button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button>
+            <button type="button" onclick="last()" class="btn" style="background-color: #3bd16f;" id="last">Last</button>
         </div>
       </div>
+
       <div class="row">
-        <div class="col-sm">
+        <div class="col-sm-3">
+            <div class="readMe" style="color: white;">
+            <div class="readMe" style="color: white;">
+                        <p>The goal of the algorithm is to find the length of the shortest string that has both given strings as subsequences.The steps are:
+                        <ol class="points">
+                          <li> Find Longest Common Subsequence (lcs) of two given strings </li>
+                          <li> Insert non-lcs characters (in their original order in strings) to the lcs found above, and return the result.  </li>
+                          <li>The idea is to follow the simple recursive solution, use a lookup table to avoid recomputations. Before computing result for an input, we check if the result is already computed or not. If already computed, we return that result.</li>
+                        </ol>
+                        </p>
+                        <p>m and n are length of both strings</p>
+                        <div class="contain">
+                          <h5>Complexity:</h5>          
+                          <table class=" table-bordered" style="color: white;">
+                            <thead>
+                              <tr>
+                                <th>Best</th>
+                                <th>Average</th>
+                                <th>Worst</th>
+                                <th>Memory</th>
+                                <th>Stability</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>O(m*n)</td>
+                                <td>O(m*n)</td>
+                                <td>O(m*n)</td>
+                                <td>O(m*n)</td>
+                                <td>Yes</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+            </div>
+          </div>
+        <div class="col-sm-4">
           <div class="code">
            
-        <div id="l1">for (i = 0; i &lt= m; i++) {</div>    
-          <div id="l2"> &nbsp; for (j = 0; j &lt= n; j++) {</div>    
-            <div id="l3"> &nbsp;  &nbsp;   if (i == 0) A[i][j] = j;</div>
-              <div id="l4">  &nbsp;  &nbsp;else if (j == 0) A[i][j] = i;</div> 
-              <div id="l5">  &nbsp;  &nbsp; else if (string1[i - 1] == string2[j - 1]) A[i][j] = A[i - 1][j - 1] + 1;</div>
+        <div class="line" id="l1">for (i = 0; i &lt= m; i++) {</div>    
+          <div class="line" id="l2"> &nbsp; for (j = 0; j &lt= n; j++) {</div>    
+            <div class="line" id="l3"> &nbsp;  &nbsp;   if (i == 0) A[i][j] = j;</div>
+              <div class="line" id="l4">  &nbsp;  &nbsp;else if (j == 0) A[i][j] = i;</div> 
+              <div class="line" id="l5">  &nbsp;  &nbsp; else if (string1[i - 1] == string2[j - 1]) A[i][j] = A[i - 1][j - 1] + 1;</div>
             
-              <div id="l6">  &nbsp;  &nbsp;   else A[i][j]=1+min(A[i-1][j],A[i][j-1]);</div>
+              <div class="line" id="l6">  &nbsp;  &nbsp;   else A[i][j]=1+min(A[i-1][j],A[i][j-1]);</div>
                
-              <div id="l7">  }
+              <div class="line" id="l7">  }
             }</div>
           </div>
-          <div class="form-floating">
-            <textarea class="form-control"  id="floatingTextarea2" style="height:130px;"> Shortest Common Supersequence</textarea>
-            
-          </div>
         </div>
-        
-        <div class="col-sm" >
+        <div class="col-sm-5">
+        <div class="container" id="ct2">
+        <div class="row" >
           <div class="row" id="stringMain1"style="margin-top:2%;"></div>
           <div class="row" id="stringMain2" style="margin-top:2%;"></div>
  
@@ -74,6 +110,18 @@
           </div>
           
         </div>
+        <div class="row">
+          <div class="col-sm">
+          <div class="form-floating">
+            <textarea class="form-control"  id="floatingTextarea2" > Shortest Common Supersequence</textarea>
+            
+          </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        
+        
       </div>
    
  

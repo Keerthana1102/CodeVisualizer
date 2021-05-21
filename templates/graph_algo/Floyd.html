@@ -38,14 +38,15 @@
 		
 		<div id = "container">
 			
-			<div id="header">  
-				<h1>Floyd-Warshall Algorithm</h1>
+			<div class="header">  
+				<a href="/" class="logo">Code Visualizer</a>
+				<h1>FloydWarshall Algorithm</h1>
 			</div>
 			
 			<div  id = "mainContent"> 
 				<div class = "head">
 				<div class = "bg">
-				<div id = "algoControlSection">
+				<div id = "algoControlSection" style = "margin-top : 40px;margin-left : 20px;margin-right : 120px;">
 					<table id="AlgorithmSpecificControls"> 
 						
 					</table> 
@@ -55,15 +56,15 @@
 					
 					</table>
 				</div>
-				<table id="speed">
+				<table id="speed" style = "margin-top : 40px;>
 					<tr>
-						<td align="center" colspan="3"><b>Animation Speed</b></td>
+						<td align="center" colspan="3"><b></b></td>
 					</tr>
 					<tr>
-						<th>
-							<button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></th>
-							<th><h1 value="1" id="floatingTextarea" >1</h1></th>
-							<th><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></th>
+						<th><button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button></th>
+						<th><button type="button" disabled class="btn" style="background-color: #3bd16f;" id="floatingTextarea" >1x</button></th>
+						<th><button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button></th>
+
 					</tr>
 					
 		
@@ -73,7 +74,46 @@
 				</div>
 				
 									
-					<div class="bg">				
+					<div class="bg">	
+					<div class="readme" style="color: white;">
+                        
+						<p>The Floyd Warshall Algorithm is for solving the All Pairs Shortest Path problem. The problem is to find shortest distances between every pair of vertices in a given Graph
+                        <ol class="points">
+							<li>We initialize the solution matrix same as the input graph matrix as a first step. </li>
+							<li>Then we update the solution matrix by considering all vertices as an intermediate vertex.</li>							
+							<li>The idea is to one by one pick all vertices and updates all shortest paths which include the picked vertex as an intermediate vertex in the shortest path. When we pick vertex number k as an intermediate vertex, we already have considered vertices {0, 1, 2, .. k-1} as intermediate vertices.
+							For every pair (i, j) of the source and destination vertices respectively, there are two possible cases. 
+							<ol class="points">
+							<li>k is not an intermediate vertex in shortest path from i to j. We keep the value of dist[i][j] as it is.  </li>
+							<li>k is an intermediate vertex in shortest path from i to j. We update the value of dist[i][j] as dist[i][k] + dist[k][j] if dist[i][j] > dist[i][k] + dist[k][j]</li>
+							</ol>
+							</li>
+							
+                        </ol>
+                        </p>
+                        <div class="contain">
+                          <h5>Complexity:</h5>          
+                          <table class="table-bordered" style="color: white;">
+                            <thead>
+								<tr>
+									<th>Best</th>
+									<th>Average</th>
+									<th>Worst</th>
+									<th>Memory</th>
+		
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td>O(V<sup>3</sup>)</td>
+									<td>O(V<sup>3</sup>)</td>
+									<td>O(V<sup>3</sup>)</td>
+									<td>O(V<sup>2</sup>)</td>
+								  </tr>
+                            </tbody>
+                          </table>
+                        </div>
+						</div>			
 						<div class="code"><pre>
 	procedure [array] FloydWarshall(D, P)
 

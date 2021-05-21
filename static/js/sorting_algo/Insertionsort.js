@@ -1,7 +1,7 @@
 var grid=document.querySelector(".rows")
 let time=1000;
 let squares=[];
-let N=10;
+let N=7;
 let speed=2;
 let timer=1000;
 let current = document.getElementById("currentelementrow");
@@ -47,35 +47,20 @@ function subSp()
   }
 }
 
-// function pause()
-// {
-//   paused = 1;
-// }
-
-// function play()
-// {
-//   paused = 0;
-// }
-
 function start(){
-  // InsertionSort();
-  // if(!pause){ 
-  //     pause=1;
-  //     document.querySelector("#start").innerHTML="Restart";
+  // alert("Start");
+  if(!pause){ 
+      pause=1;
+      document.querySelector("#start").innerHTML="Restart";
       InsertionSort();
-  // }
-  // else{
-  //     location.reload();
-  // }
-}
-
-function newArray(){
-  //     document.querySelector("#start").innerHTML="Restart";
-  location.reload();
+  }
+  else{
+      location.reload();
+  }
 }
 
 function last(){
-    speed = 0;
+  speed = 0;
 }
 
 
@@ -133,7 +118,7 @@ async function linedehighlight(i){
   var list, index;
   list = document.getElementsByClassName(i);
   for (index = 0; index < list.length; ++index) {
-      list[index].setAttribute('style', 'background-color: greenyellow');
+      list[index].setAttribute('style', 'background-color: #CBEABA');
   }
  
 }

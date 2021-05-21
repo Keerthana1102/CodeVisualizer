@@ -36,14 +36,15 @@
 	<body onload="init(false);" class="VisualizationMainPage">
 		<div id = "container">
 			
-			<div id="header">  
+			<div class="header">  
+				<a href="/" class="logo">Code Visualizer</a>
 				<h1>Prims Algorithm</h1>
 			</div>
 			
 			<div  id = "mainContent"> 
 				<div class = "head">
 				<div class = "bg">
-				<div id = "algoControlSection">
+				<div id = "algoControlSection" style = "margin-top : 40px;margin-left : 20px;margin-right : 120px;">
 					
 					<table id="AlgorithmSpecificControls"> 
 						
@@ -54,15 +55,15 @@
 					
 					</table>
 				</div>
-				<table id="speed">
+				<table id="speed" style = "margin-top : 40px;>
 					<tr>
-						<td align="center" colspan="3"><b>Animation Speed</b></td>
+						<td align="center" colspan="3"><b></b></td>
 					</tr>
 					<tr>
-						<th>
-							<button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></th>
-							<th><h1 value="1" id="floatingTextarea" >1</h1></th>
-							<th><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></th>
+						<th><button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button></th>
+						<th><button type="button" disabled class="btn" style="background-color: #3bd16f;" id="floatingTextarea" >1x</button></th>
+						<th><button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button></th>
+
 					</tr>
 					
 		
@@ -77,36 +78,75 @@
 				
 					
 									
-					<div class="bg">				
-						<div class="code"><pre>
-	node[] jarnikPrimAlgorithm(graph, weight)
-	Queue q
-	q.addAllVetices(graph.vertices) 
-	//add all vertices to the queue
-	
-	distances = new int[q.size()] //array of distances
-	distances[0] = 0 //root
-	for i in 1 -> distances.length - 1 do
-	distances[i] = +inf 
-	//all remaining vertices are in infinite distance
-	
-	predecessors = new node[q.size()] 
-	//array of predecessors
-	predecessors[0] = null 
-	//the root does not have any predecessor
-	
-	while !queue.empty() do //while the queue is not empty
-	u = queue.extractMin() 
-	//return a node in a minimal distance
-	for node in descendants(u) do //for all descendants of u
-	if queue.contains(node) AND weight(u, node) < d[node] 
-	//if we have found some improving path to the descendant
-	then predecessors[node] = u //than u is his predecessor
-	d[node] = weight(u, node) //and set a new distance
-	
-	return predecessors //return the array of predecessor
+					<div class="bg">	
+					<div class="readme" style="color: white;">
+                        
+						<p>Prim’s algorithm is a greedy algorithm for solving the Minimum spanning tree problem.it finds a subset of the edges that forms a tree that includes every vertex, where the total weight of all the edges in the tree is minimized.
+                        <ol class="points">
+							<li>Create a set mstSet that keeps track of vertices already included in MST. </li>
+							<li>Assign a key value to all vertices in the input graph. Initialize all key values as INFINITE. Assign key value as 0 for the first vertex so that it is picked first.  </li>
+							<li>While mstSet doesn’t include all vertices 
+							<ol class="points">
+							<li>Pick a vertex u which is not there in mstSet and has minimum key value.  </li>
+							<li>Include u to mstSet. </li>
+							<li>Update key value of all adjacent vertices of u. To update the key values, iterate through all adjacent vertices. For every adjacent vertex v, if weight of edge u-v is less than the previous key value of v, update the key value as weight of u-v</li>
+							</ol>
+							</li>
+							
+                        </ol>
+                        </p>
+                        <div class="contain">
+                          <h5>Complexity:</h5>          
+                          <table class="table-bordered" style="color: white;">
+                            <thead>
+								<tr>
+									<th>Best</th>
+									<th>Average</th>
+									<th>Worst</th>
+									<th>Memory</th>
+		
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td>O(VLogV)</td>
+									<td>O(ELogV)</td>
+									<td>O(V<sup>2</sup>VLogV)</td>
+									<td>O(V)</td>
+								  </tr>
+                            </tbody>
+                          </table>
+                        </div>
+						</div>			
+						<div class="code">
+						<div class="line">node[] PrimAlgorithm(graph, weight)</div>
+						<div class="line">Queue q</div>
+						<div class="line">q.addAllVetices(graph.vertices) </div>
+						<div class="line">//add all vertices to the queue</div>
 						
-				</pre>
+						<div class="line">distances = new int[q.size()] //array of distances</div>
+						<div class="line">distances[0] = 0 //root</div>
+						<div class="line">for i in 1 -> distances.length - 1 do</div>
+						<div class="line">distances[i] = +inf </div>
+						<div class="line">//all remaining vertices are in infinite distance</div>
+						
+						<div class="line">predecessors = new node[q.size()]</div> 
+						<div class="line">//array of predecessors</div>
+						<div class="line">predecessors[0] = null </div>
+						<div class="line">//the root does not have any predecessor</div>
+						
+						<div class="line">while !queue.empty() do //while the queue is not empty</div>
+						<div class="line">u = queue.extractMin() </div>
+						<div class="line">//return a node in a minimal distance</div>
+						<div class="line">for node in descendants(u) do //for all descendants of u</div>
+						<div class="line">if queue.contains(node) AND weight(u, node) < d[node] </div>
+						<div class="line">//if we have found some improving path to the descendant</div>
+						<div class="line">then predecessors[node] = u //than u is his predecessor</div>
+						<div class="line">d[node] = weight(u, node) //and set a new distance</div>
+						
+						<div class="line">return predecessors //return the array of predecessor</div>
+						
+				
 				</div>
 				<canvas id="canvas" width="1000" height="540"></canvas>
 				</div>

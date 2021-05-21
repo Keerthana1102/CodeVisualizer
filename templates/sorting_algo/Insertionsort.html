@@ -11,125 +11,133 @@
     
    <link rel="stylesheet" href="{% static 'css/sorting_algo/Insertionsort.css' %}">
     <title>Insertion Sort</title>
+    <style>
+      .header a:hover {
+        background-color: yellow;
+        color: white;
+        font-size: 20px;
+      }
+      
+    </style>
   </head>
-  <body>
-    <div class="header">
-        <a href="/" class="logo">Code Visualizer</a>
-        <h1>Insertion Sort</h1>
+  <body style="background: #141414">
+    <div id="header" style="background: white;">
+      <a href="/" class="logo" style="color: black;">Code Visualizer</a>
+      <h1>Insertion Sort</h1>
     </div>
 
     
-  <div class="container" id="ct1">
-    <!-- <div class="container" id="ct4">
-    <div class="row">
-      <div class="col-sm">
-        <h2 style="text-align: left; margin-top: 5px;">Insertion Sort</h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm">
-        <p style="text-align: left; margin-top: 5px;">Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm">
-        <p>Complexity</p>
-      </div>
-    </div>
-  </div> -->
+  <div class="contain" id="ct1">
   
     <div class="row">
                 <div class="col-sm">
-                    <!-- <h2 style="text-align: left; margin-top: 5px;">Quick Sort</h2>
-                    <h5 style="text-align: left; margin-top: 0px;">(With first element as pivot)</h5> -->
-                    <h2 style="text-align: left; margin-top: 5px;">Implementation</h2>
+                <h2 style="text-align: left; margin-top: 5px; color: white;">Readme</h2>
                 </div>
+                <div class="col-sm">
+                    <h2 style="text-align: left; margin-top: 5px; margin-left: 80px; color: white;">Implementation</h2>
+                </div>
+
 
                 <div class="col-sm-7">
-                    <button type="button" onclick="newArray()" class="btn btn-danger">New Array</button>
-                    <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
+                    <button type="button" onclick="start()" class="btn" style="background-color: #3bd16f;" id="start">Start</button>
                     <!-- <button type="button" onclick="paused()" class="btn btn-danger" id="pause">Pause</button> -->
                     <!-- <button type="button" onclick="first()" class="btn btn-danger" id="first"><<</button> -->
-                    <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button>
-                    <button type="button" disabled class="btn btn-danger" id="speed" >2x</button>
+                    <button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button>
+                    <button type="button" disabled class="btn" style="background-color: #3bd16f;border: 3px chocolate solid;font-weight: bolder;" id="speed" >2x</button>
                     <!-- <textarea class="form-control" id="floatingTextarea">2x</textarea> -->
-                    <button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button>
-                    <button type="button" onclick="last()" class="btn btn-danger" id="last">>></button>
+                    <button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button>
+                    <button type="button" onclick="last()" class="btn" style="background-color: #3bd16f;" id="last">Last</button>
                 </div>
-            </div>
-            <!-- <div class="row">
-
-                <div class="col-sm-6" id="start">
-                    <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
-                </div>
-
-                <div class="col-sm-5" id = "animation">
-                    <table id="speed">
-                    <tr>
-                    <td align="center" colspan="3"><b>Animation Speed</b></td>
-                    </tr>
-                    <tr>
-                       <th><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></th>
-                    <th><h1  id="floatingTextarea" >1x</h1></th>
-                    <textarea class="form-control" id="floatingTextarea">2x</textarea>
-                    <th><button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></th>
-                  </tr>
-                </table>
-                    
-                </div>
-            </div> -->
+      </div>
+            
 
 
-            <div class="row">
-              <div class="col-sm">
-                  <div class="code">
-                      <div class="line l1">insertionSort(int arr[], int n){</div>
-                      <div class="line l2">for (i = 1; i < n; i++){ </div>
-                      <div class="line l3">&nbsp; &nbsp; &nbsp;key = arr[i];</div>
-                      <div class="line l4">&nbsp; &nbsp; &nbsp;j = i - 1;</div>
-                      <div class="line l5">&nbsp; &nbsp; &nbsp;while (j >= 0 && arr[j] > key){</div>
-                      <div class="line l6">&nbsp; &nbsp; &nbsp; arr[j + 1] = arr[j];</div>
-                      <div class="line l7"> &nbsp; &nbsp; &nbsp;j = j - 1;</div>
-                      <div class="line l8">  &nbsp;  }</div>
-                      <div class="line l9">        arr[j + 1] = key;</div>
-                      <div class="line l10">    }</div>
-                      <div class="line l11">}</div>
-          
-                  </div>
-              </div>
-              <div class="col-sm">
-
-                <div class="container" id="ct2">
-                    <div class="row" id="currentelementtext">CurrentElement
-
-                    </div>
-                    <div class="row" id="currentelementrow">
-
-                    </div>
-
-                    <div class="row">
-                        <div class="container" id="ct3">
-                            <div class="rows" id="row">
-                
-                            </div>
-                
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="readMe" style="color: white;">
+            <div class="readMe" style="color: white;">
+                        <p>Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.THe steps are:
+                        <ol class="points">
+                          <li> Iterate from arr[1] to arr[n] over the array. </li>
+                          <li>Compare the current element (key) to its predecessor. </li>
+                          <li>f the key element is smaller than its predecessor, compare it to the elements before. Move the greater elements one position up to make space for the swapped element.</li>
+                        </ol>
+                        </p>
+                        <div class="contain">
+                          <h5>Complexity:</h5>          
+                          <table class=" table-bordered" style="color: white;">
+                            <thead>
+                              <tr>
+                                <th>Best</th>
+                                <th>Average</th>
+                                <th>Worst</th>
+                                <th>Memory</th>
+                                <th>Stability</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>O(n)</td>
+                                <td>O(n<sup>2</sup>)</td>
+                                <td>O(n<sup>2</sup>)</td>
+                                <td>O(n)</td>
+                                <td>Yes</td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                     </div>
+            </div>
+          </div>
+         
+          <div class="col-sm-4">
+              <div class="code">
+                  <div class="line l1">insertionSort(int arr[], int n){</div>
+                  <div class="line l2">for (i = 1; i < n; i++){ </div>
+                  <div class="line l3">&nbsp; &nbsp; &nbsp;key = arr[i];</div>
+                  <div class="line l4">&nbsp; &nbsp; &nbsp;j = i - 1;</div>
+                  <div class="line l5">&nbsp; &nbsp; &nbsp;while (j >= 0 && arr[j] > key){</div>
+                  <div class="line l6">&nbsp; &nbsp; &nbsp; arr[j + 1] = arr[j];</div>
+                  <div class="line l7"> &nbsp; &nbsp; &nbsp;j = j - 1;</div>
+                  <div class="line l8">  &nbsp;  }</div>
+                  <div class="line l9">        arr[j + 1] = key;</div>
+                  <div class="line l10">    }</div>
+                  <div class="line l11">}</div>
+      
+              </div>
+          </div>
+          <div class="col-sm-5">
 
-                    <div class="row">
-                        <div class="col-sm">
-                            <div class="form-floating">
-                                <textarea class="form-control"  id="floatingTextarea2" >Elements at correct place are colored in blue after each iteration!!!</textarea>
-                            </div>
-                        </div>
-                    </div>
+             <div class="container" id="ct2">
+                <div class="row" id="currentelementtext">CurrentElement
 
                 </div>
-              </div>
+                <div class="row" id="currentelementrow">
+
+                </div>
+
+                <div class="row">
+                    <div class="container" id="ct3">
+                        <div class="rows" id="mainStr">
+            
+                        </div>
+            
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="form-floating">
+                            <textarea class="form-control"  id="floatingTextarea2" >Elements at correct place are colored in blue after each iteration!!!</textarea>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-  </div> 
+          </div>
+            
+         </div> 
+         </div>
    
   </body>
   <script type="text/javascript" src="{% static 'js/sorting_algo/Insertionsort.js' %}"></script>

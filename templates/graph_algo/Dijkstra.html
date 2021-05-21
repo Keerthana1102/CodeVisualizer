@@ -1,6 +1,7 @@
 {% load static %}
 <html>
 	<head>
+	
 		
 		<title>
 			Dijkstra Visualzation
@@ -38,14 +39,15 @@
 		
 		<div id = "container">
 			
-			<div id="header">  
-				<h1>Dijkstras visualization</h1>
+			<div class="header">  
+				<a href="/" class="logo">Code Visualizer</a>
+				<h1>Dijkstra Algorithm</h1>
 			</div>
 			
 			<div  id = "mainContent"> 
 				<div class = "head">
 				<div class = "bg">
-				<div id = "algoControlSection">
+				<div id = "algoControlSection" style = "margin-top : 40px;margin-left : 20px;margin-right : 120px;">
 					<table id="AlgorithmSpecificControls"> 
 						
 					</table> 
@@ -55,15 +57,15 @@
 					
 					</table>
 				</div>
-				<table id="speed">
+				<table id="speed" style = "margin-top : 40px;>
 					<tr>
-						<td align="center" colspan="3"><b>Animation Speed</b></td>
+						<td align="center" colspan="3"><b></b></td>
 					</tr>
 					<tr>
-						<th>
-							<button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></th>
-							<th><h1 value="1" id="floatingTextarea" >1</h1></th>
-							<th><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></th>
+						<th><button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button></th>
+						<th><button type="button" disabled class="btn" style="background-color: #3bd16f;" id="floatingTextarea" >1x</button></th>
+						<th><button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button></th>
+
 					</tr>
 					
 		
@@ -77,31 +79,69 @@
 				</div>
 				
 									
-					<div class="bg">				
-						<div class="code"><pre>
-doDijkstra(d, from) {
-//insert all nodes to the priority queue, 
-//node from has a distance 0, all others infinity
-Q = InsertAllNodesToTheQueue(d, from)
-CLOSED = {} //closed nodes - empty set
-predecessors = new array[d.nodeCount] //array of ancestors
-while !Q.isEmpty() do
-node = Q.extractMin()
-	CLOSED.add(node) //close the node
+					<div class="bg">	
+					<div class="readme" style="color: white;">
+                        
+						<p>Dijkstra is used to find shortest paths from source to all vertices in the given graph.
+                        <ol class="points">
+							<li>Create a set sptSet (shortest path tree set) that keeps track of vertices included in shortest path tree, i.e., whose minimum distance from source is calculated and finalized. Initially, this set is empty. </li>
+							<li>Assign a distance value to all vertices in the input graph. Initialize all distance values as INFINITE. Assign distance value as 0 for the source vertex so that it is picked first. </li>
+							<li>While sptSet doesn’t include all vertices
+							<ol class="points">
+							<li>Pick a vertex u which is not there in sptSet and has minimum distance value. </li>
+							<li>Include u to sptSet.</li>
+							<li>Update distance value of all adjacent vertices of u. To update the distance values, iterate through all adjacent vertices. For every adjacent vertex v, if sum of distance value of u (from source) and weight of edge u-v, is less than the distance value of v, then update the distance value of v.</li>
+							</ol>
+							</li>
+							
+                        </ol>
+                        </p>
+                        <div class="contain">
+                          <h5>Complexity:</h5>          
+                          <table class="table-bordered" style="color: white;">
+                            <thead>
+								<tr>
+									<th>Best</th>
+									<th>Average</th>
+									<th>Worst</th>
+									<th>Memory</th>
+		
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td>O(E+VLogV)</td>
+									<td>O(E+VLogV)</td>
+									<td>O(E+VLogV)</td>
+									<td>O(V)</td>
+								  </tr>
+                            </tbody>
+                          </table>
+                        </div>
+						</div>			
+						<div class="code">
+						<div class="line">doDijkstra(d, from) {</div>
+						<div class="line">//insert all nodes to the priority queue,</div> 
+						<div class="line">//node from has a distance 0, all others infinity</div>
+						<div class="line">Q = InsertAllNodesToTheQueue(d, from)</div>
+						<div class="line">CLOSED = {} //closed nodes - empty set</div>
+						<div class="line">predecessors = new array[d.nodeCount] //array of ancestors</div>
+						<div class="line">while !Q.isEmpty() do</div>
+						<div class="line">node = Q.extractMin()</div>
+						<div class="line">CLOSED.add(node) </div>
+						<div class="line">for a in Adj(node) do //for all descendants</div>
+						<div class="line">if !CLOSED.contains(a) </div>
+						<div class="line">//if the descendatn was not closed yet</div>
+						<div class="line">//and his distance has decreased</div>
+						<div class="line">if Q[node].distance + d[node][a] < Q[a].distance</div>
+						<div class="line">Q[a].distance = Q[node].distance + d[node][a]</div>
+						<div class="line">//change its ancestor</div>
+						<div class="line">predecessors[a] = node</div>
 
-	//contract distances
-	for a in Adj(node) do //for all descendants
-	if !CLOSED.contains(a) 
-	//if the descendatn was not closed yet
-	//and his distance has decreased
-	if Q[node].distance + d[node][a] < Q[a].distance
-	Q[a].distance = Q[node].distance + d[node][a]
-	//change its ancestor
-	predecessors[a] = node
-
-	return predecessors}
+						<div class="line">return predecessors</div>
+						<div class="line">}</div>
 						
-				</pre>
+				
 				</div>
 				<canvas id="canvas" width="1000" height="540"></canvas>
 				</div>

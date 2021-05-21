@@ -2,13 +2,7 @@
   width: 100%;
 }
 
-.ques{
-    background-color:#DDEEDD;
-    margin: 0%;
-    padding: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
-}
+
 
 footer {
   position: relative;
@@ -25,46 +19,49 @@ footer p{
   padding-left: 20px;;
 }
 .code{
+  /*float: left;*/
   padding: 30px;
-  background-color: greenyellow;
+  background-color: #CBEABA;
   width: 100%;
+  height: 100%;
 }
 
 .code .line{
   margin-bottom: 20px;
-  /* margin-left: 20px; */
-  background-color: #ADFF2F;
+  background-color: #CBEABA;
 }
 
-#ct1{
-     
-  background-color: whitesmoke;
-  padding: 30px;
-  margin: 50px;
+#ct1{    
+  /*position: relative;*/
   width: 100%;
+  height: 100%;
+  /*float: left;
+  background-color: whitesmoke;*/
+  padding: 30px;
+  /*margin-bottom: 25px;
+  margin-top: 50px;
+  margin-right: 150px;
+  margin-left: 100px;*/
 }
 
 #ct2{
+  /*position: relative;
+  width: 120%;*/
+  float: right;
   background-color: #DCDCDC;
   padding: 30px;
-  width: 750px;
-  height: 600px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
 #ct3{
-  /* padding: 10px; */
-  /* background-color: brown; */
-  margin-top: 25px;
+  margin-top: 0px;
   width: 100%;
 }
 
-#ct4{
-  width:10%;
-  background-color: #DCDCDC;
-}
+
 
 .code .line l1{
   margin-top: 20px;
@@ -83,27 +80,46 @@ footer p{
   background-color:#f7890a;
   width: 100%;
 }*/
-#row{
-    display: flex;
-    flex-flow: row wrap;
-    height: 90px;
-    border: 2px #e07c09;
-    font-size: 35px; 
-    background-color:#f7890a;
-    width: 100%;
-    margin: 0px;
+#row
+{
+  display: flex;
+  flex-flow: row wrap;
+  height: 90px;
+  border: 2px black solid;
+  margin-top: 20px;
+  font-size: 35px; 
+  background-color: green;
 }
 
-#row div{
+ #mainStr div
+{
     border: 2px aliceblue solid;
-    margin: 8px;
-    text-align: center;
+    margin: 1%;
+  padding: 2%;
+  /*font-size: larger;*/
 }
-.header{
-  background-color: darkgreen;
+#mainStr
+{
+  
+  margin-top: 2%;
+  display: flex;
+  flex-flow: row wrap;
+  height: auto;
+  /*border: 2px black solid;*/
+  
+  padding: 1%;
+  font-size: 20px; 
+  font-weight: bold;
+  background-color: rgb(243, 149, 41);
+
+}
+
+#header{
+  background-color: white;
   padding: 20px 10px;
 }
-.header a {
+
+#header a {
   float: left;
   color: black;
   text-align: center;
@@ -112,7 +128,27 @@ footer p{
   font-size: 18px; 
   line-height: 25px;
   border-radius: 4px;
+  opacity: 1;
+  transition: 0.3s;
 }
+
+#header a:hover {
+  background-color: #CBEABA;
+  color: black;
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+#header a.logo{
+  font-size: 30px;
+  /*font-weight: bold;*/
+}
+
+h1{
+  text-align: center; 
+  color: black;
+}
+
 table{
   margin-left: 40px;
   padding: 5px;
@@ -124,27 +160,14 @@ table{
 #animation{
   align-items:  center;
 }
-.header a:hover {
-  background-color: #f2f2f2;
-  color: black;
-}
-h1{
-  text-align: center; 
-  color: yellow;
-}
-.header a.logo{
-  font-size: 30px;
-  font-weight: bold;
-}
 
-#row div{
-  border: 2px aliceblue solid;
-  margin: 8px;
-  text-align: center;
-}
-.column{
-float: left;
-width: 10%;
+
+.col-sm-7{
+  padding-left: 10px;
+  padding-right: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 pre{
@@ -194,7 +217,7 @@ th,tr{
 }
 
 #floatingTextarea2 {
-    height: 150px;
+    height: 180px;
     width: 100%; 
     border: 3px rebeccapurple solid; 
     font-weight: bolder;
@@ -208,21 +231,22 @@ th,tr{
         width: 80px;
         border: 2px black solid;
         margin: 20px;
-        margin-left: 300px;
+        margin-left: 240px;
         font-size: 25px;
         color: black;
         background-color: #ffc107;
-        text-align: center;
+        
         
     }
     #currentelementtext 
     {
         height: 50px;
         padding: 0;
+        margin-left: 200px;
 
-        margin-left: 250px;
+        
         font-size: 25px;
         color: black;
-        text-align: center;
+       
         
     }

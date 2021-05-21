@@ -50,19 +50,22 @@ function sleep(ms) {
 		document.getElementById("SpeedCount").innerHTML=speed+"x";
 	}
   }
-  function begin()
+  function star()
   {
-      //document.getElementById("#begin").disabled="True";
       if(!pause)
-        { pause=1;
-	  document.getElementById("begin").innerHTML="Restart";
-      ShortestCommonSupers();}
+      {
+        pause=1;
+	    document.querySelector("#start").innerHTML="Restart";
+        ShortestCommonSupers();
+       }
       else
-      {location.reload();
-      }
-      
-    //  document.getElementById("#begin").disabled="True";
+      {
+        location.reload();
+      }     
 
+  }
+  function last(){
+    speed = 0;
   }
 async function textEdit(msg)
 {
@@ -88,9 +91,9 @@ async function colorChange(s,revS,i,j)
 async function setback(id,chk)
 {
 if(chk)
-document.getElementById(id).setAttribute('style','background-color : hotpink');
+document.getElementById(id).setAttribute('style','background-color : #20c997');
 else
-document.getElementById(id).setAttribute('style','background-color : greenyellow');
+document.getElementById(id).setAttribute('style','background-color : #CBEABA');
 }
 async function currentElem(s,revS,i,j)
 {

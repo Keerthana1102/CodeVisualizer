@@ -36,14 +36,15 @@
 	<body onload="init(false);" class="VisualizationMainPage">
 		<div id = "container">
 			
-			<div id="header">  
+			<div class="header">  
+				<a href="/" class="logo">Code Visualizer</a>
 				<h1>Krushkals Algorithm</h1>
 			</div>
 			
 			<div  id = "mainContent"> 
 				<div class = "head">
 				<div class = "bg">
-				<div id = "algoControlSection">
+				<div id = "algoControlSection" style = "margin-top : 40px;margin-left : 20px;margin-right : 120px;">
 					
 					<table id="AlgorithmSpecificControls"> 
 						
@@ -54,15 +55,15 @@
 					
 					</table>
 				</div>
-				<table id="speed">
+				<table id="speed" style = "margin-top : 40px;>
 					<tr>
-						<td align="center" colspan="3"><b>Animation Speed</b></td>
+						<td align="center" colspan="3"><b></b></td>
 					</tr>
 					<tr>
-						<th>
-							<button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button></th>
-							<th><h1 value="1" id="floatingTextarea" >1</h1></th>
-							<th><button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button></th>
+						<th><button type="button" onclick="subSp()" class="btn" style="background-color: #3bd16f;" id="sub" >-1x</button></th>
+						<th><button type="button" disabled class="btn" style="background-color: #3bd16f;" id="floatingTextarea" >1x</button></th>
+						<th><button type="button" onclick="addSp()" class="btn" style="background-color: #3bd16f;" id="add" >+1x</button></th>
+
 					</tr>
 					
 		
@@ -76,26 +77,65 @@
 				</div>
 				
 					
-					<div class="bg">				
-						<div class="code"><pre>
+					<div class="bg">	
+					<div class="readme" style="color: white;">
+                        
+						<p>Krushkal algorithm is a greedy algorithm for solving the Minimum spanning tree problemSteps for finding MST using Kruskal’s algorithm are 
+                        <ol class="points">
+							<li>Sort all the edges in non-decreasing order of their weight. </li>
+							<li>Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far. If cycle is not formed, include this edge. Else, discard it.  </li>
+							<li>While sptSet doesn’t include all vertices
+							<ol class="points">
+							<li>Pick a vertex u which is not there in sptSet and has minimum distance value. </li>
+							<li>Repeat step#2 until there are (V-1) edges in the spanning tree.</li>
+							<li>Union Find algorithm is used to detect cycles.</li>
+							</ol>
+							</li>
+							
+                        </ol>
+                        </p>
+                        <div class="contain">
+                          <h5>Complexity:</h5>          
+                          <table class="table-bordered" style="color: white;">
+                            <thead>
+								<tr>
+									<th>Best</th>
+									<th>Average</th>
+									<th>Worst</th>
+									<th>Memory</th>
+		
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td>O(ELogV)</td>
+									<td>O(ELogV)</td>
+									<td>O(ELogV)</td>
+									<td>O(E+V)</td>
+								  </tr>
+                            </tbody>
+                          </table>
+                        </div>
+						</div>			
+						<div class="code">
 
-SpanningTree kruskalAlgorithm(Graph graph, weights w)
-SpanningTree tree
-for Node n : graph do
-makeSet(n) //every edge is considered as a separate component
-List edges = sort(graph.getEdges(), w)
-//order the edges according to their weight in ascending order
+						<div class="line">SpanningTree kruskalAlgorithm(Graph graph, weights w)</div>
+						<div class="line">SpanningTree tree</div>
+						<div class="line">for Node n : graph do</div>
+						<div class="line">makeSet(n) //every edge is considered as a separate component</div>
+						<div class="line">List edges = sort(graph.getEdges(), w)</div>
+						<div class="line">//order the edges according to their weight in ascending order</div>
 
-for Edge e in edges do
-if findSet(e.start) != findSet(e.end) 
-//if the source and target are in different components, 
-//than we are not creating a cycle
-tree.add(e) //add the edge to the spanning tree
-union(e.start, e.end) //merge the connected components
-if tree.edgeCount() == graph.nodeCount() - 1 
-//if the spanning tree is complete
+						<div class="line">for Edge e in edges do</div>
+						<div class="line">if findSet(e.start) != findSet(e.end) </div>
+						<div class="line">//if the source and target are in different components, </div>
+						<div class="line">//than we are not creating a cycle</div>
+						<div class="line">tree.add(e) //add the edge to the spanning tree</div>
+						<div class="line">union(e.start, e.end) //merge the connected components</div>
+						<div class="line">if tree.edgeCount() == graph.nodeCount() - 1 </div>
+						<div class="line">//if the spanning tree is complete</div>
 						
-				</pre>
+				
 				</div>									
 					<canvas id="canvas" width="1000" height="540"></canvas>
 				</div>
