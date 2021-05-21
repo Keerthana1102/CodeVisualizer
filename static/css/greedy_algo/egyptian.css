@@ -29,9 +29,11 @@
 }
 
 .code{
+  
     padding: 30px;
-    background-color: #ADFF2F;
-    width: 100%;
+    
+     background-color: #CBEABA;
+    width: 60%;
     height: 500px;
 
 }
@@ -39,8 +41,9 @@
 .code .line{
     margin-bottom: 20px;
     /* margin-left: 20px; */
-    background-color: #ADFF2F;
+     background-color: #CBEABA;
 }
+
 .code1{
     padding: 30px;
     background-color: pink;
@@ -56,8 +59,8 @@ color: purple;
 
 }
 #floatingTextarea2{
-height: 100px;
-width:550px;
+height: 170px;
+width:100%;
 background-color: skyblue;
 font-weight: bolder;
 font-size: large;
@@ -65,8 +68,8 @@ color: purple;
 
 }
 #floatingTextarea3{
-height: 100px;
-width:550px;
+height: 170px;
+width:100%;
 background-color: skyblue;
 
 font-weight: bolder;

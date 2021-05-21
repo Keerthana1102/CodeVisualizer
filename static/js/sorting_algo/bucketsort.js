@@ -1,7 +1,6 @@
 let speed = 2, timer = 1000;
 let s1= [], s2 = [], s3=[]
 let squares4 = [];
-let pause = 0;
 
 let grid1 =  document.querySelector('.g1')
 let grid2 =  document.querySelector('.g2')
@@ -41,7 +40,6 @@ square4.setAttribute('class','col-sm');
 square4.setAttribute('style','background-color: #ffff66');
 square4.innerHTML = "B4";
 grid4.append(square4) 
-
 square5.setAttribute('id',i);
 square5.setAttribute('class',"col-sm");
 square5.setAttribute('style','background-color: #ffc107');
@@ -192,16 +190,14 @@ s5.push(square5)
 */
 
 function start(){
-  if(!pause){ 
-        pause=1;
-        document.querySelector("#start").innerHTML="Restart";
-        Sort();
-    }
-    else{
-        location.reload();
-    }
+Sort();
  
 }
+
+function last(){
+    speed = 100;
+}
+
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -214,16 +210,15 @@ function sleep(ms) {
   }
   function subSp()
   {
-    if(speed>0){speed--;
+    if(speed>1){speed--;
     document.querySelector("#speed").innerHTML=speed+"x";
   }
   }
-  function last(){
-    speed = 0;
-}
+
+
 async function textEdit(msg)
 {
-  document.querySelector(".form-control").innerHTML="Elements should be sorted in ascending order in the buckets!!! \n"+msg;
+  document.querySelector(".form-control").innerHTML="Sorting of elements using bucket Sort Algorithm!!! \n"+msg;
 }
 async function colorev1(i,j)
 {
@@ -294,15 +289,49 @@ async function currentElem3(i,j){
     s4[j].setAttribute('style','background-color: #ffff66');
 }
 */
+async function lineHgli8(i){
+    console.log(document.getElementsByClassName(i));
+    var list, index;
+    list = document.getElementsByClassName(i);
+    for (index = 0; index < list.length; ++index) {
+        list[index].setAttribute('style', 'background-color: #20c997');
+    }
+    //document.getElementsByClassName(i).setAttribute('style', 'background-color: #20c997'); // green
+}
+
+async function deHgli8(i){
+    console.log(document.getElementsByClassName(i));
+    var list, index;
+    list = document.getElementsByClassName(i);
+    for (index = 0; index < list.length; ++index) {
+        list[index].setAttribute('style', 'background-color:  #DCDCDC; ');
+    }
+    //document.getElementsByClassName(i).setAttribute('style', 'background-color: #20c997');
+}
 
 async function Sort()
 {
-  textEdit("Unsorted Array !!!");
+  //textEdit("Unsorted Array !!!");
   for(let i=0;i<1;i++)
   {
     for(let j=0;j<1-i;j++)
     {
-      
+      lineHgli8('line l1');
+      await sleep(1*timer/speed);
+      lineHgli8('line l2');
+      lineHgli8('line l3');
+      textEdit("Elements of the array are distributed in a set of buckets");
+      await sleep(4*timer/speed);
+      deHgli8('line l1');
+      deHgli8('line l2');
+      deHgli8('line l3');
+      lineHgli8('line l4');
+       lineHgli8('line l5');
+      textEdit("Elements in the buckets are sorted using bubble sort");
+      await sleep(4*timer/speed);
+      deHgli8('line l4');
+       textEdit("Unsorted Bucket-1!!!");
+        await sleep(2*timer/speed);
       currentElem1(j,j+1);
        //currentElem2(j,j+1);
        // currentElem3(j,j+1);
@@ -324,13 +353,21 @@ async function Sort()
 
     }
     s1[1-i].setAttribute('style','background-color: yellow ');
+     deHgli8('line l5');
+      textEdit("Bucket-1 sorted!!!");
+       await sleep(2*timer/speed);
+       //await sleep(2*timer/speed);
  }    
   /* for(let i=0;i<3;i++){
     insertElem(i,i);
    }*/
-   textEdit("Bucket-1 sorted!!!")
+  textEdit("Sorting of next bucket !!!");
     await sleep(3*timer/speed);
- textEdit("Unsorted Array !!!");
+ textEdit("Unsorted Bucket-2 !!!");
+  lineHgli8('line l4');
+  await sleep(2*timer/speed);
+       lineHgli8('line l5');
+        deHgli8('line l4');
   for(let i=0;i<3;i++)
   {
     for(let j=0;j<3-i;j++)
@@ -359,9 +396,15 @@ async function Sort()
     s2[3-i].setAttribute('style','background-color: yellow ');
 
   }
-  textEdit("Bucket-2 sorted!!!")
+  textEdit("Bucket-2 sorted!!!");
+  deHgli8('line l5');
    await sleep(3*timer/speed);
-  textEdit("Unsorted Array !!!");
+   textEdit("Lets sort Bucket-3!!!"); 
+     lineHgli8('line l4');
+     await sleep(2*timer/speed);
+     lineHgli8('line l5');
+     deHgli8('line l4');
+  textEdit("Unsorted Bucket-3 !!!");
   for(let i=0;i<3;i++)
   {
     for(let j=0;j<3-i;j++)
@@ -389,8 +432,20 @@ async function Sort()
     s3[3-i].setAttribute('style','background-color: yellow ');
 
   }
-    await sleep(2*timer/speed);
-  textEdit("Buckets are sorted and the array is found!!!");
+   
+    deHgli8('line l5');
+     deHgli8('line l5');
+    
+  textEdit("Buckets are sorted!!!");
+   await sleep(3*timer/speed);
+   lineHgli8('line l7');
+   lineHgli8('line l8');
+ textEdit("Concatenation of elements ib buckets to get sorted array!!!");
+
+ await sleep(5*timer/speed);
+textEdit(" Array is Sorted!!!")
+ deHgli8('line l7');
+  deHgli8('line l8');
 
 finalarray1();
 }
@@ -398,7 +453,3 @@ finalarray1();
 
 
 //var res = s1.concat(s2, s3);
-
-
-
-

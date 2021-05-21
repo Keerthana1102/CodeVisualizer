@@ -154,17 +154,19 @@ function sleep(ms) {
 function addSp()
   {
     if(speed<10){speed++;
-  document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+  document.querySelector("#speed").innerHTML=speed+"x";
   }
   }
 function subSp()
   {
-    if(speed>0){
+    if(speed>1){
       speed--;
-    document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+    document.querySelector("#speed").innerHTML=speed+"x";
   }
 }
-
+function last(){
+    speed = 100;
+}
 
 
 
@@ -348,7 +350,7 @@ async function deHgli8(i){
     var list, index;
     list = document.getElementsByClassName(i);
     for (index = 0; index < list.length; ++index) {
-        list[index].setAttribute('style', 'background-color: greenyellow');
+        list[index].setAttribute('style', 'background-color: #CBEABA');
     }
     //document.getElementsByClassName(i).setAttribute('style', 'background-color: #20c997');
 }

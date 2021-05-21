@@ -47,12 +47,17 @@ function sleep(ms) {
     //  document.getElementById("#begin").disabled="True";
 
   }
+
+
+function last(){
+  speed=100;
+}
 async function setback(id,chk)
 {
 if(chk)
-document.getElementById(id).setAttribute('style','background-color : hotpink');
+document.getElementById(id).setAttribute('style','background-color : #20c997');
 else
-document.getElementById(id).setAttribute('style','background-color : greenyellow');
+document.getElementById(id).setAttribute('style','background-color : #CBEABA');
 }
 async function textEdit(msg)
 {

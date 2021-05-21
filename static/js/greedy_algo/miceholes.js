@@ -13,17 +13,17 @@ let square2 = document.createElement('div')
 //let square3 = document.createElement('div')
 //let square4 = document.createElement('div')
 
-square1.setAttribute('id', 0)
-square1.setAttribute('class',"col-sm");
-square1.setAttribute('style','background-color: #ffc107');
-square1.innerHTML ="Mices";
-grid1.append(square1)
+//square1.setAttribute('id', 0)
+//square1.setAttribute('class',"col-sm");
+//square1.setAttribute('style','background-color: #ffc107');
+//square1.innerHTML ="M";
+//grid1.append(square1)
 
-square2.setAttribute('id',0)
-square2.setAttribute('class',"col-sm");
-square2.setAttribute('style','background-color: #ffc107');
-square2.innerHTML = "Holes";
-grid2.append(square2)
+//square2.setAttribute('id',0)
+//square2.setAttribute('class',"col-sm");
+//square2.setAttribute('style','background-color: #ffc107');
+//square2.innerHTML = "H";
+//grid2.append(square2)
 
 
 /*square4.setAttribute('id',0)
@@ -73,15 +73,18 @@ function sleep(ms) {
   function addSp()
   {
     if(speed<10){speed++;
-  document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+  document.querySelector("#speed").innerHTML=speed+"x";
   }
   }
   function subSp()
   {
-    if(speed>0){speed--;
-    document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+    if(speed>1){speed--;
+    document.querySelector("#speed").innerHTML=speed+"x";
   }
   }
+function last(){
+    speed = 100;
+}
 
 async function colorev1(i,j)
 {
@@ -139,7 +142,7 @@ async function currentElem2(i,j){
 
 async function textEdit(msg)
 {
-  document.querySelector(".form-control").innerHTML="Mice-Holes!!! \n"+msg;
+  document.querySelector(".form-control-1").innerHTML="Mice-Holes!!! \n"+msg;
 }
 
 function start(){
@@ -163,7 +166,7 @@ async function deHgli8(i){
     var list, index;
     list = document.getElementsByClassName(i);
     for (index = 0; index < list.length; ++index) {
-        list[index].setAttribute('style', 'background-color: greenyellow');
+        list[index].setAttribute('style', 'background-color: #CBEABA');
     }
     //document.getElementsByClassName(i).setAttribute('style', 'background-color: #20c997');
 }

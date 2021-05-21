@@ -2,7 +2,7 @@
 var grid=document.querySelector("#mainStr")
 let time=1000;
 let squares=[];
-let N=10;
+let N=8;
 let speed=2;
 let timer=1000;
 let pause=0;
@@ -34,13 +34,13 @@ function sleep(ms) {
   function addSp()
   {
 	  if(speed<10){speed++;
-	document.getElementById("SpeedCount").innerHTML=speed+"x";
+	document.getElementById("speed").innerHTML=speed+"x";
 	}
   }
   function subSp()
   {
 	  if(speed>1){speed--;
-		document.getElementById("SpeedCount").innerHTML=speed+"x";
+		document.getElementById("speed").innerHTML=speed+"x";
 	}
   }
   function begin()
@@ -48,7 +48,7 @@ function sleep(ms) {
       //document.getElementById("#begin").disabled="True";
       if(!pause)
         { pause=1;
-	  document.getElementById("begin").innerHTML="Restart";
+	  document.getElementById("start").innerHTML="Restart";
 	 BubbleSort();}
       else
       {location.reload();

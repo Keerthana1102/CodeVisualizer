@@ -21,17 +21,20 @@ function sleep(ms) {
   function addSp()
   {
     if(speed<10){speed++;
-      textEdit1(speed+"x");
-  //document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+      //textEdit1(speed+"x");
+  document.querySelector("#speed").innerHTML=speed+"x";
   }
   }
   function subSp()
   {
-    if(speed>0){speed--; textEdit1(speed+"x");
-    //document.querySelector("#floatingTextarea").innerHTML=speed+"x";
+    if(speed>0){speed--; 
+      //textEdit1(speed+"x");
+    document.querySelector("#speed").innerHTML=speed+"x";
   }
   }
-
+function last(){
+    speed = 100;
+}
   async function textEdit1(msg)
 {
   document.querySelector(".form-control").innerHTML="\n"+  msg;
@@ -61,7 +64,7 @@ async function deHgli8(i){
     var list, index;
     list = document.getElementsByClassName(i);
     for (index = 0; index < list.length; ++index) {
-        list[index].setAttribute('style', 'background-color: greenyellow');
+        list[index].setAttribute('style', 'background-color: #CBEABA');
     }
   }
 

@@ -12,37 +12,52 @@
    <link rel="stylesheet" href="{% static 'css/sorting_algo/bucketsort.css' %}">
     <title>Bucket Sort</title>
   </head>
-  <body>
+ <!-- <body style="background: yellow> -->
+
+    <body style="background: black">
     
 <div class="header">
   <a href="/" class="logo">Code Visualizer</a>
   <h1>Bucket Sort</h1>
 </div>
+<br><br>
+<div class="container">
+  <div class="row" style="background-color: black">
+         <div class="col-sm"><h2 style="text-align: left; margin-top: 5px; color: white;margin-left: 10px;">Readme</h2></div>
 
-<div class="container" id="ct1">
-  <div class="row">
-          <div class="col-sm">
-               <h2 style="text-align: left; margin-top: 5px;">Implementation</h2>
-               <!-- <h5>(Scatter, Sort,  Gather)</h5>  -->
-                 <!-- <p style= "color: red;">Bucket sort or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually by different sorting algorithms.</p> -->
+         <div class="col-sm"><h2 style="text-align: left; margin-top: 5px; margin-right: 50px; color: white;">Implementation</h2>
+                </div>
+             <br>
 
-          </div>
-           <div class="col-sm-7" >
-               <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
-               <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button>
-               <button type="button" disabled class="btn btn-danger" id="speed">2x</button>
-                <button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button>
-                <button type="button" onclick="last()" class="btn btn-danger" id="last">>></button>
+           <div class="col-sm-7" style="text-align: left; margin-top: 5px; margin-right: 120px;">
+               <button type="button" onclick="start()" class="btn btn-danger" id="start" style="background-color: #3bd16f;">Start</button>
+                <br><br>
+               <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" style="background-color: #3bd16f;">-1x</button><br><br>
+               <button type="button" onclick class="btn btn-danger" id="speed" style="background-color: #3bd16f;">2x</button><br><br>
+                <button type="button" onclick="addSp()" class="btn btn-danger" id="add" style="background-color: #3bd16f;">+1x</button><br><br>
+                <button type="button" onclick="last()" class="btn btn-danger" id="last" style="background-color: #3bd16f;">>></button>
                <!-- <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control"  id="floatingTextarea"> Bucket Sort</textarea>
                </div> -->
+               
            </div>
-
+</div>
            </div> 
-   <div class="row">       
+   <div class="row">  
            <div class="col-sm">
-               <div class="code">
+               <div class="code-1" style="al;width: 350px;color:white;">
 
-                  <div class="line l1"> for (i := 0 to n-1){</div>
+                Bucket sort or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets.<br><br>In this visualisation we are going to take input array as {11,9,21,8,17,19,13,1,24,12} and we are going to insert them in 3 buckets namely B1, B2, B3.<br><br>
+                 Each bucket is then sorted individually by different sorting algorithms.<br>The average time complexity for Bucket Sort is O(n + k).<br> The worst time complexity is O(n²). The space complexity for Bucket Sort is O(n+k)<br>Bucket sort is a stable algorithm.
+                
+                  
+            </div>
+            
+            
+           </div>
+     
+           <div class="col-sm" style="width:150px;margin-right: 100px;">
+               <div class="code" style="margin-right: 100px;width:350px;background-color: #DCDCDC; ">
+                   <div class="line l1"> for (i := 0 to n-1){</div>
                  
                    <div class="line l2">&nbsp; &nbsp; insert array[i] into the bucket index (size * array[i]) </div>
                     <div class="line l3"> } </div>
@@ -54,34 +69,9 @@
                    <div class="line l8"> &nbsp; &nbsp;concatenation of buckets}</div> 
                   
             </div>
-           </div>
-           <div class="col-sm">
-           <div class = "container box" id="ct2">
-            <div class="row">Input Array</div>
-             <div class="row"id="ct5">
-                          <div class="col-sm">11</div>
-
-                          <div class="col-sm">9</div>
-
-                          <div class="col-sm">21</div>
-
-                         <div class="col-sm">8</div>
-
-                          <div class="col-sm">17</div>
-
-                          <div class="col-sm">19</div>
-
-                          <div class="col-sm">13</div>
-
-                          <div class="col-sm">1</div>
-
-                          <div class="col-sm">24</div>
-
-                         <div class="col-sm">12</div>
-                 </div><br>
-
-                 <div class="row">Buckets</div>
-                <div class="row"id="ct5">
+            <br>
+                <div class="row" style="color:white; text-align:center ;width:100%;">Buckets</div>
+                <div class="row"id="ct5"style="width:350px;">
                             <div class="col-sm">8, 1</div>
 
                             <div class="col-sm">11, 9, 13, 12</div>
@@ -90,7 +80,13 @@
 
                            
                 </div>
-           <div class="row" style="margin-top: 10px" "margin-bottom: 0px">Array</div>
+          
+           
+          </div>
+           <div class="col-sm" style="margin-right: 200px;width:100%;">
+           <div class = "container box" id="ct2" >
+             <div class="row" style="margin-top: 10px margin-bottom: 0px ; font-weight: bolder; 
+             font-size: large; color: purple; ">Buckets Sorting</div>
            <div class="row">
              <div class="col-sm">
                <div class="row g1 my-flex-box">
@@ -113,16 +109,52 @@
 
            </div>
            
-               <div class="row">
-                  <div class="col-sm">
-                      <div class="form-floating">
+
+        <!--    <div class="row">Input Array</div>
+             <div class="row"id="ct5">
+                          <div class="col-sm">11</div>
+
+                          <div class="col-sm">9</div>
+
+                          <div class="col-sm">21</div>
+
+                         <div class="col-sm">8</div>
+
+                          <div class="col-sm">17</div>
+
+                          <div class="col-sm">19</div>
+
+                          <div class="col-sm">13</div>
+
+                          <div class="col-sm">1</div>
+
+                          <div class="col-sm">24</div>
+
+                         <div class="col-sm">12</div>
+                 </div><br>
+                            -->
+
+              <div class="row">
+                 <!-- <div class="col-sm">-->
+                      <div class="form-floating" >
                           <textarea class="form-control"  id="floatingTextarea2" >    Bucket Sort</textarea>
                       </div>
                   </div>
-              </div>
+              
+      
+
+
+                
+              
           </div>
            </div>    
          </div>  
+         <div class="row">  
+          <div class="col-sm">
+              <div class="row g4 my-flex-box" style="font-size: 30px; color: black; text-align: right;background-color: grey">"The sorted array is" 
+                </div> 
+            </div>
+          </div>  
    
 
     <!-- <div class="row">  
@@ -131,7 +163,7 @@
                </div> 
            </div>
          </div>   -->
-  </div>
+  
 
 <!-- </div>  --> 
      <script type="text/javascript" src="{% static 'js/sorting_algo/bucketsort.js' %}"></script>

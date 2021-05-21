@@ -12,12 +12,12 @@
    <link rel="stylesheet" href="{% static 'css/greedy_algo/egyptian.css' %}">
    <style>
      .header{
-    background-color: darkgreen;
+    background-color: white;
     padding: 20px 10px;
 }
 .header a {
     float: left;
-    color: yellow;
+    color: black;
     text-align: center;
     padding: 12px;
     text-decoration: none;
@@ -41,32 +41,45 @@ h1{
    </style>
     <title>Egyptian Fraction</title>
   </head>
-  <body>
+
+    <body style="background: black">
+
     <div class="header">
       <a href="/" class="logo">Code Visualizer</a>
-      <h1>Egyptian Fraction</h1>
-    </div><div class="container" id="ct1">
+      <h1 style="color:black;">Egyptian Fraction</h1>
+    </div>
+
+
+<br>
+
+
+
+    <div class="container" >
       <div class="row">
-        <div class="col-sm">
-           <h2 style="text-align: left; margin-top: 5px;">Egyptian Fraction</h1>
-           <h5 style="text-align: left; margin-top: 0px;">(using greedy strategy)</h2>
-            <p style= "color: red;"> Every positive fraction can be represented as sum of unique unit fractions. <br>
-              We can generate Egyptian Fractions using Greedy Algorithm.
-                  </p>
+
+        <div class="col-sm"><h2 style="text-align: left; margin-top: 20px; color: white;margin-right: 100px;">Readme</h2></div>
+        <div class="col-sm"><h2 style="text-align: left; margin-top: 20px; margin-right: 550px; color: white;">Implementation</h2></div>
+        <div class="col-sm" style=" margin-left: 590px" >
+               <button type="button" onclick="start()" class="btn btn-danger" id="start"style="background-color: #3bd16f;">Start</button>
+               <button type="button" onclick="subSp()" class="btn btn-danger" id="sub"style="background-color: #3bd16f;" >-1x</button>
+               <button type="button" onclick class="btn btn-danger" id="speed"style="background-color: #3bd16f;">2x</button>
+                <button type="button" onclick="addSp()" class="btn btn-danger"style="background-color: #3bd16f; id=add" >+1x</button>
+                <button type="button" onclick="last()" class="btn btn-danger" style="background-color: #3bd16f;id=last">>></button>
+               <!-- <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control"  id="floatingTextarea"> Bucket Sort</textarea>
+               </div> -->
+               
+           </div>
         </div>
-       <div class="col-sm" >
-                <button type="button" onclick="start()" class="btn btn-danger" id="start">Start</button>
-                 <button type="button" onclick="addSp()" class="btn btn-danger" id="add" >+1x</button>
-                
-               <button type="button" onclick="subSp()" class="btn btn-danger" id="sub" >-1x</button>
-                <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control"  id="floatingTextarea" > 2x</textarea>
-                 </div>
-               </div>
       </div>
-      <br><br>
-      <div class="row">       
+      <br>
+      <div class="row">  
+             <div class="col-sm">
+                <div class="code" style="width: 100%;margin-left: 0px;background-color: black;color:white;">Every positive fraction can be represented as sum of unique unit fractions.<br> A fraction is unit fraction if numerator is 1 and denominator is a positive integer.<br>For a given number of the form ‘nr/dr’ where dr > nr, first find the greatest possible unit fraction, then recur for the remaining part.<br>Here Greedy paradigm is used that builds up a solution piece by piece, always choosing the next piece that offers the most obvious and immediate benefit<br> Such a representation is called Egyptian Fraction.
+                  </div>
+            </div>
+         
             <div class="col-sm">
-                <div class="code">
+                <div class="code" style="width: 420px; background-color: #CBEABA;">
                     <div class="line l1">if (dr == 0 || nr == 0){return;}</div>
                     <div class="line l2">if (dr % nr == 0) {  </div>
                     <div class="line l3">&nbsp; &nbsp; document.write("1/" + parseInt(dr / nr, 10));  return; }</div>
@@ -81,24 +94,22 @@ h1{
                   </div>
             </div>
             <div class="col-sm">
-               <div class="row">
-                   <div claa="code">
-                    <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control-1"  id="floatingTextarea2" > Let's find the egyptian fractions!!!</textarea>
+              
+                   <div class="code" style="float:inline-end;margin-left: 20px; width:350px;background-color: #DCDCDC;">
+                    <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control-1"  id="floatingTextarea2" style= "border: 2px solid black; width:100%;background-color: #CBEABA;"> Let's find the egyptian fractions!!!</textarea>
                     </div>
                    
                      <br><br><br>
                   
 
-                    <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control-2"  id="floatingTextarea3" > The egyptian fractions are:</textarea>
+                    <div class="col-sm" style= "border: 2px solid black;"><textarea class="form-control-2"  id="floatingTextarea3" style= "border: 2px solid black; width:100%;background-color:  #CBEABA;" > The egyptian fractions are:</textarea>
                     </div>
                   </div>
-               </div> 
-            </div>
-
+              
+           </div>
       </div>  
 
-  </div>
-
+  
     <script type="text/javascript" src="{% static 'js/greedy_algo/egyptian.js' %}"></script>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
